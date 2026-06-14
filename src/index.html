@@ -465,6 +465,10 @@
     .tag-junior { background: rgba(79,156,249,0.2); color: var(--blue); }
     .tag-senior { background: rgba(124,109,240,0.2); color: #a78bfa; }
 
+    .tag-college { background: rgba(52,211,153,0.2); color: var(--emerald); }
+    .tag-advanced { background: rgba(248,113,113,0.2); color: var(--rose); }
+
+
     .level-count {
       font-size: 1.3rem;
       font-weight: 800;
@@ -686,13 +690,14 @@ const LEVELS = [
 ];
 
 const FILES = {
-  'Junior-1': '../data/junior-1.json',
-  'Junior-2': '../data/junior-2.json',
-  'Junior-3': '../data/junior-3.json',
-  'Senior-1': '../data/senior-1.json',
-  'Senior-2': '../data/senior-2.json',
-  'Senior-3': '../data/senior-3.json',
-};
+        'Junior': '../data/junior.json',
+        'Senior': '../data/senior.json',
+        'CET-4': '../data/cet4.json',
+        'CET-6': '../data/cet6.json',
+        'Postgrad': '../data/postgrad.json',
+        'TOEFL': '../data/toefl.json',
+        'SAT': '../data/sat.json'
+      };
 
 let allWords = [];
 let levelCounts = {};
