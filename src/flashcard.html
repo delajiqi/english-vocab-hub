@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闪卡学习 - English Vocab Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, '微软雅黑';
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .controls {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .control-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        select {
+            padding: 10px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: opacity 0.3s;
+            font-size: 1em;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-secondary {
+            background: #999;
+        }
+
+        .flashcard-container {
+            perspective: 1000px;
+            margin-bottom: 30px;
+        }
+
+        .flashcard {
+            background: white;
+            border-radius: 15px;
+            padding: 60px 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            text-align: center;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            backface-visibility: hidden;
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+        }
+
+        .word {
+            font-size: 3.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 20px;
+            word-break: break-all;
+        }
+
+        .phonetic {
+            font-size: 1.5em;
+            color: #999;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .pronunciation-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .pronunciation-btn:hover {
+            background: #764ba2;
+        }
+
+        .meaning {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .pos {
+            font-size: 1.2em;
+            color: #999;
+            margin-bottom: 15px;
+        }
+
+        .example {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .translation {
+            font-size: 1em;
+            color: #777;
+            margin-top: 10px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .progress {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #ddd;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            width: 0%;
+            transition: width 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-label {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .stat-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .hint {
+            background: #fffaf0;
+            border-left: 4px solid #ff9f43;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            color: #666;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .back-btn:hover {
+            background: #f5f5f5;
+        }
+
+        @media (max-width: 768px) {
+            .word {
+                font-size: 2.5em;
+            }
+
+            .flashcard {
+                padding: 40px 20px;
+                min-height: 300px;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="back-btn" onclick="location.href='index.html'">← 返回</button>
+
+    <div class="container">
+        <header>
+            <h1>🃏 闪卡学习</h1>
+            <p style="color: white; opacity: 0.9;">点击卡片翻转 | 用发音按钮听发音</p>
+        </header>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>选择等级：</label>
+                <select id="levelSelect">
+                    <option value="Junior-1">初一</option>
+                    <option value="Junior-2">初二</option>
+                    <option value="Junior-3">初三</option>
+                    <option value="Senior-1">高一</option>
+                    <option value="Senior-2">高二</option>
+                    <option value="Senior-3">高三</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>选择分类：</label>
+                <select id="categorySelect">
+                    <option value="all">全部</option>
+                </select>
+            </div>
+            <button class="btn" onclick="startFlashcard()">开始学习</button>
+            <button class="btn btn-secondary" onclick="shuffleCards()">随机顺序</button>
+        </div>
+
+        <div class="progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill">0%</div>
+            </div>
+            <div style="color: #666; margin-bottom: 10px;"><span id="currentCard">0</span> / <span id="totalCards">0</span></div>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-label">已学习</div>
+                    <div class="stat-value" id="learned">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">复习</div>
+                    <div class="stat-value" id="reviewed">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">学习率</div>
+                    <div class="stat-value" id="rate">0%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard-container">
+            <div class="flashcard" id="flashcard" onclick="toggleFlip()">
+                <div class="card-front">
+                    <div class="word" id="word">House</div>
+                    <div class="phonetic" id="phonetic">[haʊs]</div>
+                    <button class="pronunciation-btn" onclick="pronounce()">🔊 发音</button>
+                    <div class="hint">👆 点击卡片翻转查看释义</div>
+                </div>
+                <div class="card-back">
+                    <div class="pos" id="pos">n.</div>
+                    <div class="meaning" id="meaning">房子</div>
+                    <div class="example" id="example">I live in a small house.</div>
+                    <div class="translation" id="translation">我住在一所小房子里。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <button class="btn" onclick="previousCard()">⬅️ 上一个</button>
+            <button class="btn" onclick="markLearned()">✅ 已掌握</button>
+            <button class="btn" onclick="nextCard()">下一个 ➡️</button>
+        </div>
+    </div>
+
+    <script>
+        let vocabData = [];
+        let currentCards = [];
+        let currentIndex = 0;
+        let learnedCards = new Set();
+        let reviewedCards = new Set();
+        let isFlipped = false;
+
+        // 加载数据
+        async function loadData() {
+            try {
+                const response = await fetch('../data/vocab.json');
+                vocabData = await response.json();
+            } catch (error) {
+                console.log('加载本地示例数据');
+                vocabData = [
+                    { id: 1, word: "house", phonetic: "[haʊs]", pos: "n.", meaning: "房子；住宅", example: "I live in a small house near the school.", translation: "我住在学校附近的一所小房子里。", level: "Junior-1", category: "daily-life" },
+                    { id: 2, word: "school", phonetic: "[sku:l]", pos: "n.", meaning: "学校", example: "My school is very beautiful.", translation: "我的学校很漂亮。", level: "Junior-1", category: "school" }
+                ];
+            }
+            updateCategorySelect();
+        }
+
+        function updateCategorySelect() {
+            const selectedLevel = document.getElementById('levelSelect').value;
+            const categories = new Set();
+            
+            vocabData.forEach(item => {
+                if (item.level === selectedLevel) {
+                    categories.add(item.category);
+                }
+            });
+
+            const select = document.getElementById('categorySelect');
+            const currentValue = select.value;
+            select.innerHTML = '<option value="all">全部</option>';
+            
+            categories.forEach(cat => {
+                const option = document.createElement('option');
+                option.value = cat;
+                option.textContent = cat;
+                select.appendChild(option);
+            });
+        }
+
+        function startFlashcard() {
+            const level = document.getElementById('levelSelect').value;
+            const category = document.getElementById('categorySelect').value;
+            
+            currentCards = vocabData.filter(item => {
+                const levelMatch = item.level === level;
+                const categoryMatch = category === 'all' || item.category === category;
+                return levelMatch && categoryMatch;
+            });
+
+            if (currentCards.length === 0) {
+                alert('该分类没有单词');
+                return;
+            }
+
+            currentIndex = 0;
+            learnedCards.clear();
+            reviewedCards.clear();
+            isFlipped = false;
+            showCard();
+        }
+
+        function showCard() {
+            if (currentCards.length === 0) return;
+
+            const card = currentCards[currentIndex];
+            document.getElementById('word').textContent = card.word;
+            document.getElementById('phonetic').textContent = card.phonetic;
+            document.getElementById('pos').textContent = card.pos;
+            document.getElementById('meaning').textContent = card.meaning;
+            document.getElementById('example').textContent = card.example;
+            document.getElementById('translation').textContent = card.translation;
+            
+            document.getElementById('currentCard').textContent = currentIndex + 1;
+            document.getElementById('totalCards').textContent = currentCards.length;
+            
+            updateProgress();
+            resetFlip();
+        }
+
+        function toggleFlip() {
+            const card = document.getElementById('flashcard');
+            isFlipped = !isFlipped;
+            if (isFlipped) {
+                card.classList.add('flipped');
+                reviewedCards.add(currentIndex);
+            } else {
+                card.classList.remove('flipped');
+            }
+            updateProgress();
+        }
+
+        function resetFlip() {
+            isFlipped = false;
+            document.getElementById('flashcard').classList.remove('flipped');
+        }
+
+        function pronounce() {
+            const card = currentCards[currentIndex];
+            const utterance = new SpeechSynthesisUtterance(card.word);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.9;
+            speechSynthesis.speak(utterance);
+        }
+
+        function markLearned() {
+            learnedCards.add(currentIndex);
+            reviewedCards.add(currentIndex);
+            nextCard();
+        }
+
+        function nextCard() {
+            if (currentIndex < currentCards.length - 1) {
+                currentIndex++;
+                showCard();
+            } else {
+                alert('🎉 学完了！恭喜你');
+            }
+        }
+
+        function previousCard() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                showCard();
+            }
+        }
+
+        function shuffleCards() {
+            for (let i = currentCards.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [currentCards[i], currentCards[j]] = [currentCards[j], currentCards[i]];
+            }
+            currentIndex = 0;
+            showCard();
+        }
+
+        function updateProgress() {
+            const total = currentCards.length;
+            const reviewed = reviewedCards.size;
+            const learned = learnedCards.size;
+            const percentage = total > 0 ? Math.round((reviewed / total) * 100) : 0;
+            
+            document.getElementById('progressFill').style.width = percentage + '%';
+            document.getElementById('progressFill').textContent = percentage + '%';
+            document.getElementById('learned').textContent = learned;
+            document.getElementById('reviewed').textContent = reviewed;
+            document.getElementById('rate').textContent = percentage + '%';
+        }
+
+        // 页面加载
+        document.getElementById('levelSelect').addEventListener('change', updateCategorySelect);
+        loadData();
+    </script>
+</body>
+</html>
