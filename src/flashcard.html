@@ -104,6 +104,7 @@
     }
 
     .ctrl-select:focus { border-color: var(--purple); }
+    .ctrl-select option { background-color: var(--bg); color: var(--text); }
 
     .ctrl-btn {
       padding: 8px 16px;
@@ -439,13 +440,18 @@
   <div class="controls-bar">
     <select class="ctrl-select" id="level-select">
       <option value="all">全部年级 All Grades</option>
-      <option value="Junior">初中大纲 Junior</option>
-          <option value="Senior">高中高考 Senior</option>
-          <option value="CET-4">大学四级 CET-4</option>
-          <option value="CET-6">大学六级 CET-6</option>
-          <option value="Postgrad">考研 Postgrad</option>
-          <option value="TOEFL">托福 TOEFL</option>
-          <option value="SAT">SAT</option>
+      <option value="Primary">小学大纲 Primary</option>
+      <option value="Junior-1">初一年级 Junior-1</option>
+      <option value="Junior-2">初二年级 Junior-2</option>
+      <option value="Junior-3">初三年级 Junior-3</option>
+      <option value="Senior-1">高一年级 Senior-1</option>
+      <option value="Senior-2">高二年级 Senior-2</option>
+      <option value="Senior-3">高三年级 Senior-3</option>
+      <option value="CET-4">大学四级 CET-4</option>
+      <option value="CET-6">大学六级 CET-6</option>
+      <option value="Postgrad">考研 Postgrad</option>
+      <option value="TOEFL">托福 TOEFL</option>
+      <option value="SAT">SAT</option>
     </select>
     <select class="ctrl-select" id="cat-select">
       <option value="all">全部分类 All</option>
@@ -532,8 +538,13 @@
 
 <script>
 const FILES = {
-        'Junior': '../data/junior.json',
-        'Senior': '../data/senior.json',
+        'Primary': '../data/primary.json',
+        'Junior-1': '../data/junior-1.json',
+        'Junior-2': '../data/junior-2.json',
+        'Junior-3': '../data/junior-3.json',
+        'Senior-1': '../data/senior-1.json',
+        'Senior-2': '../data/senior-2.json',
+        'Senior-3': '../data/senior-3.json',
         'CET-4': '../data/cet4.json',
         'CET-6': '../data/cet6.json',
         'Postgrad': '../data/postgrad.json',
@@ -547,6 +558,7 @@ let currentIdx = 0;
 let isFlipped = false;
 let favMode = false;
 let unknownMode = false;
+let isLoading = true;
 
 const LS_KNOWN = 'evh_known';
 const LS_FAV = 'evh_fav';
@@ -567,6 +579,7 @@ async function loadAllVocab() {
   });
   const results = await Promise.all(promises);
   allWords = results.flat();
+  isLoading = false;
   applyFilters();
 
   // Read URL param
@@ -608,12 +621,12 @@ function renderCard() {
   document.getElementById('sc-fav').textContent = favSet.size;
 
   if (!total) {
-    document.getElementById('front-word').textContent = 'No words';
+    document.getElementById('front-word').textContent = isLoading ? 'Loading...' : '没有单词 (No words)';
     document.getElementById('front-phonetic').textContent = '';
     document.getElementById('front-pos').textContent = '';
     document.getElementById('front-level').textContent = '';
     document.getElementById('back-meaning').textContent = '—';
-    document.getElementById('back-example').textContent = '';
+    document.getElementById('back-example').innerHTML = '';
     document.getElementById('back-translation').textContent = '';
     return;
   }
@@ -625,7 +638,11 @@ function renderCard() {
   document.getElementById('front-level').textContent = w.level || '';
   document.getElementById('back-cat').textContent = w.category || '';
   document.getElementById('back-meaning').textContent = w.meaning || '';
-  document.getElementById('back-example').textContent = w.example || '';
+  if (w.example) {
+    document.getElementById('back-example').innerHTML = `${w.example} <button onclick="playSentence(event)" title="朗读例句" style="background:none;border:none;cursor:pointer;font-size:1.1rem;padding:0 4px;color:inherit;opacity:0.8;">🔊</button>`;
+  } else {
+    document.getElementById('back-example').innerHTML = '';
+  }
   document.getElementById('back-translation').textContent = w.translation || '';
 
   // Fav button
@@ -688,15 +705,43 @@ function speakWord() {
   const w = deck[currentIdx];
   const utt = new SpeechSynthesisUtterance(w.word);
   utt.lang = 'en-US';
-  utt.rate = 0.85;
+  utt.rate = 0.75;
+  window.speechSynthesis.speak(utt);
+}
+
+function playSentence(e) {
+  e.stopPropagation();
+  if (!deck.length) return;
+  const w = deck[currentIdx];
+  if (!w.example) return;
+  const utt = new SpeechSynthesisUtterance(w.example);
+  utt.lang = 'en-US';
+  utt.rate = 0.75;
   window.speechSynthesis.speak(utt);
 }
 
 // Shuffle
-document.getElementById('btn-shuffle').addEventListener('click', () => {
+document.getElementById('btn-shuffle').addEventListener('click', (e) => {
+  if (deck.length <= 1) return;
   deck = [...deck].sort(() => Math.random() - 0.5);
   currentIdx = 0;
-  renderCard();
+  
+  // Visual feedback on button
+  const btn = e.currentTarget;
+  const origHTML = btn.innerHTML;
+  btn.innerHTML = '✨ 已打乱!';
+  setTimeout(() => btn.innerHTML = origHTML, 1000);
+  
+  // Visual feedback on card
+  const card = document.getElementById('card');
+  card.style.transition = 'transform 0.2s, opacity 0.2s';
+  card.style.transform = 'scale(0.95)';
+  card.style.opacity = '0';
+  setTimeout(() => {
+    renderCard();
+    card.style.transform = '';
+    card.style.opacity = '';
+  }, 200);
 });
 
 // Fav-only mode
