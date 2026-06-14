@@ -1,0 +1,41 @@
+id,word,phonetic,pos,meaning,example,translation,level,category
+1,house,[haʊs],n.,房子；住宅,I live in a small house near the school.,我住在学校附近的一所小房子里。,Junior-1,daily-life
+2,school,[skuːl],n.,学校,My school is very beautiful.,我的学校很漂亮。,Junior-1,school
+3,teacher,[ˈtiːtʃə(r)],n.,老师；教师,My English teacher is very kind.,我的英语老师很善良。,Junior-1,school
+4,student,[ˈstjuːdənt],n.,学生,There are 50 students in our class.,我们班有50个学生。,Junior-1,school
+5,book,[bʊk],n.,书；书籍,I like reading books in the library.,我喜欢在图书馆里读书。,Junior-1,school
+6,friend,[frend],n.,朋友,My best friend is Tom.,我最好的朋友是汤姆。,Junior-1,relationships
+7,family,[ˈfæməli],n.,家庭；家族,My family loves to spend time together.,我的家人喜欢一起度过时光。,Junior-1,family
+8,mother,[ˈmʌðə(r)],n.,母亲；妈妈,My mother is a doctor.,我的母亲是一名医生。,Junior-1,family
+9,father,[ˈfɑːðə(r)],n.,父亲；爸爸,My father works in a company.,我的父亲在一家公司工作。,Junior-1,family
+10,sister,[ˈsɪstə(r)],n.,姐妹,I have two sisters.,我有两个姐妹。,Junior-1,family
+11,brother,[ˈbrʌðə(r)],n.,兄弟,My brother is a student.,我的兄弟是一名学生。,Junior-1,family
+12,apple,[ˈæpl],n.,苹果,An apple a day keeps the doctor away.,一天一个苹果，医生远离我。,Junior-1,food
+13,orange,[ˈɒrɪndʒ],n.,橙子；橘子,I like eating oranges in winter.,我喜欢在冬天吃橙子。,Junior-1,food
+14,water,[ˈwɔːtə(r)],n.,水,Drink more water it's good for your health.,多喝水，对你的健康有好处。,Junior-1,drink
+15,milk,[mɪlk],n.,牛奶,Milk is rich in calcium.,牛奶含有丰富的钙。,Junior-1,drink
+16,desk,[desk],n.,书桌；课桌,There is a computer on my desk.,我的书桌上有一台电脑。,Junior-1,furniture
+17,chair,[tʃeə(r)],n.,椅子,Please sit on the chair.,请坐在椅子上。,Junior-1,furniture
+18,bed,[bed],n.,床,I go to bed at 10 p.m.,我晚上10点上床睡觉。,Junior-1,furniture
+19,door,[dɔː(r)],n.,门,Please close the door behind you.,请关上你身后的门。,Junior-1,buildings
+20,window,[ˈwɪndəʊ],n.,窗户；窗口,Look out the window.,向窗外看。,Junior-1,buildings
+21,run,[rʌn],v.,跑；运行,He runs every morning.,他每天早上跑步。,Junior-1,action
+22,walk,[wɔːk],v.,走；步行,Let's walk to the park.,让我们走路去公园。,Junior-1,action
+23,eat,[iːt],v.,吃,What did you eat for lunch?,你午餐吃了什么？,Junior-1,action
+24,drink,[drɪŋk],v.,喝,Drink your milk.,喝你的牛奶。,Junior-1,action
+25,sleep,[sliːp],v.,睡眠；睡觉,I sleep 8 hours every night.,我每晚睡8个小时。,Junior-1,action
+26,beautiful,[ˈbjuːtɪfl],adj.,美丽的；漂亮的,The sunset is very beautiful.,日落非常美丽。,Junior-1,adjective
+27,good,[ɡʊd],adj.,好的；良好的,She is a good student.,她是个好学生。,Junior-1,adjective
+28,bad,[bæd],adj.,坏的；不好的,The weather is bad today.,今天天气不好。,Junior-1,adjective
+29,big,[bɪɡ],adj.,大的；巨大的,We have a big backyard.,我们有一个大的后院。,Junior-1,adjective
+30,small,[smɔːl],adj.,小的；少量的,The cat is small.,猫很小。,Junior-1,adjective
+31,happy,[ˈhæpi],adj.,快乐的；高兴的,I am happy to see you.,看到你我很高兴。,Junior-1,adjective
+32,sad,[sæd],adj.,悲伤的；难过的,She looks sad.,她看起来很悲伤。,Junior-1,adjective
+33,hot,[hɒt],adj.,热的；炎热的,It's hot outside today.,今天外面很热。,Junior-1,adjective
+34,cold,[kəʊld],adj.,冷的；寒冷的,Winter is cold.,冬天很冷。,Junior-1,adjective
+35,I,[aɪ],pron.,我,I am a student.,我是一个学生。,Junior-1,pronoun
+36,you,[juː],pron.,你；你们,Are you ready?,你准备好了吗？,Junior-1,pronoun
+37,he,[hi],pron.,他,He is my brother.,他是我的兄弟。,Junior-1,pronoun
+38,she,[ʃi],pron.,她,She is my sister.,她是我的姐妹。,Junior-1,pronoun
+39,it,[ɪt],pron.,它,It is a book.,它是一本书。,Junior-1,pronoun
+40,they,[ðeɪ],pron.,他们；她们；它们,They are students.,他们是学生。,Junior-1,pronoun

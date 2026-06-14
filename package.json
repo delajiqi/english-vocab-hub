@@ -1,0 +1,23 @@
+{
+  "name": "english-vocab-hub",
+  "version": "1.0.0",
+  "description": "一个帮助学生系统学习初高中英语单词的完整词汇库",
+  "main": "index.js",
+  "scripts": {
+    "start": "node scripts/generate-data.js",
+    "export-csv": "node scripts/export-csv.js",
+    "serve": "http-server src -c-1 -o"
+  },
+  "keywords": [
+    "english",
+    "vocabulary",
+    "learning",
+    "junior-high",
+    "senior-high",
+    "education"
+  ],
+  "author": "delajiqi",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
