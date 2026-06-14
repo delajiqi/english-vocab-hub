@@ -1,301 +1,827 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Vocab Hub - 英语单词学习平台</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Vocab Hub | 英语词汇中心</title>
+  <meta name="description" content="系统学习初高中英语词汇，闪卡、测验、搜索全功能词汇学习平台">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0e1a;
+      --surface: rgba(255,255,255,0.05);
+      --surface-hover: rgba(255,255,255,0.09);
+      --border: rgba(255,255,255,0.10);
+      --text: #e8eaf0;
+      --text-muted: #8892a4;
+      --purple: #7c6df0;
+      --blue: #4f9cf9;
+      --emerald: #34d399;
+      --amber: #fbbf24;
+      --rose: #f87171;
+      --grad1: linear-gradient(135deg, #7c6df0, #4f9cf9);
+      --grad2: linear-gradient(135deg, #34d399, #4f9cf9);
+      --grad3: linear-gradient(135deg, #f87171, #fbbf24);
+      --grad4: linear-gradient(135deg, #c084fc, #7c6df0);
+      --radius: 16px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, '微软雅黑';
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-        header {
-            text-align: center;
-            color: white;
-            margin-bottom: 40px;
-            padding-top: 20px;
-        }
+    /* Animated background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 20%, rgba(124,109,240,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(79,156,249,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 60% 20%, rgba(52,211,153,0.08) 0%, transparent 40%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-        h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
 
-        .subtitle {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
 
-        .main-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
 
-        .card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-        }
+    .nav-logo-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--grad1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
+    .nav-logo span { color: var(--text-muted); font-weight: 400; font-size: 0.85rem; }
 
-        .card-icon {
-            font-size: 3em;
-            margin-bottom: 15px;
-        }
+    .nav-links { display: flex; gap: 8px; }
 
-        .card h2 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 1.5em;
-        }
+    .nav-link {
+      padding: 8px 16px;
+      border-radius: 8px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
 
-        .card p {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
+    .nav-link:hover {
+      color: var(--text);
+      background: var(--surface);
+      border-color: var(--border);
+    }
 
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: opacity 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 1em;
-        }
+    .nav-link.active {
+      color: var(--purple);
+      background: rgba(124,109,240,0.1);
+      border-color: rgba(124,109,240,0.3);
+    }
 
-        .btn:hover {
-            opacity: 0.9;
-        }
+    /* HERO */
+    .hero {
+      padding: 60px 24px 40px;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
 
-        .search-section {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(124,109,240,0.15);
+      border: 1px solid rgba(124,109,240,0.3);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 0.8rem;
+      color: #a78bfa;
+      font-weight: 500;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
 
-        .search-box {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #fff 30%, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
-        .search-box input {
-            flex: 1;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 1em;
-            transition: border-color 0.3s;
-        }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
 
-        .search-box input:focus {
-            outline: none;
-            border-color: #667eea;
-        }
+    /* STATS ROW */
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
 
-        .search-results {
-            margin-top: 20px;
-        }
+    .stat {
+      text-align: center;
+    }
 
-        .result-item {
-            background: #f5f5f5;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            border-left: 4px solid #667eea;
-        }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      background: var(--grad1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
 
-        .word {
-            font-weight: bold;
-            font-size: 1.2em;
-            color: #333;
-        }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      font-weight: 500;
+    }
 
-        .phonetic {
-            color: #999;
-            font-style: italic;
-        }
+    .stat-divider {
+      width: 1px;
+      background: var(--border);
+      align-self: stretch;
+    }
 
-        .meaning {
-            color: #666;
-            margin-top: 5px;
-        }
+    /* SEARCH */
+    .search-wrapper {
+      max-width: 560px;
+      margin: 0 auto 56px;
+      position: relative;
+    }
 
-        .example {
-            color: #888;
-            margin-top: 8px;
-            font-size: 0.95em;
-            border-top: 1px solid #ddd;
-            padding-top: 8px;
-        }
+    .search-input {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 50px 14px 48px;
+      font-size: 0.95rem;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: all 0.2s;
+    }
 
-        .level-badge {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.85em;
-            margin-top: 8px;
-        }
+    .search-input::placeholder { color: var(--text-muted); }
 
-        footer {
-            text-align: center;
-            color: white;
-            padding: 20px;
-            opacity: 0.9;
-        }
+    .search-input:focus {
+      border-color: var(--purple);
+      background: rgba(255,255,255,0.07);
+      box-shadow: 0 0 0 3px rgba(124,109,240,0.15);
+    }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      pointer-events: none;
+    }
 
-            .main-content {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    .search-results {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0; right: 0;
+      background: #12182a;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      max-height: 320px;
+      overflow-y: auto;
+      z-index: 100;
+      display: none;
+      box-shadow: var(--shadow);
+    }
+
+    .search-results.show { display: block; }
+
+    .search-result-item {
+      padding: 12px 16px;
+      cursor: pointer;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .search-result-item:hover { background: var(--surface); }
+    .search-result-item:last-child { border-bottom: none; }
+
+    .result-word { font-weight: 600; font-size: 1rem; }
+    .result-meaning { color: var(--text-muted); font-size: 0.85rem; }
+    .result-level {
+      margin-left: auto;
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 100px;
+      background: rgba(124,109,240,0.2);
+      color: #a78bfa;
+      white-space: nowrap;
+    }
+
+    /* GRADE FILTER */
+    .grade-filter {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .grade-chip {
+      padding: 7px 16px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .grade-chip:hover { border-color: var(--purple); color: var(--text); }
+
+    .grade-chip.active {
+      background: rgba(124,109,240,0.2);
+      border-color: rgba(124,109,240,0.5);
+      color: #a78bfa;
+    }
+
+    /* FEATURE CARDS */
+    .section-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .feature-card.card-purple::before { background: radial-gradient(ellipse at 0% 0%, rgba(124,109,240,0.15), transparent 60%); }
+    .feature-card.card-blue::before { background: radial-gradient(ellipse at 0% 0%, rgba(79,156,249,0.15), transparent 60%); }
+    .feature-card.card-emerald::before { background: radial-gradient(ellipse at 0% 0%, rgba(52,211,153,0.15), transparent 60%); }
+
+    .feature-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,0.2);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-card:hover::before { opacity: 1; }
+
+    .card-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+    }
+
+    .icon-purple { background: rgba(124,109,240,0.2); }
+    .icon-blue { background: rgba(79,156,249,0.2); }
+    .icon-emerald { background: rgba(52,211,153,0.2); }
+
+    .feature-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .card-subtitle {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+
+    .feature-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .card-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: gap 0.2s;
+    }
+
+    .card-purple .card-action { color: #a78bfa; }
+    .card-blue .card-action { color: var(--blue); }
+    .card-emerald .card-action { color: var(--emerald); }
+
+    .feature-card:hover .card-action { gap: 10px; }
+
+    /* LEVEL PROGRESS */
+    .levels-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    .levels-section h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .levels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+    }
+
+    .level-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s;
+    }
+
+    .level-item:hover {
+      background: var(--surface-hover);
+      transform: translateY(-2px);
+    }
+
+    .level-item-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .level-tag {
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .tag-junior { background: rgba(79,156,249,0.2); color: var(--blue); }
+    .tag-senior { background: rgba(124,109,240,0.2); color: #a78bfa; }
+
+    .level-count {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 2px;
+    }
+
+    .level-name { font-size: 0.78rem; color: var(--text-muted); }
+
+    .level-bar {
+      height: 3px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 2px;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+
+    .level-bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      background: var(--grad1);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(4px);
+    }
+
+    .modal-overlay.show { display: flex; }
+
+    .modal {
+      background: #12182a;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: var(--shadow);
+      animation: modalIn 0.25s ease;
+    }
+
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.95) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .modal-word { font-size: 2.2rem; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+    .modal-phonetic { font-size: 1rem; color: var(--text-muted); margin-bottom: 12px; font-style: italic; }
+    .modal-pos { display: inline-block; padding: 3px 10px; background: rgba(124,109,240,0.2); color: #a78bfa; border-radius: 6px; font-size: 0.8rem; font-weight: 600; margin-bottom: 12px; }
+    .modal-meaning { font-size: 1.2rem; font-weight: 600; color: var(--text); margin-bottom: 16px; }
+    .modal-example { background: rgba(255,255,255,0.04); border-left: 3px solid var(--purple); padding: 12px 16px; border-radius: 0 8px 8px 0; }
+    .modal-example-en { font-size: 0.9rem; color: var(--text); margin-bottom: 4px; font-style: italic; }
+    .modal-example-zh { font-size: 0.85rem; color: var(--text-muted); }
+    .modal-close { margin-top: 20px; width: 100%; padding: 10px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; color: var(--text-muted); font-family: 'Inter', sans-serif; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; }
+    .modal-close:hover { background: var(--surface-hover); color: var(--text); }
+
+    /* Animated counter */
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .stat-number { animation: countUp 0.6s ease forwards; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>📚 English Vocab Hub</h1>
-            <p class="subtitle">系统学习初高中英语单词</p>
-        </header>
 
-        <div class="search-section">
-            <h2>🔍 搜索单词</h2>
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="输入单词或中文意思...">
-                <button class="btn" onclick="searchWord()">搜索</button>
-            </div>
-            <div class="search-results" id="searchResults"></div>
-        </div>
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">📚</div>
+    <div>
+      English Vocab Hub
+      <span>| 英语词汇中心</span>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link active">首页 Home</a>
+    <a href="flashcard.html" class="nav-link">闪卡 Flashcards</a>
+    <a href="quiz.html" class="nav-link">测验 Quiz</a>
+  </div>
+</nav>
 
-        <div class="main-content">
-            <div class="card" onclick="location.href='flashcard.html'">
-                <div class="card-icon">🎴</div>
-                <h2>闪卡学习</h2>
-                <p>使用闪卡模式逐个学习单词，包括音标、例句和中文释义。</p>
-                <button class="btn">进入闪卡</button>
-            </div>
+<div class="container">
+  <div class="hero">
+    <div class="hero-badge">
+      🎓 初高中英语 &nbsp;·&nbsp; Chinese Middle & High School English
+    </div>
+    <h1>English Vocab Hub<br>英语词汇中心</h1>
+    <p class="hero-sub">系统掌握初高中核心词汇 · Master Essential Vocabulary for Academic Success</p>
 
-            <div class="card" onclick="location.href='quiz.html'">
-                <div class="card-icon">✏️</div>
-                <h2>测试评估</h2>
-                <p>通过各种题型（选择题、填空、拼写）检验学习成果。</p>
-                <button class="btn">开始测试</button>
-            </div>
-
-            <div class="card" onclick="location.href='search.html'">
-                <div class="card-icon">🔎</div>
-                <h2>全面搜索</h2>
-                <p>按等级、分类、词性等条件精准查找单词。</p>
-                <button class="btn">高级搜索</button>
-            </div>
-        </div>
-
-        <footer>
-            <p>&copy; 2024 English Vocab Hub - 帮助学生系统学习英语单词</p>
-            <p>数据来源：中国教育部英语课程标准 | <a href="#" style="color: white;">GitHub</a></p>
-        </footer>
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-number" id="total-count">—</div>
+        <div class="stat-label">核心词汇 Words</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-number">6</div>
+        <div class="stat-label">年级覆盖 Grades</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-number">3+</div>
+        <div class="stat-label">学习模式 Modes</div>
+      </div>
     </div>
 
-    <script>
-        // 加载词汇数据
-        let vocabData = [];
+    <!-- Search -->
+    <div class="search-wrapper">
+      <span class="search-icon">🔍</span>
+      <input
+        type="text"
+        class="search-input"
+        id="search-input"
+        placeholder="搜索单词 / Search a word..."
+        autocomplete="off"
+      >
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
 
-        async function loadVocabData() {
-            try {
-                const response = await fetch('../data/vocab.json');
-                vocabData = await response.json();
-            } catch (error) {
-                console.log('注：此为离线演示版本，搜索功能演示相关数据。');
-                // 演示数据
-                vocabData = [
-                    { id: 1, word: "house", phonetic: "[haʊs]", pos: "n.", meaning: "房子；住宅", example: "I live in a small house near the school.", translation: "我住在学校附近的一所小房子里。", level: "Junior-1" },
-                    { id: 2, word: "school", phonetic: "[skuːl]", pos: "n.", meaning: "学校", example: "My school is very beautiful.", translation: "我的学校很漂亮。", level: "Junior-1" },
-                    { id: 3, word: "teacher", phonetic: "[ˈtiːtʃə(r)]", pos: "n.", meaning: "老师；教师", example: "My English teacher is very kind.", translation: "我的英语老师很善良。", level: "Junior-1" }
-                ];
-            }
-        }
+  <!-- Grade filter -->
+  <div class="grade-filter" id="grade-filter">
+    <button class="grade-chip active" data-level="all">全部 All</button>
+    <button class="grade-chip" data-level="Junior-1">初一 Junior 1</button>
+    <button class="grade-chip" data-level="Junior-2">初二 Junior 2</button>
+    <button class="grade-chip" data-level="Junior-3">初三 Junior 3</button>
+    <button class="grade-chip" data-level="Senior-1">高一 Senior 1</button>
+    <button class="grade-chip" data-level="Senior-2">高二 Senior 2</button>
+    <button class="grade-chip" data-level="Senior-3">高三 Senior 3</button>
+  </div>
 
-        function searchWord() {
-            const query = document.getElementById('searchInput').value.trim().toLowerCase();
-            const resultsDiv = document.getElementById('searchResults');
-            resultsDiv.innerHTML = '';
+  <!-- Feature Cards -->
+  <p class="section-title">学习工具 · Learning Tools</p>
+  <div class="cards-grid">
+    <a href="flashcard.html" class="feature-card card-purple">
+      <div class="card-icon-wrap icon-purple">🎴</div>
+      <h3>闪卡学习</h3>
+      <p class="card-subtitle">Flashcard Mode</p>
+      <p>翻转卡片学习单词，支持年级筛选、收藏生词、TTS 朗读和进度追踪</p>
+      <span class="card-action">开始学习 Start →</span>
+    </a>
+    <a href="quiz.html" class="feature-card card-blue">
+      <div class="card-icon-wrap icon-blue">✏️</div>
+      <h3>测验模式</h3>
+      <p class="card-subtitle">Quiz Mode</p>
+      <p>多种题型检验掌握程度，即时反馈分析，记录错题集中攻克薄弱点</p>
+      <span class="card-action">开始测验 Start →</span>
+    </a>
+    <div class="feature-card card-emerald" id="random-card" style="cursor:pointer">
+      <div class="card-icon-wrap icon-emerald">🎲</div>
+      <h3>随机单词</h3>
+      <p class="card-subtitle">Word of the Day</p>
+      <p id="random-word-preview">点击查看今日随机单词，扩展词汇量</p>
+      <span class="card-action" style="color:var(--emerald)">查看详情 View →</span>
+    </div>
+  </div>
 
-            if (!query) {
-                resultsDiv.innerHTML = '<p style="color: #999;">请输入搜索内容</p>';
-                return;
-            }
+  <!-- Levels overview -->
+  <div class="levels-section">
+    <h3>📊 词汇概览 · Vocabulary Overview</h3>
+    <div class="levels-grid" id="levels-grid">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+</div>
 
-            const results = vocabData.filter(item => 
-                item.word.toLowerCase().includes(query) || 
-                item.meaning.toLowerCase().includes(query) ||
-                item.translation.toLowerCase().includes(query)
-            );
+<!-- Word Modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" id="word-modal">
+    <div class="modal-word" id="m-word"></div>
+    <div class="modal-phonetic" id="m-phonetic"></div>
+    <span class="modal-pos" id="m-pos"></span>
+    <div class="modal-meaning" id="m-meaning"></div>
+    <div class="modal-example">
+      <div class="modal-example-en" id="m-example"></div>
+      <div class="modal-example-zh" id="m-translation"></div>
+    </div>
+    <button class="modal-close" onclick="closeModal()">关闭 Close</button>
+  </div>
+</div>
 
-            if (results.length === 0) {
-                resultsDiv.innerHTML = '<p style="color: #999;">未找到相关单词</p>';
-                return;
-            }
+<footer>
+  <p>English Vocab Hub &copy; 2025 · MIT License · <a href="https://github.com/delajiqi/english-vocab-hub" style="color:var(--purple);text-decoration:none">GitHub</a></p>
+</footer>
 
-            results.forEach(item => {
-                const resultHTML = `
-                    <div class="result-item">
-                        <div class="word">${item.word}</div>
-                        <div class="phonetic">${item.phonetic} | ${item.pos}</div>
-                        <div class="meaning">${item.meaning}</div>
-                        <div class="example">例句：${item.example}</div>
-                        <div class="example" style="border: none; padding: 0; margin-top: 5px;">${item.translation}</div>
-                        <span class="level-badge">${item.level}</span>
-                    </div>
-                `;
-                resultsDiv.innerHTML += resultHTML;
-            });
-        }
+<script>
+const LEVELS = [
+  { code: 'Junior-1', name: '初一 Grade 7', tag: 'junior' },
+  { code: 'Junior-2', name: '初二 Grade 8', tag: 'junior' },
+  { code: 'Junior-3', name: '初三 Grade 9', tag: 'junior' },
+  { code: 'Senior-1', name: '高一 Grade 10', tag: 'senior' },
+  { code: 'Senior-2', name: '高二 Grade 11', tag: 'senior' },
+  { code: 'Senior-3', name: '高三 Grade 12', tag: 'senior' },
+];
 
-        // 回车搜索
-        document.getElementById('searchInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') searchWord();
-        });
+const FILES = {
+  'Junior-1': '../data/junior-1.json',
+  'Junior-2': '../data/junior-2.json',
+  'Junior-3': '../data/junior-3.json',
+  'Senior-1': '../data/senior-1.json',
+  'Senior-2': '../data/senior-2.json',
+  'Senior-3': '../data/senior-3.json',
+};
 
-        // 页面加载时获取数据
-        loadVocabData();
-    </script>
+let allWords = [];
+let levelCounts = {};
+
+async function loadAllVocab() {
+  const promises = Object.entries(FILES).map(async ([level, file]) => {
+    try {
+      const res = await fetch(file);
+      if (!res.ok) return [];
+      const data = await res.json();
+      levelCounts[level] = data.length;
+      return data;
+    } catch {
+      levelCounts[level] = 0;
+      return [];
+    }
+  });
+  const results = await Promise.all(promises);
+  allWords = results.flat();
+  renderStats();
+  renderLevels();
+  pickRandomWord();
+}
+
+function renderStats() {
+  const total = allWords.length;
+  const el = document.getElementById('total-count');
+  let cur = 0;
+  const step = Math.ceil(total / 40);
+  const interval = setInterval(() => {
+    cur = Math.min(cur + step, total);
+    el.textContent = cur.toLocaleString() + '+';
+    if (cur >= total) clearInterval(interval);
+  }, 30);
+}
+
+function renderLevels() {
+  const grid = document.getElementById('levels-grid');
+  const maxCount = Math.max(...Object.values(levelCounts), 1);
+  grid.innerHTML = LEVELS.map(lv => {
+    const count = levelCounts[lv.code] || 0;
+    const pct = Math.round((count / maxCount) * 100);
+    return `
+      <a href="flashcard.html?level=${lv.code}" class="level-item" style="text-decoration:none;color:inherit">
+        <div class="level-item-header">
+          <span class="level-tag tag-${lv.tag}">${lv.code}</span>
+        </div>
+        <div class="level-count">${count.toLocaleString()}</div>
+        <div class="level-name">${lv.name}</div>
+        <div class="level-bar"><div class="level-bar-fill" style="width:${pct}%"></div></div>
+      </a>
+    `;
+  }).join('');
+}
+
+function pickRandomWord() {
+  if (!allWords.length) return;
+  const w = allWords[Math.floor(Math.random() * allWords.length)];
+  const preview = document.getElementById('random-word-preview');
+  preview.innerHTML = `<strong style="font-size:1.2rem;color:var(--text)">${w.word}</strong>&nbsp;&nbsp;<span style="color:var(--text-muted)">${w.meaning}</span>`;
+  document.getElementById('random-card').onclick = () => showModal(w);
+}
+
+function showModal(w) {
+  document.getElementById('m-word').textContent = w.word;
+  document.getElementById('m-phonetic').textContent = w.phonetic || '';
+  document.getElementById('m-pos').textContent = w.pos || '';
+  document.getElementById('m-meaning').textContent = w.meaning || '';
+  document.getElementById('m-example').textContent = w.example || '';
+  document.getElementById('m-translation').textContent = w.translation || '';
+  document.getElementById('modal-overlay').classList.add('show');
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('show');
+}
+
+document.getElementById('modal-overlay').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// Search
+const searchInput = document.getElementById('search-input');
+const searchResults = document.getElementById('search-results');
+let searchTimeout;
+
+searchInput.addEventListener('input', () => {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() => {
+    const q = searchInput.value.trim().toLowerCase();
+    if (q.length < 1) { searchResults.classList.remove('show'); return; }
+    const matches = allWords.filter(w =>
+      w.word.toLowerCase().includes(q) || (w.meaning && w.meaning.includes(q))
+    ).slice(0, 10);
+    if (!matches.length) { searchResults.classList.remove('show'); return; }
+    searchResults.innerHTML = matches.map(w => `
+      <div class="search-result-item" onclick='showModal(${JSON.stringify(w).replace(/'/g,"&#39;")})'>
+        <div>
+          <div class="result-word">${w.word}</div>
+          <div class="result-meaning">${w.meaning}</div>
+        </div>
+        <span class="result-level">${w.level}</span>
+      </div>
+    `).join('');
+    searchResults.classList.add('show');
+  }, 150);
+});
+
+document.addEventListener('click', e => {
+  if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+    searchResults.classList.remove('show');
+  }
+});
+
+// Grade chips
+document.getElementById('grade-filter').addEventListener('click', e => {
+  const chip = e.target.closest('.grade-chip');
+  if (!chip) return;
+  document.querySelectorAll('.grade-chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  const level = chip.dataset.level;
+  const links = document.querySelectorAll('[href^="flashcard.html"]');
+  links.forEach(l => {
+    if (level === 'all') l.href = 'flashcard.html';
+    else l.href = `flashcard.html?level=${level}`;
+  });
+});
+
+loadAllVocab();
+</script>
 </body>
 </html>
