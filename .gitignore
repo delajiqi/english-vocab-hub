@@ -22,3 +22,6 @@ Thumbs.db
 # Build
 dist/
 build/
+
+# Downloaded textbook source packs (~68MB; re-fetch via the build scripts — see DEVELOPER_NOTES §1)
+data/syllabus/pep_zip/
