@@ -534,6 +534,20 @@
     <kbd class="kbd">F</kbd> 收藏 &nbsp;
     <kbd class="kbd">K</kbd> 已掌握
   </div>
+  <div class="keyboard-hint" style="margin-top:4px">💡 选中例句里的单词即可查看翻译与发音</div>
+</div>
+
+<!-- 选词翻译浮层 -->
+<div id="sel-popup" style="display:none;position:fixed;z-index:2000;max-width:280px;background:#12182a;
+  border:1px solid var(--border);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);font-size:0.9rem;">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+    <span id="sel-word" style="font-weight:700;font-size:1.05rem;color:var(--text)"></span>
+    <button id="sel-tts" title="朗读" style="background:rgba(124,109,240,0.15);border:1px solid rgba(124,109,240,0.25);
+      color:#a78bfa;border-radius:50%;width:28px;height:28px;cursor:pointer;font-size:0.85rem">🔊</button>
+  </div>
+  <div id="sel-meaning" style="color:var(--text-muted);line-height:1.5;margin-bottom:8px"></div>
+  <a id="sel-link" target="_blank" rel="noopener"
+     style="color:#a78bfa;text-decoration:none;font-size:0.82rem">在有道查询 ↗</a>
 </div>
 
 <script>
@@ -579,6 +593,7 @@ async function loadAllVocab() {
   });
   const results = await Promise.all(promises);
   allWords = results.flat();
+  buildDict();
   isLoading = false;
   applyFilters();
 
@@ -658,8 +673,62 @@ function renderCard() {
 
 function flipCard() {
   if (!deck.length) return;
+  // 正在选词（划词翻译）时不翻转卡片
+  if (window.getSelection && window.getSelection().toString().trim()) return;
   isFlipped = !isFlipped;
   document.getElementById('card').classList.toggle('flipped', isFlipped);
+}
+
+// ---- 划词翻译：本地词库即时查中文，含发音与有道查询 ----
+let wordDict = null;
+function buildDict() {
+  wordDict = new Map();
+  for (const w of allWords) {
+    const k = (w.word || '').toLowerCase();
+    if (k && !wordDict.has(k)) wordDict.set(k, w.meaning || '');
+  }
+}
+function lookupLocal(word) {
+  if (!wordDict) return '';
+  const w = word.toLowerCase();
+  if (wordDict.has(w)) return wordDict.get(w);
+  // 轻量还原词形再试一次
+  for (const suf of ['s','es','ed','ing','d','ies']) {
+    if (w.endsWith(suf)) {
+      let base = w.slice(0, -suf.length);
+      if (suf === 'ies') base += 'y';
+      if (wordDict.has(base)) return wordDict.get(base);
+    }
+  }
+  return '';
+}
+function showSelPopup(word, rect) {
+  const pop = document.getElementById('sel-popup');
+  document.getElementById('sel-word').textContent = word;
+  const local = lookupLocal(word);
+  document.getElementById('sel-meaning').textContent = local || '本地词库未收录，点下方有道查询';
+  document.getElementById('sel-link').href = 'https://www.youdao.com/result?word=' + encodeURIComponent(word) + '&lang=en';
+  document.getElementById('sel-tts').onclick = (e) => { e.stopPropagation(); playClip(youdaoAudio(word), word, 0.95); };
+  pop.style.display = 'block';
+  // 定位到选区上方
+  const pw = pop.offsetWidth, ph = pop.offsetHeight;
+  let left = rect.left + rect.width / 2 - pw / 2;
+  left = Math.max(8, Math.min(left, window.innerWidth - pw - 8));
+  let top = rect.top - ph - 10;
+  if (top < 8) top = rect.bottom + 10;
+  pop.style.left = left + 'px';
+  pop.style.top = top + 'px';
+}
+function hideSelPopup() { document.getElementById('sel-popup').style.display = 'none'; }
+
+function handleExampleSelection() {
+  const sel = window.getSelection();
+  const text = (sel ? sel.toString() : '').trim();
+  const word = text.replace(/[^a-zA-Z'\-]/g, '');
+  // 只对「单个英文单词」生效
+  if (!word || /\s/.test(text) || word.length < 2) { return; }
+  const rect = sel.getRangeAt(0).getBoundingClientRect();
+  showSelPopup(word, rect);
 }
 
 function nextCard() {
@@ -754,8 +823,8 @@ function playSentence(e) {
   if (!deck.length) return;
   const w = deck[currentIdx];
   if (!w.example) return;
-  // 句子用有道在线发音（比浏览器机器音自然）
-  playClip(youdaoAudio(w.example), w.example, 0.9);
+  // 句子用有道在线发音（比浏览器机器音自然），放慢到 0.8 听更清楚
+  playClip(youdaoAudio(w.example), w.example, 0.8);
 }
 
 // Shuffle
@@ -823,6 +892,16 @@ document.getElementById('card-scene').addEventListener('touchend', e => {
   const dx = e.changedTouches[0].clientX - touchStartX;
   if (Math.abs(dx) > 50) { dx > 0 ? prevCard() : nextCard(); }
 }, { passive: true });
+
+// 划词翻译：在例句上选词后弹出
+const exampleEl = document.getElementById('back-example');
+exampleEl.addEventListener('mouseup', (e) => { e.stopPropagation(); setTimeout(handleExampleSelection, 0); });
+exampleEl.addEventListener('touchend', (e) => { e.stopPropagation(); setTimeout(handleExampleSelection, 0); });
+// 点击浮层之外则关闭
+document.addEventListener('mousedown', (e) => {
+  const pop = document.getElementById('sel-popup');
+  if (pop.style.display === 'block' && !pop.contains(e.target) && !exampleEl.contains(e.target)) hideSelPopup();
+});
 
 loadAllVocab();
 </script>

@@ -663,13 +663,16 @@
 <!-- Word Modal -->
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal" id="word-modal">
-    <div class="modal-word" id="m-word"></div>
+    <div class="modal-word"><span id="m-word"></span>
+      <button id="m-tts" onclick="speakModal()" title="朗读" style="vertical-align:middle;background:rgba(124,109,240,0.15);border:1px solid rgba(124,109,240,0.25);color:#a78bfa;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:1rem;margin-left:10px">🔊</button>
+    </div>
     <div class="modal-phonetic" id="m-phonetic"></div>
     <span class="modal-pos" id="m-pos"></span>
     <div class="modal-meaning" id="m-meaning"></div>
     <div class="modal-example">
       <div class="modal-example-en" id="m-example"></div>
       <div class="modal-example-zh" id="m-translation"></div>
+      <button id="m-tts-sent" onclick="speakModalSentence()" title="朗读例句" style="margin-top:8px;background:none;border:none;cursor:pointer;font-size:1.05rem;color:var(--text-muted)">🔊 朗读例句</button>
     </div>
     <button class="modal-close" onclick="closeModal()">关闭 Close</button>
   </div>
@@ -713,6 +716,33 @@ const FILES = {
 let allWords = [];
 let levelCounts = {};
 
+// ---- 发音：优先有道真人/神经网络音频，失败回退浏览器语音 ----
+function youdaoAudio(text) { return 'https://dict.youdao.com/dictvoice?audio=' + encodeURIComponent(text) + '&type=2'; }
+let preferredVoice = null;
+function pickVoice() {
+  const vs = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+  if (!vs.length) return;
+  preferredVoice =
+    vs.find(v => /natural|aria|jenny|guy|michelle|google us english/i.test(v.name) && /^en/i.test(v.lang)) ||
+    vs.find(v => /en[-_]US/i.test(v.lang)) || vs.find(v => /^en/i.test(v.lang)) || null;
+}
+if ('speechSynthesis' in window) { pickVoice(); window.speechSynthesis.onvoiceschanged = pickVoice; }
+function speakFallback(text) {
+  if (!text || !('speechSynthesis' in window)) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.9; if (preferredVoice) u.voice = preferredVoice;
+  window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+}
+let currentAudio = null;
+function playClip(url, fallbackText, rate) {
+  if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+  if (!url) return speakFallback(fallbackText);
+  const a = new Audio(url); a.playbackRate = rate || 0.92; currentAudio = a;
+  a.play().catch(() => speakFallback(fallbackText));
+}
+function speakWordObj(w, rate) { if (w) playClip(w.audio || youdaoAudio(w.word), w.word, rate || 0.95); }
+function speakSentence(text) { if (text) playClip(youdaoAudio(text), text, 0.8); }
+
 async function loadAllVocab() {
   const promises = Object.entries(FILES).map(async ([level, file]) => {
     try {
@@ -731,6 +761,7 @@ async function loadAllVocab() {
   renderStats();
   renderLevels();
   pickRandomWord();
+  setupRandomCard();
 }
 
 function renderStats() {
@@ -764,23 +795,48 @@ function renderLevels() {
   }).join('');
 }
 
+let randomWord = null;
 function pickRandomWord() {
   if (!allWords.length) return;
   const w = allWords[Math.floor(Math.random() * allWords.length)];
+  randomWord = w;
   const preview = document.getElementById('random-word-preview');
-  preview.innerHTML = `<strong style="font-size:1.2rem;color:var(--text)">${w.word}</strong>&nbsp;&nbsp;<span style="color:var(--text-muted)">${w.meaning}</span>`;
-  document.getElementById('random-card').onclick = () => showModal(w);
+  preview.innerHTML = `
+    <span style="display:inline-flex;align-items:center;gap:8px">
+      <strong style="font-size:1.3rem;color:var(--text)">${w.word}</strong>
+      <button onclick="event.stopPropagation();speakWordObj(randomWord)" title="朗读"
+        style="background:rgba(52,211,153,0.15);border:1px solid rgba(52,211,153,0.3);color:var(--emerald);border-radius:50%;width:28px;height:28px;cursor:pointer;font-size:0.8rem">🔊</button>
+    </span>
+    <span style="color:var(--text-muted);font-size:0.85rem">${w.phonetic || ''}</span><br>
+    <span style="color:var(--text-muted)">${w.meaning}</span>`;
 }
 
+// 整张卡片点击 = 换一个随机单词；详情按钮单独打开弹窗
+function setupRandomCard() {
+  const card = document.getElementById('random-card');
+  card.onclick = pickRandomWord;
+  const act = card.querySelector('.card-action');
+  if (act) {
+    act.innerHTML = `🔄 换一个 · <span id="rand-detail" style="text-decoration:underline">查看详情</span>`;
+    const detail = document.getElementById('rand-detail');
+    if (detail) detail.onclick = (e) => { e.stopPropagation(); if (randomWord) showModal(randomWord); };
+  }
+}
+
+let modalWord = null;
 function showModal(w) {
+  modalWord = w;
   document.getElementById('m-word').textContent = w.word;
   document.getElementById('m-phonetic').textContent = w.phonetic || '';
   document.getElementById('m-pos').textContent = w.pos || '';
   document.getElementById('m-meaning').textContent = w.meaning || '';
   document.getElementById('m-example').textContent = w.example || '';
   document.getElementById('m-translation').textContent = w.translation || '';
+  document.getElementById('m-tts-sent').style.display = w.example ? 'inline-block' : 'none';
   document.getElementById('modal-overlay').classList.add('show');
 }
+function speakModal() { if (modalWord) speakWordObj(modalWord); }
+function speakModalSentence() { if (modalWord && modalWord.example) speakSentence(modalWord.example); }
 
 function closeModal() {
   document.getElementById('modal-overlay').classList.remove('show');

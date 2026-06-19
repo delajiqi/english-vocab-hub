@@ -147,3 +147,22 @@ in the dataset has `category: "general"`, but the dropdown filtered on values li
   Options now map to the normalized `pos` field (`n / v / adj / adv / prep / conj / pron / num`),
   and `applyFilters()` filters on `w.pos` instead of `w.category`.
 - The back-of-card badge (previously always "general") now shows the word's POS.
+
+## 6. Interactive Enhancements (Date: 2026-06-19)
+Audio helpers (`youdaoAudio / playClip / speakFallback / speakWordObj / speakSentence`) were
+copied into all three pages so audio is available everywhere.
+
+- **Slower sentences** — example-sentence playback uses `playbackRate = 0.8` (words stay 0.95).
+- **Flashcard 划词翻译 (select-to-translate)** — selecting a word inside the example sentence
+  pops up `#sel-popup` with: the word, a 🔊 button, its Chinese meaning looked up from an
+  in-memory dict (`buildDict()` over all loaded words, with light suffix stemming for
+  `s/es/ed/ing/d/ies`), and a fallback "在有道查询" link
+  (`https://www.youdao.com/result?word=<w>&lang=en`). `flipCard()` is guarded so selecting
+  text doesn't flip the card.
+- **Quiz audio** — `src/quiz.html` shows a 🔊 next to the word in 看英选中 questions, and 🔊
+  buttons for the word + example inside the feedback box (so 看中选英 / 拼写 also get audio
+  after answering). Helpers: `speakCurrent()` / `speakCurrentSentence()`.
+- **Index 随机单词 (Word of the Day)** — clicking the card now cycles to a **new** random word
+  each click (`pickRandomWord` + `setupRandomCard`), shows word/phonetic/meaning with a 🔊,
+  and a "查看详情" sub-link opens the modal. The modal gained 🔊 buttons for word and example
+  (`speakModal()` / `speakModalSentence()`).
