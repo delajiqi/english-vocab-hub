@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node scripts/generate-data.js",
     "export-csv": "node scripts/export-csv.js",
-    "serve": "http-server src -c-1 -o"
+    "serve": "http-server . -c-1 -o src/index.html"
   },
   "keywords": [
     "english",
