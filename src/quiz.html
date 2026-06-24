@@ -495,10 +495,20 @@
     <div class="nav-logo-icon">📚</div>
     English Vocab Hub
   </a>
-  <div class="nav-links">
+  <div class="nav-links" style="align-items:center">
     <a href="index.html" class="nav-link">首页 Home</a>
     <a href="flashcard.html" class="nav-link">闪卡 Flashcards</a>
     <a href="quiz.html" class="nav-link active">测验 Quiz</a>
+    <label style="display:flex;align-items:center;gap:6px;color:var(--text-muted);font-size:0.82rem;margin-left:8px">
+      🔈
+      <select id="speed-select" style="background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:5px 8px;font-size:0.82rem;cursor:pointer">
+        <option value="0.5">0.5x</option>
+        <option value="0.6">0.6x</option>
+        <option value="0.75">0.75x</option>
+        <option value="0.9">0.9x</option>
+        <option value="1">1.0x</option>
+      </select>
+    </label>
   </div>
 </nav>
 
@@ -622,6 +632,21 @@
 
 </div>
 
+<!-- 选词翻译浮层 -->
+<div id="sel-popup" style="display:none;position:fixed;z-index:2000;max-width:280px;background:#12182a;
+  border:1px solid var(--border);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);font-size:0.9rem;">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+    <span id="sel-word" style="font-weight:700;font-size:1.05rem;color:var(--text)"></span>
+    <button id="sel-tts" title="朗读" style="background:rgba(124,109,240,0.15);border:1px solid rgba(124,109,240,0.25);
+      color:#a78bfa;border-radius:50%;width:28px;height:28px;cursor:pointer;font-size:0.85rem">🔊</button>
+    <button id="sel-fav" title="收藏到生词本" style="background:rgba(248,113,113,0.12);border:1px solid rgba(248,113,113,0.3);
+      color:var(--rose);border-radius:50%;width:28px;height:28px;cursor:pointer;font-size:0.85rem">🤍</button>
+  </div>
+  <div id="sel-meaning" style="color:var(--text-muted);line-height:1.5;margin-bottom:8px"></div>
+  <a id="sel-link" target="_blank" rel="noopener"
+     style="color:#a78bfa;text-decoration:none;font-size:0.82rem">在有道查询 ↗</a>
+</div>
+
 <script>
 const FILES = {
         'Primary': '../data/primary.json',
@@ -680,9 +705,13 @@ function playClip(url, fallbackText, rate) {
   const a = new Audio(url); a.playbackRate = rate || 0.92; currentAudio = a;
   a.play().catch(() => speakFallback(fallbackText));
 }
+// 语速设置（全站共用 localStorage，默认 0.6）
+const LS_RATE = 'evh_rate';
+function getRate() { const v = parseFloat(localStorage.getItem(LS_RATE)); return (v > 0 ? v : 0.6); }
+function setRate(v) { localStorage.setItem(LS_RATE, v); }
 // 播放某个词的发音（优先该词数据自带的 audio 字段）
-function speakWordObj(w, rate) { if (w) playClip(w.audio || youdaoAudio(w.word), w.word, rate || 0.95); }
-function speakSentence(text) { if (text) playClip(youdaoAudio(text), text, 0.8); }
+function speakWordObj(w) { if (w) playClip(w.audio || youdaoAudio(w.word), w.word, Math.min(getRate() + 0.2, 1)); }
+function speakSentence(text) { if (text) playClip(youdaoAudio(text), text, getRate()); }
 
 async function loadAllVocab() {
   const promises = Object.entries(FILES).map(async ([, file]) => {
@@ -690,7 +719,88 @@ async function loadAllVocab() {
     catch { return []; }
   });
   allWords = (await Promise.all(promises)).flat();
+  buildDict();
 }
+
+// ---- 划词翻译（与闪卡同款，收藏写入同一生词本）----
+let wordDict = null;
+function buildDict() {
+  wordDict = new Map();
+  for (const w of allWords) {
+    const k = (w.word || '').toLowerCase();
+    if (k && !wordDict.has(k)) wordDict.set(k, w);
+  }
+}
+function findEntry(word) {
+  if (!wordDict) return null;
+  const w = word.toLowerCase();
+  if (wordDict.has(w)) return wordDict.get(w);
+  for (const suf of ['s','es','ed','ing','d','ies']) {
+    if (w.endsWith(suf)) {
+      let base = w.slice(0, -suf.length);
+      if (suf === 'ies') base += 'y';
+      if (wordDict.has(base)) return wordDict.get(base);
+    }
+  }
+  return null;
+}
+function lookupLocal(word) { const e = findEntry(word); return e ? e.meaning : ''; }
+
+// 收藏写入与闪卡共用的 localStorage
+let favSet = new Set(JSON.parse(localStorage.getItem('evh_fav') || '[]'));
+let favWords = new Set(JSON.parse(localStorage.getItem('evh_fav_words') || '[]'));
+function isSelFaved(word) {
+  const e = findEntry(word);
+  if (e && favSet.has(e.id)) return true;
+  return favWords.has(word.toLowerCase());
+}
+function toggleSelFav(word) {
+  const e = findEntry(word);
+  if (e) {
+    if (favSet.has(e.id)) favSet.delete(e.id); else favSet.add(e.id);
+    localStorage.setItem('evh_fav', JSON.stringify([...favSet]));
+  } else {
+    const k = word.toLowerCase();
+    if (favWords.has(k)) favWords.delete(k); else favWords.add(k);
+    localStorage.setItem('evh_fav_words', JSON.stringify([...favWords]));
+  }
+}
+function showSelPopup(word, rect) {
+  const pop = document.getElementById('sel-popup');
+  document.getElementById('sel-word').textContent = word;
+  document.getElementById('sel-meaning').textContent = lookupLocal(word) || '本地词库未收录，点下方有道查询';
+  document.getElementById('sel-link').href = 'https://www.youdao.com/result?word=' + encodeURIComponent(word) + '&lang=en';
+  document.getElementById('sel-tts').onclick = (e) => { e.stopPropagation(); playClip(youdaoAudio(word), word, Math.min(getRate() + 0.2, 1)); };
+  const favBtn = document.getElementById('sel-fav');
+  favBtn.textContent = isSelFaved(word) ? '❤️' : '🤍';
+  favBtn.onclick = (e) => { e.stopPropagation(); toggleSelFav(word); favBtn.textContent = isSelFaved(word) ? '❤️' : '🤍'; };
+  pop.style.display = 'block';
+  const pw = pop.offsetWidth, ph = pop.offsetHeight;
+  let left = rect.left + rect.width / 2 - pw / 2;
+  left = Math.max(8, Math.min(left, window.innerWidth - pw - 8));
+  let top = rect.top - ph - 10; if (top < 8) top = rect.bottom + 10;
+  pop.style.left = left + 'px'; pop.style.top = top + 'px';
+}
+function hideSelPopup() { document.getElementById('sel-popup').style.display = 'none'; }
+function handleSelection() {
+  const sel = window.getSelection();
+  const text = (sel ? sel.toString() : '').trim();
+  const word = text.replace(/[^a-zA-Z'\-]/g, '');
+  if (!word || /\s/.test(text) || word.length < 2) return;
+  showSelPopup(word, sel.getRangeAt(0).getBoundingClientRect());
+}
+// 只在题目区/反馈区选词时触发
+document.addEventListener('mouseup', (e) => {
+  const card = document.getElementById('question-card');
+  const fb = document.getElementById('feedback-box');
+  if ((card && card.contains(e.target)) || (fb && fb.contains(e.target))) setTimeout(handleSelection, 0);
+});
+document.addEventListener('click', (e) => {
+  const pop = document.getElementById('sel-popup');
+  if (pop.style.display !== 'block') return;
+  if (pop.contains(e.target)) return;
+  hideSelPopup();
+}, true);
 
 loadAllVocab();
 
@@ -712,6 +822,25 @@ function setupChips(containerId, singleSelect = true) {
 setupChips('grade-chips', true);
 setupChips('type-chips', false);
 setupChips('timer-chips', true);
+
+// 语速设置初始化
+(function initSpeed() {
+  const sel = document.getElementById('speed-select');
+  if (!sel) return;
+  sel.value = String(getRate());
+  sel.addEventListener('change', () => setRate(sel.value));
+})();
+
+// 读取 URL 的 level 参数，预选对应年级
+(function applyLevelParam() {
+  const lv = new URLSearchParams(location.search).get('level');
+  if (!lv) return;
+  const chip = document.querySelector(`#grade-chips .setup-chip[data-val="${lv}"]`);
+  if (chip) {
+    document.querySelectorAll('#grade-chips .setup-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+  }
+})();
 
 const qCountInput = document.getElementById('q-count');
 const qCountVal = document.getElementById('q-count-val');
