@@ -568,10 +568,20 @@
       <span>| 英语词汇中心</span>
     </div>
   </div>
-  <div class="nav-links">
+  <div class="nav-links" style="align-items:center">
     <a href="index.html" class="nav-link active">首页 Home</a>
     <a href="flashcard.html" class="nav-link">闪卡 Flashcards</a>
     <a href="quiz.html" class="nav-link">测验 Quiz</a>
+    <label style="display:flex;align-items:center;gap:6px;color:var(--text-muted);font-size:0.82rem;margin-left:8px">
+      🔈 语速
+      <select id="speed-select" style="background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:5px 8px;font-size:0.82rem;cursor:pointer">
+        <option value="0.5">0.5x 很慢</option>
+        <option value="0.6">0.6x 慢</option>
+        <option value="0.75">0.75x 较慢</option>
+        <option value="0.9">0.9x 正常</option>
+        <option value="1">1.0x 原速</option>
+      </select>
+    </label>
   </div>
 </nav>
 
@@ -649,6 +659,21 @@
       <p id="random-word-preview">点击查看今日随机单词，扩展词汇量</p>
       <span class="card-action" style="color:var(--emerald)">查看详情 View →</span>
     </div>
+  </div>
+
+  <!-- Quiz by grade -->
+  <style>#quiz-grade-links a.grade-chip{text-decoration:none}</style>
+  <p class="section-title">按年级测验 · Quiz by Grade</p>
+  <div class="grade-filter" id="quiz-grade-links" style="margin-bottom:48px">
+    <a class="grade-chip" href="quiz.html?level=Primary">小学 Primary</a>
+    <a class="grade-chip" href="quiz.html?level=Junior-1">初一 J1</a>
+    <a class="grade-chip" href="quiz.html?level=Junior-2">初二 J2</a>
+    <a class="grade-chip" href="quiz.html?level=Junior-3">初三 J3</a>
+    <a class="grade-chip" href="quiz.html?level=Senior-1">高一 S1</a>
+    <a class="grade-chip" href="quiz.html?level=Senior-2">高二 S2</a>
+    <a class="grade-chip" href="quiz.html?level=Senior-3">高三 S3</a>
+    <a class="grade-chip" href="quiz.html?level=CET-4">四级 CET-4</a>
+    <a class="grade-chip" href="quiz.html?level=CET-6">六级 CET-6</a>
   </div>
 
   <!-- Levels overview -->
@@ -740,8 +765,19 @@ function playClip(url, fallbackText, rate) {
   const a = new Audio(url); a.playbackRate = rate || 0.92; currentAudio = a;
   a.play().catch(() => speakFallback(fallbackText));
 }
-function speakWordObj(w, rate) { if (w) playClip(w.audio || youdaoAudio(w.word), w.word, rate || 0.95); }
-function speakSentence(text) { if (text) playClip(youdaoAudio(text), text, 0.8); }
+// 语速设置（全站共用 localStorage，默认 0.6）
+const LS_RATE = 'evh_rate';
+function getRate() { const v = parseFloat(localStorage.getItem(LS_RATE)); return (v > 0 ? v : 0.6); }
+function setRate(v) { localStorage.setItem(LS_RATE, v); }
+function speakWordObj(w) { if (w) playClip(w.audio || youdaoAudio(w.word), w.word, Math.min(getRate() + 0.2, 1)); }
+function speakSentence(text) { if (text) playClip(youdaoAudio(text), text, getRate()); }
+// 初始化语速下拉
+(function initSpeed() {
+  const sel = document.getElementById('speed-select');
+  if (!sel) return;
+  sel.value = String(getRate());
+  sel.addEventListener('change', () => setRate(sel.value));
+})();
 
 async function loadAllVocab() {
   const promises = Object.entries(FILES).map(async ([level, file]) => {

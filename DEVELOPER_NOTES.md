@@ -166,3 +166,20 @@ copied into all three pages so audio is available everywhere.
   each click (`pickRandomWord` + `setupRandomCard`), shows word/phonetic/meaning with a 🔊,
   and a "查看详情" sub-link opens the modal. The modal gained 🔊 buttons for word and example
   (`speakModal()` / `speakModalSentence()`).
+
+## 7. Adjustable speed + more 划词 (Date: 2026-06-25)
+- **Global speech-speed setting** — a `🔈 语速` `<select>` (index/quiz nav, flashcard controls
+  bar) writes `localStorage['evh_rate']` (default **0.6**). All pages read it via `getRate()`:
+  sentences play at `getRate()`, single words at `min(getRate()+0.2, 1)`. Setting persists
+  across pages and reloads.
+- **收藏 in the 划词 popup** — the select-to-translate popup gained a 🤍/❤️ button. If the word
+  exists in the loaded dataset it is added to the shared 生词本 (`localStorage['evh_fav']` ids);
+  otherwise it is saved by text in `localStorage['evh_fav_words']`. flashcard & quiz share these
+  keys.
+- **Dismiss without flipping** — when the popup is open, an outside click is intercepted in the
+  **capture phase** (`stopPropagation`+`preventDefault`) so it only closes the popup instead of
+  flipping the card.
+- **划词翻译 in quiz** — the same popup now works on the question card and feedback box in
+  `src/quiz.html` (`buildDict` over all loaded words).
+- **Quiz by grade** — `src/index.html` has a "按年级测验" row linking to `quiz.html?level=<X>`;
+  `quiz.html` reads the `level` URL param and pre-selects the matching grade chip.
