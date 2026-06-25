@@ -183,3 +183,27 @@ copied into all three pages so audio is available everywhere.
   `src/quiz.html` (`buildDict` over all loaded words).
 - **Quiz by grade** — `src/index.html` has a "按年级测验" row linking to `quiz.html?level=<X>`;
   `quiz.html` reads the `level` URL param and pre-selects the matching grade chip.
+
+## 8. Memory Plan + Wordbook pages (Date: 2026-06-25)
+Two new pages, both linked from the homepage feature cards and the nav of every page.
+
+### `src/plan.html` — 背单词计划 (Ebbinghaus N-day plan)
+- **Setup**: pick a stage (`STAGE_LEVELS` maps 小学/初中(全)/初一~初三/高中(全)/高一~高三/CET-4/6 to
+  their level files) + a day count slider (10–90, **user-chosen**). Shows total words and
+  words/day.
+- **Plan build**: the stage's words (kept in textbook order) are sliced into N daily lists
+  `lists[1..N]`. Stored in `localStorage['evh_plan']` = `{stage, days, startDate}`.
+- **Ebbinghaus review**: `EBB = [1,2,4,7,15]`. Day D studies its own new list **plus** the lists
+  from days `D-1, D-2, D-4, D-7, D-15` (each word ends up reviewed ~5×). `dayDeck(d)` tags each
+  card `new` / `review·第N天`.
+- **Study**: a flashcard-style slideshow per day (flip, audio, 记住, prev/next), progress in
+  `localStorage` (`evh_plan_known` ids, `evh_plan_done_<key>` per finished day). Overview grid
+  marks done days ✅ and today 📍 (computed from `startDate`).
+- Includes the same 划词翻译 popup + speed select. No file export (in-app only, per request).
+
+### `src/wordbook.html` — 生词本 (Wordbook)
+- Lists all favorites: resolves `evh_fav` ids against the loaded data, plus text-only
+  `evh_fav_words`. Per row: word/phonetic/meaning/level + 🔊 + ✕ remove.
+- **开始复习** → `flashcard.html?fav=1` (flashcard now reads `fav=1` and auto-enables 生词本 mode).
+- **导出 CSV** — builds a UTF-8 BOM CSV client-side and downloads via a Blob (no library).
+- **清空** clears both fav stores.

@@ -432,6 +432,8 @@
     <a href="index.html" class="nav-link">首页 Home</a>
     <a href="flashcard.html" class="nav-link active">闪卡 Flashcards</a>
     <a href="quiz.html" class="nav-link">测验 Quiz</a>
+    <a href="plan.html" class="nav-link">计划 Plan</a>
+    <a href="wordbook.html" class="nav-link">生词本</a>
   </div>
 </nav>
 
@@ -611,6 +613,12 @@ async function loadAllVocab() {
   const lvParam = params.get('level');
   if (lvParam) {
     document.getElementById('level-select').value = lvParam;
+    applyFilters();
+  }
+  // 从生词本进入：自动开启「生词本」模式
+  if (params.get('fav') === '1') {
+    favMode = true;
+    document.getElementById('btn-fav-only').classList.add('active');
     applyFilters();
   }
 }
