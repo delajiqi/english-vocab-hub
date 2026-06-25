@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生词本 Wordbook | English Vocab Hub</title>
+  <meta name="description" content="我的生词本，收藏单词集中复习与导出">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0a0e1a; --surface:rgba(255,255,255,0.05); --surface-hover:rgba(255,255,255,0.09);
+      --border:rgba(255,255,255,0.10); --text:#e8eaf0; --text-muted:#8892a4;
+      --purple:#7c6df0; --blue:#4f9cf9; --emerald:#34d399; --rose:#f87171; --radius:16px; --shadow:0 8px 32px rgba(0,0,0,0.4);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; display:flex; flex-direction:column; }
+    body::before { content:''; position:fixed; inset:0; background:
+      radial-gradient(ellipse at 15% 30%, rgba(248,113,113,0.10) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 70%, rgba(124,109,240,0.10) 0%, transparent 50%); pointer-events:none; z-index:0; }
+    nav { display:flex; align-items:center; justify-content:space-between; padding:16px 24px; border-bottom:1px solid var(--border);
+      position:sticky; top:0; background:rgba(10,14,26,0.9); backdrop-filter:blur(12px); z-index:100; }
+    .nav-logo { display:flex; align-items:center; gap:8px; text-decoration:none; color:inherit; font-weight:700; font-size:0.95rem; }
+    .nav-logo-icon { width:30px; height:30px; border-radius:8px; background:linear-gradient(135deg,#7c6df0,#4f9cf9); display:flex; align-items:center; justify-content:center; font-size:0.9rem; }
+    .nav-links { display:flex; gap:6px; align-items:center; }
+    .nav-link { padding:7px 14px; border-radius:8px; color:var(--text-muted); text-decoration:none; font-size:0.85rem; font-weight:500; transition:all 0.2s; border:1px solid transparent; }
+    .nav-link:hover { color:var(--text); background:var(--surface); }
+    .nav-link.active { color:#a78bfa; background:rgba(124,109,240,0.12); border-color:rgba(124,109,240,0.3); }
+    .main { flex:1; max-width:820px; margin:0 auto; width:100%; padding:28px 24px 48px; position:relative; z-index:1; }
+    .head { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:8px; }
+    h1 { font-size:1.7rem; font-weight:800; }
+    .sub { color:var(--text-muted); font-size:0.9rem; margin-bottom:22px; }
+    .toolbar { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px; }
+    .btn { padding:10px 18px; border-radius:10px; font-family:'Inter',sans-serif; font-size:0.88rem; font-weight:600; cursor:pointer; transition:all 0.2s; border:1px solid var(--border); }
+    .btn-primary { background:linear-gradient(135deg,#7c6df0,#4f9cf9); color:#fff; border:none; }
+    .btn-primary:hover { opacity:0.92; transform:translateY(-1px); }
+    .btn-ghost { background:var(--surface); color:var(--text); }
+    .btn-ghost:hover { background:var(--surface-hover); }
+    .list { display:flex; flex-direction:column; gap:8px; }
+    .item { display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:12px 16px; }
+    .item-main { flex:1; min-width:0; }
+    .item-word { font-weight:700; font-size:1.05rem; }
+    .item-phon { color:var(--text-muted); font-size:0.82rem; font-style:italic; margin-left:6px; }
+    .item-mean { color:var(--text-muted); font-size:0.86rem; margin-top:2px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .item-lv { font-size:0.7rem; padding:2px 8px; border-radius:100px; background:rgba(124,109,240,0.18); color:#a78bfa; white-space:nowrap; }
+    .icon-btn { background:none; border:none; cursor:pointer; font-size:1.05rem; padding:4px 6px; border-radius:8px; color:var(--text-muted); }
+    .icon-btn:hover { background:var(--surface-hover); color:var(--text); }
+    .empty { text-align:center; padding:60px 20px; color:var(--text-muted); }
+    .empty h2 { color:var(--text); font-size:1.3rem; margin-bottom:8px; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><div class="nav-logo-icon">📚</div>English Vocab Hub</a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">首页 Home</a>
+    <a href="flashcard.html" class="nav-link">闪卡 Flashcards</a>
+    <a href="quiz.html" class="nav-link">测验 Quiz</a>
+    <a href="plan.html" class="nav-link">计划 Plan</a>
+    <a href="wordbook.html" class="nav-link active">生词本 Wordbook</a>
+  </div>
+</nav>
+
+<div class="main">
+  <div class="head">
+    <h1>❤️ 我的生词本</h1>
+    <span class="item-lv" id="wb-count">0 词</span>
+  </div>
+  <p class="sub">收藏的单词集中在这里，可一键复习或导出</p>
+
+  <div class="toolbar">
+    <button class="btn btn-primary" id="review-btn">🎴 开始复习</button>
+    <button class="btn btn-ghost" id="export-btn">⬇️ 导出 CSV</button>
+    <button class="btn btn-ghost" id="clear-btn" style="color:var(--rose)">🗑️ 清空</button>
+  </div>
+
+  <div class="list" id="wb-list"></div>
+  <div class="empty" id="wb-empty">
+    <h2>生词本还是空的</h2>
+    <p>在闪卡点 🤍 收藏，或在例句里划词收藏，单词就会出现在这里。</p>
+  </div>
+</div>
+
+<script>
+const FILES = {
+  'Primary':'../data/primary.json','Junior-1':'../data/junior-1.json','Junior-2':'../data/junior-2.json',
+  'Junior-3':'../data/junior-3.json','Senior-1':'../data/senior-1.json','Senior-2':'../data/senior-2.json',
+  'Senior-3':'../data/senior-3.json','CET-4':'../data/cet4.json','CET-6':'../data/cet6.json',
+  'Postgrad':'../data/postgrad.json','TOEFL':'../data/toefl.json','SAT':'../data/sat.json'
+};
+// 发音
+function youdaoAudio(t){ return 'https://dict.youdao.com/dictvoice?audio='+encodeURIComponent(t)+'&type=2'; }
+const LS_RATE='evh_rate';
+function getRate(){ const v=parseFloat(localStorage.getItem(LS_RATE)); return (v>0?v:0.6); }
+let preferredVoice=null;
+function pickVoice(){ const vs=window.speechSynthesis?window.speechSynthesis.getVoices():[]; if(!vs.length)return;
+  preferredVoice=vs.find(v=>/natural|aria|jenny|guy|michelle|google us english/i.test(v.name)&&/^en/i.test(v.lang))||vs.find(v=>/en[-_]US/i.test(v.lang))||vs.find(v=>/^en/i.test(v.lang))||null; }
+if('speechSynthesis'in window){ pickVoice(); window.speechSynthesis.onvoiceschanged=pickVoice; }
+function speakFallback(t){ if(!t||!('speechSynthesis'in window))return; const u=new SpeechSynthesisUtterance(t); u.lang='en-US'; u.rate=0.9; if(preferredVoice)u.voice=preferredVoice; window.speechSynthesis.cancel(); window.speechSynthesis.speak(u); }
+let curAudio=null;
+function playClip(url,fb,rate){ if(curAudio){curAudio.pause();curAudio=null;} if(!url)return speakFallback(fb); const a=new Audio(url); a.playbackRate=rate||0.92; curAudio=a; a.play().catch(()=>speakFallback(fb)); }
+function speakWordObj(w){ if(w) playClip(w.audio||youdaoAudio(w.word), w.word, Math.min(getRate()+0.2,1)); }
+
+let allWords=[];
+let favSet=new Set(JSON.parse(localStorage.getItem('evh_fav')||'[]'));
+let favWords=new Set(JSON.parse(localStorage.getItem('evh_fav_words')||'[]'));
+let items=[];  // 解析后的生词条目
+
+async function load(){
+  const results = await Promise.all(Object.values(FILES).map(async f=>{ try{const r=await fetch(f); if(!r.ok)return[]; return await r.json();}catch{return[];} }));
+  allWords = results.flat();
+  buildItems();
+  render();
+}
+function buildItems(){
+  items=[];
+  const byId=new Map(); for(const w of allWords) byId.set(w.id,w);
+  const seen=new Set();
+  // 按 id 收藏的
+  for(const id of favSet){ const w=byId.get(id); if(w && !seen.has(w.word.toLowerCase())){ items.push(w); seen.add(w.word.toLowerCase()); } }
+  // 仅按词收藏的（词库里没有的）
+  const byWord=new Map(); for(const w of allWords) if(!byWord.has(w.word.toLowerCase())) byWord.set(w.word.toLowerCase(),w);
+  for(const wd of favWords){ if(seen.has(wd))continue; const w=byWord.get(wd);
+    items.push(w || { word:wd, phonetic:'', pos:'', meaning:'(划词收藏)', example:'', translation:'', level:'词', _textOnly:true });
+    seen.add(wd); }
+}
+function render(){
+  document.getElementById('wb-count').textContent = items.length+' 词';
+  const list=document.getElementById('wb-list'), empty=document.getElementById('wb-empty');
+  if(!items.length){ list.innerHTML=''; empty.style.display='block'; return; }
+  empty.style.display='none';
+  list.innerHTML = items.map((w,i)=>`
+    <div class="item">
+      <div class="item-main">
+        <div><span class="item-word">${w.word}</span><span class="item-phon">${w.phonetic||''}</span></div>
+        <div class="item-mean">${w.meaning||''}</div>
+      </div>
+      <span class="item-lv">${w.level||''}</span>
+      <button class="icon-btn" title="朗读" onclick="speakWordObj(items[${i}])">🔊</button>
+      <button class="icon-btn" title="移除" onclick="removeItem(${i})">✕</button>
+    </div>`).join('');
+}
+function removeItem(i){
+  const w=items[i]; if(!w)return;
+  if(w._textOnly || !('id'in w) || !favSet.has(w.id)){ favWords.delete(w.word.toLowerCase()); }
+  if('id'in w) favSet.delete(w.id);
+  localStorage.setItem('evh_fav',JSON.stringify([...favSet]));
+  localStorage.setItem('evh_fav_words',JSON.stringify([...favWords]));
+  buildItems(); render();
+}
+document.getElementById('clear-btn').onclick=()=>{
+  if(!items.length) return;
+  if(!confirm('确定清空整个生词本？')) return;
+  favSet=new Set(); favWords=new Set();
+  localStorage.setItem('evh_fav','[]'); localStorage.setItem('evh_fav_words','[]');
+  buildItems(); render();
+};
+document.getElementById('review-btn').onclick=()=>{
+  if(!items.length){ alert('生词本是空的'); return; }
+  location.href='flashcard.html?fav=1';
+};
+document.getElementById('export-btn').onclick=()=>{
+  if(!items.length){ alert('生词本是空的'); return; }
+  const esc=s=>'"'+String(s||'').replace(/"/g,'""')+'"';
+  const rows=[['单词','音标','词性','释义','例句','翻译','等级']];
+  items.forEach(w=>rows.push([w.word,w.phonetic,w.pos,w.meaning,w.example,w.translation,w.level]));
+  const csv='﻿'+rows.map(r=>r.map(esc).join(',')).join('\r\n');
+  const blob=new Blob([csv],{type:'text/csv;charset=utf-8'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='生词本_'+new Date().toISOString().slice(0,10)+'.csv'; a.click();
+  URL.revokeObjectURL(a.href);
+};
+load();
+</script>
+</body>
+</html>

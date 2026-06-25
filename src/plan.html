@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>背单词计划 Memory Plan | English Vocab Hub</title>
+  <meta name="description" content="艾宾浩斯遗忘曲线背单词计划，自选天数，每日新词+科学复习">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0a0e1a; --surface:rgba(255,255,255,0.05); --surface-hover:rgba(255,255,255,0.09);
+      --border:rgba(255,255,255,0.10); --text:#e8eaf0; --text-muted:#8892a4;
+      --purple:#7c6df0; --blue:#4f9cf9; --emerald:#34d399; --amber:#fbbf24; --rose:#f87171;
+      --radius:16px; --shadow:0 8px 32px rgba(0,0,0,0.4);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; display:flex; flex-direction:column; }
+    body::before { content:''; position:fixed; inset:0; background:
+      radial-gradient(ellipse at 15% 30%, rgba(124,109,240,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 70%, rgba(52,211,153,0.10) 0%, transparent 50%); pointer-events:none; z-index:0; }
+    nav { display:flex; align-items:center; justify-content:space-between; padding:16px 24px; border-bottom:1px solid var(--border);
+      position:sticky; top:0; background:rgba(10,14,26,0.9); backdrop-filter:blur(12px); z-index:100; }
+    .nav-logo { display:flex; align-items:center; gap:8px; text-decoration:none; color:inherit; font-weight:700; font-size:0.95rem; }
+    .nav-logo-icon { width:30px; height:30px; border-radius:8px; background:linear-gradient(135deg,#7c6df0,#4f9cf9); display:flex; align-items:center; justify-content:center; font-size:0.9rem; }
+    .nav-links { display:flex; gap:6px; align-items:center; }
+    .nav-link { padding:7px 14px; border-radius:8px; color:var(--text-muted); text-decoration:none; font-size:0.85rem; font-weight:500; transition:all 0.2s; border:1px solid transparent; }
+    .nav-link:hover { color:var(--text); background:var(--surface); }
+    .nav-link.active { color:#a78bfa; background:rgba(124,109,240,0.12); border-color:rgba(124,109,240,0.3); }
+    .ctrl-select { background:var(--surface); border:1px solid var(--border); border-radius:8px; color:var(--text); padding:6px 10px; font-size:0.85rem; cursor:pointer; font-family:'Inter',sans-serif; outline:none; }
+    .ctrl-select option { background:var(--bg); color:var(--text); }
+    .main { flex:1; max-width:880px; margin:0 auto; width:100%; padding:28px 24px 48px; position:relative; z-index:1; }
+    h1 { font-size:1.9rem; font-weight:800; margin-bottom:6px; }
+    .sub { color:var(--text-muted); font-size:0.9rem; margin-bottom:28px; }
+    .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; margin-bottom:16px; }
+    .card h3 { font-size:0.85rem; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; margin-bottom:14px; }
+    .row { display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+    input[type=range] { flex:1; -webkit-appearance:none; height:4px; background:rgba(255,255,255,0.12); border-radius:2px; outline:none; min-width:200px; }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:18px; height:18px; border-radius:50%; background:var(--purple); cursor:pointer; }
+    .big-val { font-weight:800; font-size:1.2rem; color:#a78bfa; min-width:64px; text-align:right; }
+    .stat-line { color:var(--text-muted); font-size:0.9rem; margin-top:12px; }
+    .stat-line b { color:var(--emerald); font-size:1.05rem; }
+    .btn { padding:14px; border:none; border-radius:12px; font-family:'Inter',sans-serif; font-size:0.98rem; font-weight:700; cursor:pointer; transition:all 0.2s; }
+    .btn-primary { width:100%; background:linear-gradient(135deg,#7c6df0,#4f9cf9); color:#fff; margin-top:8px; }
+    .btn-primary:hover { opacity:0.92; transform:translateY(-1px); }
+    .btn-ghost { background:var(--surface); border:1px solid var(--border); color:var(--text); padding:10px 18px; }
+    .btn-ghost:hover { background:var(--surface-hover); }
+    /* overview */
+    .ov-head { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:18px; }
+    .ov-progress { color:var(--text-muted); font-size:0.9rem; }
+    .days-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:12px; }
+    .day-card { background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:12px; padding:14px; cursor:pointer; transition:all 0.2s; position:relative; }
+    .day-card:hover { background:var(--surface-hover); transform:translateY(-2px); border-color:rgba(124,109,240,0.4); }
+    .day-card.done { border-color:rgba(52,211,153,0.45); background:rgba(52,211,153,0.07); }
+    .day-num { font-weight:800; font-size:1.05rem; margin-bottom:6px; }
+    .day-meta { font-size:0.76rem; color:var(--text-muted); line-height:1.5; }
+    .day-badge { position:absolute; top:10px; right:10px; font-size:0.7rem; }
+    .day-today { outline:2px solid rgba(124,109,240,0.6); }
+    /* study */
+    .study-top { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+    .progress-track { flex:1; height:4px; background:rgba(255,255,255,0.08); border-radius:2px; overflow:hidden; }
+    .progress-fill { height:100%; background:linear-gradient(90deg,#7c6df0,#4f9cf9); border-radius:2px; transition:width 0.3s; }
+    .progress-text { font-size:0.8rem; color:var(--text-muted); white-space:nowrap; }
+    .scene { perspective:1200px; margin-bottom:22px; }
+    .card3d { width:100%; min-height:340px; position:relative; transform-style:preserve-3d; transition:transform 0.6s cubic-bezier(0.4,0,0.2,1); cursor:pointer; }
+    .card3d.flipped { transform:rotateY(180deg); }
+    .face { position:absolute; inset:0; border-radius:20px; backface-visibility:hidden; -webkit-backface-visibility:hidden; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:36px; border:1px solid var(--border); box-shadow:var(--shadow); }
+    .front { background:linear-gradient(145deg,#111827,#1a2035); }
+    .back { background:linear-gradient(145deg,#0f1d30,#141e35); transform:rotateY(180deg); }
+    .tag { position:absolute; top:16px; left:18px; font-size:0.72rem; padding:3px 10px; border-radius:100px; font-weight:600; }
+    .tag-new { background:rgba(52,211,153,0.2); color:var(--emerald); }
+    .tag-review { background:rgba(251,191,36,0.2); color:var(--amber); }
+    .hint { position:absolute; top:16px; right:18px; font-size:0.72rem; color:var(--text-muted); opacity:0.6; }
+    .word { font-size:clamp(2rem,6vw,3rem); font-weight:800; text-align:center; margin-bottom:10px; }
+    .phon { font-size:1.05rem; color:var(--text-muted); font-style:italic; margin-bottom:18px; }
+    .tts { width:44px; height:44px; border-radius:50%; background:rgba(124,109,240,0.15); border:1px solid rgba(124,109,240,0.25); color:#a78bfa; font-size:1.1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+    .mean { font-size:1.5rem; font-weight:700; text-align:center; margin-bottom:16px; }
+    .ex { background:rgba(255,255,255,0.05); border-left:3px solid var(--purple); border-radius:0 10px 10px 0; padding:14px 16px; width:100%; }
+    .ex-en { font-size:0.9rem; margin-bottom:6px; font-style:italic; line-height:1.5; }
+    .ex-zh { font-size:0.82rem; color:var(--text-muted); }
+    .actions { display:flex; gap:12px; justify-content:center; margin-bottom:18px; flex-wrap:wrap; }
+    .a-btn { display:flex; align-items:center; gap:7px; padding:10px 20px; border-radius:10px; border:1px solid var(--border); background:var(--surface); color:var(--text-muted); font-family:'Inter',sans-serif; font-size:0.88rem; font-weight:500; cursor:pointer; transition:all 0.2s; }
+    .a-btn:hover { background:var(--surface-hover); color:var(--text); }
+    .a-next { background:linear-gradient(135deg,rgba(124,109,240,0.2),rgba(79,156,249,0.2)); border-color:rgba(124,109,240,0.3); color:#a78bfa; }
+    .a-know { background:rgba(52,211,153,0.1); border-color:rgba(52,211,153,0.3); color:var(--emerald); }
+    .empty { text-align:center; padding:50px 20px; color:var(--text-muted); }
+    .hidden { display:none !important; }
+    /* 选词翻译浮层 */
+    #sel-popup { display:none; position:fixed; z-index:2000; max-width:280px; background:#12182a; border:1px solid var(--border); border-radius:12px; padding:12px 14px; box-shadow:var(--shadow); font-size:0.9rem; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo"><div class="nav-logo-icon">📚</div>English Vocab Hub</a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">首页 Home</a>
+    <a href="flashcard.html" class="nav-link">闪卡 Flashcards</a>
+    <a href="quiz.html" class="nav-link">测验 Quiz</a>
+    <a href="plan.html" class="nav-link active">计划 Plan</a>
+    <label style="display:flex;align-items:center;gap:6px;color:var(--text-muted);font-size:0.82rem;margin-left:8px">🔈
+      <select class="ctrl-select" id="speed-select">
+        <option value="0.5">0.5x</option><option value="0.6">0.6x</option>
+        <option value="0.75">0.75x</option><option value="0.9">0.9x</option><option value="1">1.0x</option>
+      </select>
+    </label>
+  </div>
+</nav>
+
+<div class="main">
+  <!-- SETUP -->
+  <div id="setup-screen">
+    <h1>🗓️ 背单词计划 Memory Plan</h1>
+    <p class="sub">艾宾浩斯遗忘曲线 · 每天学新词 + 科学复习旧词 · 自选天数</p>
+
+    <div class="card">
+      <h3>① 选择阶段 Stage</h3>
+      <select class="ctrl-select" id="stage-select" style="width:100%;padding:10px 12px;font-size:0.95rem">
+        <option value="Primary">小学 Primary</option>
+        <option value="Junior">初中（初一~初三全部）</option>
+        <option value="Junior-1">初一 Junior-1</option>
+        <option value="Junior-2">初二 Junior-2</option>
+        <option value="Junior-3">初三 Junior-3</option>
+        <option value="Senior">高中（高一~高三全部）</option>
+        <option value="Senior-1">高一 Senior-1</option>
+        <option value="Senior-2">高二 Senior-2</option>
+        <option value="Senior-3">高三 Senior-3</option>
+        <option value="CET-4">大学四级 CET-4</option>
+        <option value="CET-6">大学六级 CET-6</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <h3>② 计划天数 Days</h3>
+      <div class="row">
+        <input type="range" id="days-range" min="10" max="90" value="30" step="1">
+        <span class="big-val"><span id="days-val">30</span> 天</span>
+      </div>
+      <div class="stat-line">该阶段共 <b id="stage-total">—</b> 词，约每天 <b id="per-day">—</b> 个新词</div>
+    </div>
+
+    <button class="btn btn-primary" id="start-plan-btn">🚀 生成计划 Start</button>
+    <div id="resume-box" class="card hidden" style="margin-top:16px">
+      <h3>继续上次的计划</h3>
+      <div class="row" style="justify-content:space-between">
+        <span id="resume-desc" style="color:var(--text-muted);font-size:0.9rem"></span>
+        <span style="display:flex;gap:10px">
+          <button class="btn btn-ghost" id="resume-btn">继续</button>
+          <button class="btn btn-ghost" id="delete-plan-btn" style="color:var(--rose)">删除</button>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div id="overview-screen" class="hidden">
+    <div class="ov-head">
+      <div>
+        <h1 style="font-size:1.5rem" id="ov-title">计划总览</h1>
+        <div class="ov-progress" id="ov-progress"></div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <button class="btn btn-ghost" id="ov-today-btn">▶ 学习今天</button>
+        <button class="btn btn-ghost" id="ov-back-btn">返回设置</button>
+      </div>
+    </div>
+    <div class="days-grid" id="days-grid"></div>
+  </div>
+
+  <!-- STUDY -->
+  <div id="study-screen" class="hidden">
+    <div class="study-top">
+      <button class="btn btn-ghost" id="study-back" style="padding:8px 14px">← 总览</button>
+      <div class="progress-track"><div class="progress-fill" id="study-fill"></div></div>
+      <span class="progress-text" id="study-text">0 / 0</span>
+    </div>
+    <div class="scene">
+      <div class="card3d" id="card" onclick="flipCard()">
+        <div class="face front">
+          <span class="tag" id="card-tag">新词</span>
+          <span class="hint">点击翻转 · Click to flip</span>
+          <div class="word" id="f-word">—</div>
+          <div class="phon" id="f-phon"></div>
+          <button class="tts" onclick="event.stopPropagation();speakWord()">🔊</button>
+        </div>
+        <div class="face back">
+          <span class="hint">再次点击返回</span>
+          <div class="mean" id="b-mean">—</div>
+          <div class="ex">
+            <div class="ex-en" id="b-ex"></div>
+            <div class="ex-zh" id="b-zh"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="a-btn" onclick="prevCard()">← 上一个</button>
+      <button class="a-btn a-know" id="know-btn" onclick="markKnown()">✓ 记住了</button>
+      <button class="a-btn a-next" onclick="nextCard()">下一个 →</button>
+    </div>
+    <div style="text-align:center"><button class="btn btn-primary" id="finish-day-btn" style="max-width:280px" onclick="finishDay()">✅ 完成今天</button></div>
+    <div class="empty hidden" id="study-empty"><h2 style="color:var(--text)">今天没有需要学习的词 🎉</h2></div>
+  </div>
+</div>
+
+<!-- 选词翻译浮层 -->
+<div id="sel-popup">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+    <span id="sel-word" style="font-weight:700;font-size:1.05rem;color:var(--text)"></span>
+    <button id="sel-tts" title="朗读" style="background:rgba(124,109,240,0.15);border:1px solid rgba(124,109,240,0.25);color:#a78bfa;border-radius:50%;width:28px;height:28px;cursor:pointer;font-size:0.85rem">🔊</button>
+    <button id="sel-fav" title="收藏到生词本" style="background:rgba(248,113,113,0.12);border:1px solid rgba(248,113,113,0.3);color:var(--rose);border-radius:50%;width:28px;height:28px;cursor:pointer;font-size:0.85rem">🤍</button>
+  </div>
+  <div id="sel-meaning" style="color:var(--text-muted);line-height:1.5;margin-bottom:8px"></div>
+  <a id="sel-link" target="_blank" rel="noopener" style="color:#a78bfa;text-decoration:none;font-size:0.82rem">在有道查询 ↗</a>
+</div>
+
+<script>
+const FILES = {
+  'Primary':'../data/primary.json','Junior-1':'../data/junior-1.json','Junior-2':'../data/junior-2.json',
+  'Junior-3':'../data/junior-3.json','Senior-1':'../data/senior-1.json','Senior-2':'../data/senior-2.json',
+  'Senior-3':'../data/senior-3.json','CET-4':'../data/cet4.json','CET-6':'../data/cet6.json'
+};
+// 阶段 -> 包含哪些等级文件（按学习顺序）
+const STAGE_LEVELS = {
+  'Primary':['Primary'], 'Junior':['Junior-1','Junior-2','Junior-3'],
+  'Junior-1':['Junior-1'],'Junior-2':['Junior-2'],'Junior-3':['Junior-3'],
+  'Senior':['Senior-1','Senior-2','Senior-3'],
+  'Senior-1':['Senior-1'],'Senior-2':['Senior-2'],'Senior-3':['Senior-3'],
+  'CET-4':['CET-4'],'CET-6':['CET-6']
+};
+// 艾宾浩斯复习间隔（天）
+const EBB = [1,2,4,7,15];
+const LS_PLAN = 'evh_plan';
+const LS_PLAN_KNOWN = 'evh_plan_known';
+
+let dataByLevel = {};   // level -> 词数组
+let plan = null;        // {stage, days, startDate}
+let lists = [];         // lists[d] = 第 d 天的新词数组 (d 从 1 开始, lists[0] 空)
+let knownSet = new Set(JSON.parse(localStorage.getItem(LS_PLAN_KNOWN) || '[]'));
+function saveKnown(){ localStorage.setItem(LS_PLAN_KNOWN, JSON.stringify([...knownSet])); }
+
+// ---- 发音 ----
+function youdaoAudio(t){ return 'https://dict.youdao.com/dictvoice?audio='+encodeURIComponent(t)+'&type=2'; }
+const LS_RATE='evh_rate';
+function getRate(){ const v=parseFloat(localStorage.getItem(LS_RATE)); return (v>0?v:0.6); }
+function setRate(v){ localStorage.setItem(LS_RATE,v); }
+let preferredVoice=null;
+function pickVoice(){ const vs=window.speechSynthesis?window.speechSynthesis.getVoices():[]; if(!vs.length)return;
+  preferredVoice=vs.find(v=>/natural|aria|jenny|guy|michelle|google us english/i.test(v.name)&&/^en/i.test(v.lang))||vs.find(v=>/en[-_]US/i.test(v.lang))||vs.find(v=>/^en/i.test(v.lang))||null; }
+if('speechSynthesis'in window){ pickVoice(); window.speechSynthesis.onvoiceschanged=pickVoice; }
+function speakFallback(t){ if(!t||!('speechSynthesis'in window))return; const u=new SpeechSynthesisUtterance(t); u.lang='en-US'; u.rate=0.9; if(preferredVoice)u.voice=preferredVoice; window.speechSynthesis.cancel(); window.speechSynthesis.speak(u); }
+let curAudio=null;
+function playClip(url,fb,rate){ if(curAudio){curAudio.pause();curAudio=null;} if(!url)return speakFallback(fb); const a=new Audio(url); a.playbackRate=rate||0.92; curAudio=a; a.play().catch(()=>speakFallback(fb)); }
+function speakWord(){ const w=studyDeck[studyIdx]; if(w) playClip(w.audio||youdaoAudio(w.word), w.word, Math.min(getRate()+0.2,1)); }
+function speakSentence(t){ if(t) playClip(youdaoAudio(t), t, getRate()); }
+
+// ---- 数据加载 ----
+async function loadData(){
+  const entries = await Promise.all(Object.entries(FILES).map(async ([lv,f])=>{
+    try{ const r=await fetch(f); if(!r.ok) return [lv,[]]; return [lv, await r.json()]; }catch{ return [lv,[]]; }
+  }));
+  dataByLevel = Object.fromEntries(entries);
+  buildDict();
+  initSetup();
+  // 已有计划？
+  const saved = localStorage.getItem(LS_PLAN);
+  if(saved){ const p=JSON.parse(saved); showResume(p); }
+}
+
+function stageWords(stage){
+  return (STAGE_LEVELS[stage]||[]).flatMap(lv => dataByLevel[lv]||[]);
+}
+
+// ---- 设置页 ----
+function initSetup(){
+  const stageSel=document.getElementById('stage-select');
+  const daysRange=document.getElementById('days-range');
+  const daysVal=document.getElementById('days-val');
+  function refresh(){
+    const total = stageWords(stageSel.value).length;
+    const days = parseInt(daysRange.value);
+    document.getElementById('stage-total').textContent = total.toLocaleString();
+    document.getElementById('per-day').textContent = total? Math.ceil(total/days) : '—';
+    daysVal.textContent = days;
+  }
+  stageSel.addEventListener('change', refresh);
+  daysRange.addEventListener('input', refresh);
+  refresh();
+  // 语速
+  const sp=document.getElementById('speed-select'); sp.value=String(getRate());
+  sp.addEventListener('change',()=>setRate(sp.value));
+
+  document.getElementById('start-plan-btn').onclick = ()=>{
+    const stage=stageSel.value, days=parseInt(daysRange.value);
+    if(!stageWords(stage).length){ alert('该阶段暂无词汇'); return; }
+    plan = { stage, days, startDate: todayStr() };
+    localStorage.setItem(LS_PLAN, JSON.stringify(plan));
+    knownSet = new Set(); saveKnown();
+    buildLists(); showOverview();
+  };
+}
+function showResume(p){
+  const box=document.getElementById('resume-box');
+  box.classList.remove('hidden');
+  const total=stageWords(p.stage).length;
+  document.getElementById('resume-desc').textContent = `${stageLabel(p.stage)} · ${p.days}天 · 共${total}词`;
+  document.getElementById('resume-btn').onclick = ()=>{ plan=p; buildLists(); showOverview(); };
+  document.getElementById('delete-plan-btn').onclick = ()=>{
+    if(!confirm('删除当前计划及进度？')) return;
+    localStorage.removeItem(LS_PLAN); localStorage.removeItem(LS_PLAN_KNOWN);
+    knownSet=new Set(); box.classList.add('hidden');
+  };
+}
+function stageLabel(s){ const o=[...document.getElementById('stage-select').options].find(o=>o.value===s); return o?o.textContent:s; }
+
+// ---- 计划切分 ----
+function buildLists(){
+  const words = stageWords(plan.stage);
+  const n = plan.days;
+  const per = Math.ceil(words.length / n);
+  lists = [[]];
+  for(let d=1; d<=n; d++) lists[d] = words.slice((d-1)*per, d*per);
+}
+// 第 d 天要复习哪些“天”的词（艾宾浩斯）
+function reviewDaysFor(d){ return EBB.map(k=>d-k).filter(x=>x>=1); }
+function dayDeck(d){
+  const out=[];
+  (lists[d]||[]).forEach(w=> out.push({...w, _kind:'new'}));
+  reviewDaysFor(d).forEach(rd => (lists[rd]||[]).forEach(w=> out.push({...w, _kind:'review', _from:rd})));
+  return out;
+}
+function dayKey(d){ return plan.stage+'|'+plan.days+'|day'+d; }
+function isDayDone(d){ return localStorage.getItem('evh_plan_done_'+dayKey(d))==='1'; }
+function setDayDone(d){ localStorage.setItem('evh_plan_done_'+dayKey(d),'1'); }
+
+// ---- 总览页 ----
+function showScreen(id){ ['setup-screen','overview-screen','study-screen'].forEach(s=>document.getElementById(s).classList.toggle('hidden', s!==id)); }
+function showOverview(){
+  showScreen('overview-screen');
+  document.getElementById('ov-title').textContent = stageLabel(plan.stage)+' · '+plan.days+'天计划';
+  let done=0; for(let d=1; d<=plan.days; d++) if(isDayDone(d)) done++;
+  document.getElementById('ov-progress').textContent = `已完成 ${done} / ${plan.days} 天 · 已记住 ${knownSet.size} 词`;
+  const today = currentDayIndex();
+  const grid=document.getElementById('days-grid'); grid.innerHTML='';
+  for(let d=1; d<=plan.days; d++){
+    const nv=(lists[d]||[]).length;
+    const rv=reviewDaysFor(d).reduce((s,rd)=>s+(lists[rd]||[]).length,0);
+    const done=isDayDone(d);
+    const el=document.createElement('div');
+    el.className='day-card'+(done?' done':'')+(d===today?' day-today':'');
+    el.innerHTML = `<div class="day-badge">${done?'✅':(d===today?'📍':'')}</div>
+      <div class="day-num">第 ${d} 天</div>
+      <div class="day-meta">🆕 新词 ${nv}<br>🔁 复习 ${rv}</div>`;
+    el.onclick = ()=> startDay(d);
+    grid.appendChild(el);
+  }
+  document.getElementById('ov-today-btn').onclick = ()=> startDay(currentDayIndex());
+  document.getElementById('ov-back-btn').onclick = ()=> showScreen('setup-screen');
+}
+// 根据开始日期算今天是第几天（封顶 days）
+function currentDayIndex(){
+  const start = new Date(plan.startDate+'T00:00:00');
+  const now = new Date(todayStr()+'T00:00:00');
+  const diff = Math.floor((now-start)/86400000) + 1;
+  return Math.max(1, Math.min(diff, plan.days));
+}
+function todayStr(){ const d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+
+// ---- 学习页（幻灯片）----
+let studyDeck=[], studyIdx=0, isFlipped=false, studyDay=1;
+function startDay(d){
+  studyDay=d; studyDeck=dayDeck(d); studyIdx=0; isFlipped=false;
+  showScreen('study-screen');
+  document.getElementById('study-back').onclick = showOverview;
+  const empty = studyDeck.length===0;
+  document.getElementById('study-empty').classList.toggle('hidden', !empty);
+  document.getElementById('card').parentElement.classList.toggle('hidden', empty);
+  renderStudy();
+}
+function renderStudy(){
+  const card=document.getElementById('card');
+  if(isFlipped){ card.classList.remove('flipped'); isFlipped=false; }
+  const total=studyDeck.length;
+  document.getElementById('study-fill').style.width = total?`${((studyIdx+1)/total)*100}%`:'0%';
+  document.getElementById('study-text').textContent = total?`${studyIdx+1} / ${total}`:'0 / 0';
+  if(!total) return;
+  const w=studyDeck[studyIdx];
+  const tag=document.getElementById('card-tag');
+  if(w._kind==='new'){ tag.textContent='🆕 新词'; tag.className='tag tag-new'; }
+  else { tag.textContent='🔁 复习·第'+w._from+'天'; tag.className='tag tag-review'; }
+  document.getElementById('f-word').textContent=w.word;
+  document.getElementById('f-phon').textContent=w.phonetic||'';
+  document.getElementById('b-mean').textContent=w.meaning||'';
+  if(w.example){ document.getElementById('b-ex').innerHTML = `${w.example} <button onclick="event.stopPropagation();speakSentence(studyDeck[studyIdx].example)" title="朗读例句" style="background:none;border:none;cursor:pointer;font-size:1.05rem;color:inherit;opacity:0.8">🔊</button>`; }
+  else document.getElementById('b-ex').innerHTML='';
+  document.getElementById('b-zh').textContent=w.translation||'';
+  const kb=document.getElementById('know-btn');
+  kb.textContent = knownSet.has(w.id)?'✓ 已记住':'✓ 记住了';
+}
+function flipCard(){ if(!studyDeck.length)return; if(window.getSelection&&window.getSelection().toString().trim())return; isFlipped=!isFlipped; document.getElementById('card').classList.toggle('flipped',isFlipped); }
+function nextCard(){ if(!studyDeck.length)return; studyIdx=(studyIdx+1)%studyDeck.length; renderStudy(); }
+function prevCard(){ if(!studyDeck.length)return; studyIdx=(studyIdx-1+studyDeck.length)%studyDeck.length; renderStudy(); }
+function markKnown(){ if(!studyDeck.length)return; knownSet.add(studyDeck[studyIdx].id); saveKnown(); renderStudy(); nextCard(); }
+function finishDay(){ setDayDone(studyDay); showOverview(); }
+
+// keyboard
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('study-screen').classList.contains('hidden'))return;
+  if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT')return;
+  if(e.code==='Space'){ e.preventDefault(); flipCard(); }
+  if(e.code==='ArrowRight') nextCard();
+  if(e.code==='ArrowLeft') prevCard();
+  if(e.key.toLowerCase()==='k') markKnown();
+});
+
+// ---- 划词翻译（与其他页一致，收藏写入同一生词本）----
+let wordDict=null;
+function buildDict(){ wordDict=new Map(); for(const lv in dataByLevel) for(const w of dataByLevel[lv]){ const k=(w.word||'').toLowerCase(); if(k&&!wordDict.has(k)) wordDict.set(k,w); } }
+function findEntry(word){ if(!wordDict)return null; const w=word.toLowerCase(); if(wordDict.has(w))return wordDict.get(w);
+  for(const suf of ['s','es','ed','ing','d','ies']){ if(w.endsWith(suf)){ let b=w.slice(0,-suf.length); if(suf==='ies')b+='y'; if(wordDict.has(b))return wordDict.get(b); } } return null; }
+function lookupLocal(word){ const e=findEntry(word); return e?e.meaning:''; }
+let favSet=new Set(JSON.parse(localStorage.getItem('evh_fav')||'[]'));
+let favWords=new Set(JSON.parse(localStorage.getItem('evh_fav_words')||'[]'));
+function isSelFaved(word){ const e=findEntry(word); if(e&&favSet.has(e.id))return true; return favWords.has(word.toLowerCase()); }
+function toggleSelFav(word){ const e=findEntry(word);
+  if(e){ if(favSet.has(e.id))favSet.delete(e.id); else favSet.add(e.id); localStorage.setItem('evh_fav',JSON.stringify([...favSet])); }
+  else { const k=word.toLowerCase(); if(favWords.has(k))favWords.delete(k); else favWords.add(k); localStorage.setItem('evh_fav_words',JSON.stringify([...favWords])); } }
+function showSelPopup(word,rect){
+  const pop=document.getElementById('sel-popup');
+  document.getElementById('sel-word').textContent=word;
+  document.getElementById('sel-meaning').textContent=lookupLocal(word)||'本地词库未收录，点下方有道查询';
+  document.getElementById('sel-link').href='https://www.youdao.com/result?word='+encodeURIComponent(word)+'&lang=en';
+  document.getElementById('sel-tts').onclick=(e)=>{ e.stopPropagation(); playClip(youdaoAudio(word),word,Math.min(getRate()+0.2,1)); };
+  const fb=document.getElementById('sel-fav'); fb.textContent=isSelFaved(word)?'❤️':'🤍';
+  fb.onclick=(e)=>{ e.stopPropagation(); toggleSelFav(word); fb.textContent=isSelFaved(word)?'❤️':'🤍'; };
+  pop.style.display='block';
+  const pw=pop.offsetWidth, ph=pop.offsetHeight;
+  let left=rect.left+rect.width/2-pw/2; left=Math.max(8,Math.min(left,window.innerWidth-pw-8));
+  let top=rect.top-ph-10; if(top<8) top=rect.bottom+10;
+  pop.style.left=left+'px'; pop.style.top=top+'px';
+}
+function hideSelPopup(){ document.getElementById('sel-popup').style.display='none'; }
+function handleSelection(){ const sel=window.getSelection(); const text=(sel?sel.toString():'').trim();
+  const word=text.replace(/[^a-zA-Z'\-]/g,''); if(!word||/\s/.test(text)||word.length<2)return;
+  showSelPopup(word, sel.getRangeAt(0).getBoundingClientRect()); }
+document.addEventListener('mouseup',(e)=>{ const ex=document.getElementById('b-ex'); if(ex&&ex.contains(e.target)){ e.stopPropagation(); setTimeout(handleSelection,0); } });
+document.addEventListener('click',(e)=>{ const pop=document.getElementById('sel-popup'); if(pop.style.display!=='block')return;
+  const ex=document.getElementById('b-ex'); if(pop.contains(e.target)||(ex&&ex.contains(e.target)))return; hideSelPopup(); e.stopPropagation(); e.preventDefault(); }, true);
+
+loadData();
+</script>
+</body>
+</html>
