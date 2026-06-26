@@ -199,7 +199,17 @@ Two new pages, both linked from the homepage feature cards and the nav of every 
 - **Study**: a flashcard-style slideshow per day (flip, audio, 记住, prev/next), progress in
   `localStorage` (`evh_plan_known` ids, `evh_plan_done_<key>` per finished day). Overview grid
   marks done days ✅ and today 📍 (computed from `startDate`).
-- Includes the same 划词翻译 popup + speed select. No file export (in-app only, per request).
+- Includes the same 划词翻译 popup + speed select.
+- **Export (added 2026-06-26)**: overview has 「🖨️ 打印/导出PDF」and 「⬇️ 导出CSV」.
+  - Print view (`#print-screen` / `buildPrintPages`) renders every day as one light-themed
+    `.day-page` (gradient banner + 🆕新词 / 🔁复习 sections). Cards are a dense multi-column
+    grid (`auto-fill minmax(165px)` on screen, `150px` in print) showing checkbox + word +
+    phonetic + meaning, tuned for **~150 words per A4 page** (user picks enough days to fit).
+    `@media print` hides the app chrome and uses `page-break-after:always` per day; user does
+    Ctrl+P → Save as PDF. Both new + review words are printed.
+  - CSV export (`exportCSV`) writes a UTF-8 BOM CSV: 天数/类型/单词/音标/词性/释义/例句/翻译.
+  - NOTE: a full plan renders thousands of word cards (Ebbinghaus review multiplies counts),
+    so the print DOM is large — fine to print, but heavy to screenshot in automation.
 
 ### `src/wordbook.html` — 生词本 (Wordbook)
 - Lists all favorites: resolves `evh_fav` ids against the loaded data, plus text-only

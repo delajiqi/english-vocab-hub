@@ -86,6 +86,43 @@
     .hidden { display:none !important; }
     /* 选词翻译浮层 */
     #sel-popup { display:none; position:fixed; z-index:2000; max-width:280px; background:#12182a; border:1px solid var(--border); border-radius:12px; padding:12px 14px; box-shadow:var(--shadow); font-size:0.9rem; }
+
+    /* ===== 打印 / 导出（浅色，一天一页，便于打印）===== */
+    .print-toolbar { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:20px; }
+    #print-area { display:flex; flex-direction:column; gap:24px; }
+    .day-page { background:#fff; color:#1f2430; border-radius:14px; padding:22px 24px 26px; box-shadow:0 4px 18px rgba(0,0,0,0.25); }
+    .dp-banner { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      background:linear-gradient(135deg,#7c6df0,#4f9cf9); color:#fff; border-radius:12px; padding:14px 20px; margin-bottom:18px; }
+    .dp-day { font-size:1.8rem; font-weight:800; letter-spacing:0.5px; line-height:1; }
+    .dp-day small { display:block; font-size:0.78rem; font-weight:500; opacity:0.9; margin-top:4px; letter-spacing:0; }
+    .dp-counts { display:flex; gap:10px; }
+    .dp-pill { background:rgba(255,255,255,0.2); border-radius:100px; padding:5px 12px; font-size:0.82rem; font-weight:600; white-space:nowrap; }
+    .dp-section { margin-bottom:14px; }
+    .dp-sec-title { font-size:0.92rem; font-weight:800; margin:8px 0 10px; display:flex; align-items:center; gap:8px; }
+    .dp-sec-new { color:#0f6e56; }
+    .dp-sec-review { color:#854f0b; }
+    .dp-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(165px,1fr)); gap:5px 9px; }
+    .dp-word { display:flex; align-items:flex-start; gap:6px; padding:4px 7px; border:1px solid #e7e9f0; border-radius:7px; background:#fafbff; }
+    .dp-word.rv { background:#fff9ef; border-color:#f3e6c8; }
+    .dp-chk { width:13px; height:13px; border:1.5px solid #b9bed0; border-radius:3px; flex-shrink:0; margin-top:2px; }
+    .dp-wmain { min-width:0; flex:1; }
+    .dp-w { font-weight:700; font-size:0.84rem; color:#1f2430; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .dp-w .ph { font-weight:400; font-size:0.68rem; color:#8a8f9e; margin-left:4px; font-style:italic; }
+    .dp-m { font-size:0.72rem; color:#4a4f5e; line-height:1.3; margin-top:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .dp-foot { margin-top:12px; padding-top:8px; border-top:1px dashed #dfe2ec; display:flex; justify-content:space-between; font-size:0.76rem; color:#8a8f9e; }
+
+    @media print {
+      @page { size:A4; margin:10mm; }
+      body { background:#fff !important; }
+      body::before, nav, #setup-screen, #overview-screen, #study-screen, .print-toolbar, #sel-popup { display:none !important; }
+      .main { padding:0; max-width:none; }
+      #print-area { gap:0; }
+      .day-page { box-shadow:none; border-radius:0; padding:0 0 4mm; page-break-after:always; break-after:page; }
+      .day-page:last-child { page-break-after:auto; }
+      .dp-grid { grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:3px 7px; }
+      .dp-word { padding:3px 6px; }
+      .dp-banner { padding:10px 16px; margin-bottom:12px; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    }
   </style>
 </head>
 <body>
@@ -157,8 +194,10 @@
         <h1 style="font-size:1.5rem" id="ov-title">计划总览</h1>
         <div class="ov-progress" id="ov-progress"></div>
       </div>
-      <div style="display:flex;gap:10px">
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
         <button class="btn btn-ghost" id="ov-today-btn">▶ 学习今天</button>
+        <button class="btn btn-ghost" id="ov-print-btn">🖨️ 打印/导出PDF</button>
+        <button class="btn btn-ghost" id="ov-csv-btn">⬇️ 导出CSV</button>
         <button class="btn btn-ghost" id="ov-back-btn">返回设置</button>
       </div>
     </div>
@@ -198,6 +237,16 @@
     </div>
     <div style="text-align:center"><button class="btn btn-primary" id="finish-day-btn" style="max-width:280px" onclick="finishDay()">✅ 完成今天</button></div>
     <div class="empty hidden" id="study-empty"><h2 style="color:var(--text)">今天没有需要学习的词 🎉</h2></div>
+  </div>
+
+  <!-- PRINT / EXPORT -->
+  <div id="print-screen" class="hidden">
+    <div class="print-toolbar">
+      <button class="btn btn-primary" onclick="window.print()" style="width:auto;padding:10px 20px">🖨️ 打印 / 保存为 PDF</button>
+      <button class="btn btn-ghost" id="print-back">← 返回总览</button>
+      <span style="color:var(--text-muted);font-size:0.85rem">提示：打印时纸张选 A4、边距选「默认」，目标选「另存为 PDF」即可</span>
+    </div>
+    <div id="print-area"></div>
   </div>
 </div>
 
@@ -332,7 +381,7 @@ function isDayDone(d){ return localStorage.getItem('evh_plan_done_'+dayKey(d))==
 function setDayDone(d){ localStorage.setItem('evh_plan_done_'+dayKey(d),'1'); }
 
 // ---- 总览页 ----
-function showScreen(id){ ['setup-screen','overview-screen','study-screen'].forEach(s=>document.getElementById(s).classList.toggle('hidden', s!==id)); }
+function showScreen(id){ ['setup-screen','overview-screen','study-screen','print-screen'].forEach(s=>document.getElementById(s).classList.toggle('hidden', s!==id)); }
 function showOverview(){
   showScreen('overview-screen');
   document.getElementById('ov-title').textContent = stageLabel(plan.stage)+' · '+plan.days+'天计划';
@@ -354,6 +403,57 @@ function showOverview(){
   }
   document.getElementById('ov-today-btn').onclick = ()=> startDay(currentDayIndex());
   document.getElementById('ov-back-btn').onclick = ()=> showScreen('setup-screen');
+  document.getElementById('ov-print-btn').onclick = showPrint;
+  document.getElementById('ov-csv-btn').onclick = exportCSV;
+}
+
+// ---- 打印 / 导出 ----
+function escHtml(s){ return String(s||'').replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function wordRow(w, isReview){
+  const ph = w.phonetic? `<span class="ph">${escHtml(w.phonetic)}</span>`:'';
+  return `<div class="dp-word ${isReview?'rv':''}"><span class="dp-chk"></span>
+    <div class="dp-wmain"><div class="dp-w">${escHtml(w.word)}${ph}</div>
+    <div class="dp-m">${escHtml(w.meaning)}</div></div></div>`;
+}
+function buildPrintPages(){
+  const area = document.getElementById('print-area');
+  let html='';
+  for(let d=1; d<=plan.days; d++){
+    const news = lists[d]||[];
+    const reviews = reviewDaysFor(d).flatMap(rd => (lists[rd]||[]).map(w=>({...w,_from:rd})));
+    html += `<div class="day-page">
+      <div class="dp-banner">
+        <div class="dp-day">DAY ${String(d).padStart(2,'0')}<small>${escHtml(stageLabel(plan.stage))} · 第 ${d} / ${plan.days} 天</small></div>
+        <div class="dp-counts"><span class="dp-pill">🆕 新词 ${news.length}</span><span class="dp-pill">🔁 复习 ${reviews.length}</span></div>
+      </div>`;
+    if(news.length){
+      html += `<div class="dp-section"><div class="dp-sec-title dp-sec-new">🆕 今日新词 · ${news.length}</div>
+        <div class="dp-grid">${news.map(w=>wordRow(w,false)).join('')}</div></div>`;
+    }
+    if(reviews.length){
+      html += `<div class="dp-section"><div class="dp-sec-title dp-sec-review">🔁 今日复习 · ${reviews.length}</div>
+        <div class="dp-grid">${reviews.map(w=>wordRow(w,true)).join('')}</div></div>`;
+    }
+    html += `<div class="dp-foot"><span>${escHtml(stageLabel(plan.stage))} 背单词计划</span><span>第 ${d} / ${plan.days} 天 · 打勾✅记录进度</span></div></div>`;
+  }
+  area.innerHTML = html;
+}
+function showPrint(){
+  buildPrintPages();
+  showScreen('print-screen');
+  document.getElementById('print-back').onclick = showOverview;
+}
+function exportCSV(){
+  const esc = s=>'"'+String(s||'').replace(/"/g,'""')+'"';
+  const rows=[['天数','类型','单词','音标','词性','释义','例句','翻译']];
+  for(let d=1; d<=plan.days; d++){
+    (lists[d]||[]).forEach(w=> rows.push([d,'新词',w.word,w.phonetic,w.pos,w.meaning,w.example,w.translation]));
+    reviewDaysFor(d).forEach(rd => (lists[rd]||[]).forEach(w=> rows.push([d,'复习(第'+rd+'天)',w.word,w.phonetic,w.pos,w.meaning,w.example,w.translation])));
+  }
+  const csv='﻿'+rows.map(r=>r.map(esc).join(',')).join('\r\n');
+  const blob=new Blob([csv],{type:'text/csv;charset=utf-8'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download = stageLabel(plan.stage)+'_'+plan.days+'天计划.csv'; a.click(); URL.revokeObjectURL(a.href);
 }
 // 根据开始日期算今天是第几天（封顶 days）
 function currentDayIndex(){
