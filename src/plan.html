@@ -315,7 +315,14 @@ async function loadData(){
 }
 
 function stageWords(stage){
-  return (STAGE_LEVELS[stage]||[]).flatMap(lv => dataByLevel[lv]||[]);
+  // 合并多个年级(初中全/高中全)时按单词去重，避免跨册重复
+  const seen=new Set(), out=[];
+  for(const lv of (STAGE_LEVELS[stage]||[]))
+    for(const w of (dataByLevel[lv]||[])){
+      const k=(w.word||'').toLowerCase();
+      if(seen.has(k)) continue; seen.add(k); out.push(w);
+    }
+  return out;
 }
 
 // ---- 设置页 ----
@@ -409,39 +416,62 @@ function showOverview(){
 
 // ---- 打印 / 导出 ----
 function escHtml(s){ return String(s||'').replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
-function wordRow(w, isReview){
-  const ph = w.phonetic? `<span class="ph">${escHtml(w.phonetic)}</span>`:'';
-  return `<div class="dp-word ${isReview?'rv':''}"><span class="dp-chk"></span>
-    <div class="dp-wmain"><div class="dp-w">${escHtml(w.word)}${ph}</div>
-    <div class="dp-m">${escHtml(w.meaning)}</div></div></div>`;
+function wordCell(w){
+  const ph = w.phonetic? ` <span class="ph">${escHtml(w.phonetic)}</span>`:'';
+  return `<div class="w ${w._rv?'rv':''}"><div class="hw">${escHtml(w.word)}${ph}</div><div class="mn">${escHtml(w.meaning)}</div></div>`;
 }
-function buildPrintPages(){
-  const area = document.getElementById('print-area');
+const PRINT_CSS = `
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,'Segoe UI','Microsoft YaHei',sans-serif;background:#eef0f5;color:#1f2430;padding:16px}
+.toolbar{position:sticky;top:0;z-index:9;background:#fff;border:1px solid #e0e3ec;border-radius:10px;padding:10px 14px;margin-bottom:16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.toolbar button{background:#7c6df0;color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:14px;font-weight:600;cursor:pointer}
+.toolbar span{color:#6b7080;font-size:13px}
+.day-page{background:#fff;border-radius:12px;padding:18px 20px 18px;margin:0 auto 18px;max-width:900px}
+.banner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:linear-gradient(135deg,#7c6df0,#4f9cf9);color:#fff;border-radius:10px;padding:12px 18px;margin-bottom:14px}
+.banner .d{font-size:1.7rem;font-weight:800;line-height:1}
+.banner .d small{display:block;font-size:.74rem;font-weight:500;opacity:.92;margin-top:4px}
+.pill{background:rgba(255,255,255,.2);border-radius:100px;padding:5px 12px;font-size:.8rem;font-weight:600;white-space:nowrap;margin-left:8px}
+.sec{font-size:.9rem;font-weight:800;margin:10px 0 8px}
+.sec.n{color:#0f6e56}.sec.r{color:#854f0b}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px 12px}
+.w{border:1px solid #e7e9f0;border-radius:7px;background:#fafbff;padding:5px 9px}
+.w.rv{background:#fff9ef;border-color:#f3e6c8}
+.hw{font-weight:700;font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hw .ph{font-weight:400;font-size:.74rem;color:#8a8f9e;font-style:italic}
+.mn{font-size:.76rem;color:#4a4f5e;line-height:1.35;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.foot{margin-top:12px;padding-top:8px;border-top:1px dashed #dfe2ec;display:flex;justify-content:space-between;font-size:.74rem;color:#8a8f9e}
+@media print{
+  @page{size:A4;margin:10mm}
+  body{background:#fff;padding:0}
+  .no-print{display:none!important}
+  .day-page{border-radius:0;max-width:none;margin:0;padding:0 0 4mm;page-break-after:always}
+  .day-page:last-child{page-break-after:auto}
+  .banner{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}`;
+function buildPagesHTML(){
   let html='';
   for(let d=1; d<=plan.days; d++){
-    const news = lists[d]||[];
-    const reviews = reviewDaysFor(d).flatMap(rd => (lists[rd]||[]).map(w=>({...w,_from:rd})));
-    html += `<div class="day-page">
-      <div class="dp-banner">
-        <div class="dp-day">DAY ${String(d).padStart(2,'0')}<small>${escHtml(stageLabel(plan.stage))} · 第 ${d} / ${plan.days} 天</small></div>
-        <div class="dp-counts"><span class="dp-pill">🆕 新词 ${news.length}</span><span class="dp-pill">🔁 复习 ${reviews.length}</span></div>
-      </div>`;
-    if(news.length){
-      html += `<div class="dp-section"><div class="dp-sec-title dp-sec-new">🆕 今日新词 · ${news.length}</div>
-        <div class="dp-grid">${news.map(w=>wordRow(w,false)).join('')}</div></div>`;
-    }
-    if(reviews.length){
-      html += `<div class="dp-section"><div class="dp-sec-title dp-sec-review">🔁 今日复习 · ${reviews.length}</div>
-        <div class="dp-grid">${reviews.map(w=>wordRow(w,true)).join('')}</div></div>`;
-    }
-    html += `<div class="dp-foot"><span>${escHtml(stageLabel(plan.stage))} 背单词计划</span><span>第 ${d} / ${plan.days} 天 · 打勾✅记录进度</span></div></div>`;
+    const news = (lists[d]||[]).map(w=>({...w,_rv:false}));
+    const reviews = reviewDaysFor(d).flatMap(rd => (lists[rd]||[]).map(w=>({...w,_rv:true})));
+    html += `<div class="day-page"><div class="banner">
+        <div class="d">DAY ${String(d).padStart(2,'0')}<small>${escHtml(stageLabel(plan.stage))} · 第 ${d} / ${plan.days} 天</small></div>
+        <div><span class="pill">🆕 新词 ${news.length}</span><span class="pill">🔁 复习 ${reviews.length}</span></div></div>`;
+    if(news.length) html += `<div class="sec n">🆕 今日新词 · ${news.length}</div><div class="grid">${news.map(wordCell).join('')}</div>`;
+    if(reviews.length) html += `<div class="sec r">🔁 今日复习 · ${reviews.length}</div><div class="grid">${reviews.map(wordCell).join('')}</div>`;
+    html += `<div class="foot"><span>${escHtml(stageLabel(plan.stage))} · 背单词计划</span><span>第 ${d} / ${plan.days} 天</span></div></div>`;
   }
-  area.innerHTML = html;
+  return html;
 }
+// 在新窗口里渲染（无论选多大范围都不会卡死主页面）
 function showPrint(){
-  buildPrintPages();
-  showScreen('print-screen');
-  document.getElementById('print-back').onclick = showOverview;
+  const win = window.open('', '_blank');
+  if(!win){ alert('请允许本站弹出窗口，然后再点一次「打印/导出PDF」'); return; }
+  const title = stageLabel(plan.stage)+' · '+plan.days+'天计划';
+  win.document.write(`<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>${escHtml(title)}</title><style>${PRINT_CSS}</style></head><body>
+    <div class="toolbar no-print"><button onclick="window.print()">🖨️ 打印 / 保存为 PDF</button>
+    <span>纸张选 A4、目标选「另存为 PDF」。每天从新的一页开始，词多放不下会自动顺延到下一页。</span></div>
+    ${buildPagesHTML()}</body></html>`);
+  win.document.close();
 }
 function exportCSV(){
   const esc = s=>'"'+String(s||'').replace(/"/g,'""')+'"';

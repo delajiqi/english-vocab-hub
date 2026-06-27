@@ -92,7 +92,8 @@ function makeEntry(line) {
 }
 
 function run() {
-  const seen = new Set();   // 跨级去重：首次出现的年级为准
+  // 只在「本年级自己的教材」内去重，不跨阶段删词，
+  // 这样每个年级的词数符合该阶段教材实际（高一≈630，高中三年≈3500）。
   let id = 1;
   const summary = [];
   let noMeaning = 0, noExample = 0;
@@ -105,7 +106,7 @@ function run() {
         const e = makeEntry(line);
         if (!e) continue;
         const key = e.word.toLowerCase();
-        if (seen.has(key) || localSeen.has(key)) continue;
+        if (localSeen.has(key)) continue;
         localSeen.add(key);
         e.level = level;
         e.category = 'general';
@@ -115,7 +116,6 @@ function run() {
         entries.push(e);
       }
     }
-    localSeen.forEach(k => seen.add(k));
     fs.writeFileSync(path.join(DATA, FILE_FOR[level]), JSON.stringify(entries, null, 2));
     const withEx = entries.filter(e => e.example).length;
     const withAudio = entries.filter(e => e.audio).length;
