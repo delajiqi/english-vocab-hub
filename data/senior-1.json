@@ -1,5 +1,17 @@
 [
   {
+    "word": "survey",
+    "phonetic": "[ˈsɝˌve; (for v.) sɝˈve]",
+    "pos": "n",
+    "meaning": "n. 调查；测验",
+    "example": "The council conducted a survey of the uses to which farm buildings are put.",
+    "translation": "该委员会对农场建筑的用途进行了一个调查。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=survey&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3129
+  },
+  {
     "word": "add up",
     "phonetic": "",
     "pos": "",
@@ -9,7 +21,19 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2516
+    "id": 3130
+  },
+  {
+    "word": "upset",
+    "phonetic": "[ʌp'sɛt]",
+    "pos": "adj",
+    "meaning": "adj. 心烦意乱的；不安的；不适的; v. (过去式 upset, 过去分词 upset) 使不安；使心烦",
+    "example": "She was deeply upset about the way her father treated her.",
+    "translation": "父亲那样对她，她非常难过。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=upset&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3131
   },
   {
     "word": "ignore",
@@ -21,7 +45,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=ignore&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2517
+    "id": 3132
   },
   {
     "word": "calm",
@@ -33,7 +57,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=calm&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2518
+    "id": 3133
   },
   {
     "word": "calm(…)down",
@@ -45,7 +69,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2519
+    "id": 3134
   },
   {
     "word": "have got to",
@@ -57,7 +81,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2520
+    "id": 3135
   },
   {
     "word": "concern",
@@ -69,7 +93,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=concern&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2521
+    "id": 3136
   },
   {
     "word": "be concerned about",
@@ -81,7 +105,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2522
+    "id": 3137
   },
   {
     "word": "walk the dog",
@@ -93,7 +117,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2523
+    "id": 3138
   },
   {
     "word": "loose",
@@ -105,7 +129,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=loose&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2524
+    "id": 3139
   },
   {
     "word": "vet",
@@ -117,7 +141,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=vet&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2525
+    "id": 3140
   },
   {
     "word": "go through",
@@ -129,7 +153,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=go+through&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2526
+    "id": 3141
   },
   {
     "word": "Amsterdam",
@@ -141,7 +165,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Amsterdam&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2527
+    "id": 3142
   },
   {
     "word": "Netherlands",
@@ -153,7 +177,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Netherlands&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2528
+    "id": 3143
   },
   {
     "word": "Jewish",
@@ -165,7 +189,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Jewish&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2529
+    "id": 3144
+  },
+  {
+    "word": "German",
+    "phonetic": "['dʒɜːmən]",
+    "pos": "adj",
+    "meaning": "adj. 德国的；德国人的；德语的; n. 德国人；德语",
+    "example": "English, Dutch and German are cognate languages.",
+    "translation": "英语、荷兰语、德语是同语族的语言",
+    "audio": "https://dict.youdao.com/dictvoice?audio=German&type=1",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3145
   },
   {
     "word": "Nazi",
@@ -177,7 +213,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2530
+    "id": 3146
   },
   {
     "word": "set down",
@@ -189,7 +225,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2531
+    "id": 3147
   },
   {
     "word": "series",
@@ -201,7 +237,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=series&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2532
+    "id": 3148
   },
   {
     "word": "a series of",
@@ -213,7 +249,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=a+series+of&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2533
+    "id": 3149
   },
   {
     "word": "Kitty",
@@ -225,7 +261,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Kitty&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2534
+    "id": 3150
   },
   {
     "word": "outdoors",
@@ -237,7 +273,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=outdoors&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2535
+    "id": 3151
   },
   {
     "word": "spellbind",
@@ -249,7 +285,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=spellbind&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2536
+    "id": 3152
   },
   {
     "word": "on purpose",
@@ -261,7 +297,19 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2537
+    "id": 3153
+  },
+  {
+    "word": "in order to",
+    "phonetic": "",
+    "pos": "",
+    "meaning": "为了……",
+    "example": "Jack and Helen had dropped behind in order to be alone.",
+    "translation": "为了单独呆在一起，杰克和海伦故意让别人走在前面。",
+    "audio": "",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3154
   },
   {
     "word": "dusk",
@@ -273,7 +321,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=dusk&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2538
+    "id": 3155
   },
   {
     "word": "at dusk",
@@ -285,7 +333,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2539
+    "id": 3156
   },
   {
     "word": "thunder",
@@ -297,7 +345,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=thunder&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2540
+    "id": 3157
   },
   {
     "word": "entire",
@@ -309,7 +357,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=entire&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2541
+    "id": 3158
   },
   {
     "word": "entirely",
@@ -321,7 +369,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=entirely&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2542
+    "id": 3159
+  },
+  {
+    "word": "power",
+    "phonetic": "['paʊɚ]",
+    "pos": "n",
+    "meaning": "n. 能力；力量；权力",
+    "example": "After the accident she lost the power of speech (= ability to speak ) .",
+    "translation": "那次事故之后，她丧失了语言能力。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=power&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3160
   },
   {
     "word": "face to face",
@@ -333,7 +393,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2543
+    "id": 3161
   },
   {
     "word": "curtain",
@@ -345,7 +405,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=curtain&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2544
+    "id": 3162
   },
   {
     "word": "dusty",
@@ -357,7 +417,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=dusty&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2545
+    "id": 3163
+  },
+  {
+    "word": "no longer",
+    "phonetic": "",
+    "pos": "",
+    "meaning": "不再……",
+    "example": "The order was no longer effective.",
+    "translation": "这项命令已不再生效。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=no+longer&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3164
   },
   {
     "word": "not…any longer",
@@ -369,7 +441,19 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2546
+    "id": 3165
+  },
+  {
+    "word": "partner",
+    "phonetic": "['pɑrtnɚ]",
+    "pos": "n",
+    "meaning": "n. 合作者；合伙人；伙伴",
+    "example": "She’s a partner in a law firm.",
+    "translation": "她是一家律师事务所的合伙人。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=partner&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3166
   },
   {
     "word": "settle",
@@ -381,7 +465,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=settle&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2547
+    "id": 3167
   },
   {
     "word": "suffer",
@@ -393,7 +477,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=suffer&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2548
+    "id": 3168
   },
   {
     "word": "suffer from",
@@ -405,7 +489,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=suffer+from&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2549
+    "id": 3169
   },
   {
     "word": "loneliness",
@@ -417,7 +501,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=loneliness&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2550
+    "id": 3170
   },
   {
     "word": "highway",
@@ -429,7 +513,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=highway&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2551
+    "id": 3171
   },
   {
     "word": "recover",
@@ -441,7 +525,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=recover&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2552
+    "id": 3172
   },
   {
     "word": "get tired of",
@@ -453,7 +537,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2553
+    "id": 3173
   },
   {
     "word": "be tired of",
@@ -465,7 +549,19 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2554
+    "id": 3174
+  },
+  {
+    "word": "pack",
+    "phonetic": "[pæk]",
+    "pos": "v",
+    "meaning": "v. 捆扎；包装；打行李; n. 小包；包裹",
+    "example": "I forgot to pack my razor.",
+    "translation": "我忘记把剃须刀放入行李包了。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=pack&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3175
   },
   {
     "word": "pack (sth) up",
@@ -477,7 +573,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2555
+    "id": 3176
   },
   {
     "word": "suitcase",
@@ -489,7 +585,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=suitcase&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2556
+    "id": 3177
   },
   {
     "word": "Margot",
@@ -501,7 +597,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Margot&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2557
+    "id": 3178
   },
   {
     "word": "Overcoat",
@@ -513,7 +609,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=overcoat&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2558
+    "id": 3179
+  },
+  {
+    "word": "teenager",
+    "phonetic": "['tinedʒɚ]",
+    "pos": "n",
+    "meaning": "n. 十几岁的青少年",
+    "example": "a TV sex education series aimed at teenagers",
+    "translation": "一部针对青少年的性教育电视系列片",
+    "audio": "https://dict.youdao.com/dictvoice?audio=teenager&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3180
   },
   {
     "word": "get along with",
@@ -525,7 +633,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2559
+    "id": 3181
   },
   {
     "word": "gossip",
@@ -537,7 +645,43 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=gossip&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2560
+    "id": 3182
+  },
+  {
+    "word": "fall in love",
+    "phonetic": "",
+    "pos": "",
+    "meaning": "相爱；爱上",
+    "example": "My dream, like that of my mother and her mother, was to fall in love, get married and live happily ever after.",
+    "translation": "我的梦想，像我妈妈和她妈妈一样，曾经是坠入爱河、结婚、然后从此过上幸福快乐的日子。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=fall+in+love&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3183
+  },
+  {
+    "word": "exactly",
+    "phonetic": "[ɪɡ'zæktli]",
+    "pos": "adv",
+    "meaning": "adv. 确实如此；正是；确切地",
+    "example": "It’s exactly half past five.",
+    "translation": "一分不差，正好5点半。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=exactly&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3184
+  },
+  {
+    "word": "disagree",
+    "phonetic": "[,dɪsə'ɡri]",
+    "pos": "v",
+    "meaning": "v. 不同意",
+    "example": "Barr strongly disagreed with Kronfeld’s statement.",
+    "translation": "巴尔强烈反对克龙费尔德的说法。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=disagree&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3185
   },
   {
     "word": "grateful",
@@ -549,7 +693,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=grateful&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2561
+    "id": 3186
+  },
+  {
+    "word": "dislike",
+    "phonetic": "[dɪs'laɪk]",
+    "pos": "v",
+    "meaning": "v. 不喜欢；厌恶; n. 不喜欢；厌恶",
+    "example": "Why do you dislike her so much?",
+    "translation": "你为什么那么讨厌她？",
+    "audio": "https://dict.youdao.com/dictvoice?audio=dislike&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3187
   },
   {
     "word": "join in",
@@ -561,7 +717,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2562
+    "id": 3188
   },
   {
     "word": "tip",
@@ -573,7 +729,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=tip&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2563
+    "id": 3189
+  },
+  {
+    "word": "secondly",
+    "phonetic": "['sɛkəndli]",
+    "pos": "adv",
+    "meaning": "adv. 第二；其次",
+    "example": "Firstly, they are not efficient, and secondly, they are expensive to make.",
+    "translation": "首先，它们效率不高，其次，它们的制作成本很高。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=secondly&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3190
   },
   {
     "word": "swap",
@@ -585,7 +753,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=swap&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2564
+    "id": 3191
   },
   {
     "word": "item",
@@ -597,7 +765,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=item&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2565
+    "id": 3192
+  },
+  {
+    "word": "subway",
+    "phonetic": "['sʌbwe]",
+    "pos": "n",
+    "meaning": "n. <美>地铁；地下人行道",
+    "example": "Boston has the oldest subway system in the US.",
+    "translation": "波士顿拥有美国最老的地铁运输系统。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=subway&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3193
   },
   {
     "word": "elevator",
@@ -609,7 +789,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=elevator&type=3",
     "level": "Senior-1",
     "category": "general",
-    "id": 2566
+    "id": 3194
   },
   {
     "word": "petrol",
@@ -621,7 +801,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=petrol&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2567
+    "id": 3195
   },
   {
     "word": "gas",
@@ -633,7 +813,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=gas&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2568
+    "id": 3196
   },
   {
     "word": "official",
@@ -645,7 +825,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=official&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2569
+    "id": 3197
   },
   {
     "word": "voyage",
@@ -657,7 +837,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=voyage&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2570
+    "id": 3198
   },
   {
     "word": "conquer",
@@ -669,7 +849,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=conquer&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2571
+    "id": 3199
+  },
+  {
+    "word": "because of",
+    "phonetic": "",
+    "pos": "",
+    "meaning": "因为；由于",
+    "example": "His business went under because of competition from the large corporations.",
+    "translation": "由于大公司的竞争，他的生意陷入了困境。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=because+of&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3200
   },
   {
     "word": "native",
@@ -681,7 +873,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=native&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2572
+    "id": 3201
   },
   {
     "word": "Amy",
@@ -693,7 +885,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Amy&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2573
+    "id": 3202
   },
   {
     "word": "come up",
@@ -705,7 +897,31 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=come+up&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2574
+    "id": 3203
+  },
+  {
+    "word": "apartment",
+    "phonetic": "[ə'pɑrtmənt]",
+    "pos": "n",
+    "meaning": "n. <美> 公寓住宅；单元住宅",
+    "example": "Christina has her own apartment, with her own car.",
+    "translation": "克里斯蒂娜有她自己的公寓，有自己的车。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=apartment&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3204
+  },
+  {
+    "word": "actually",
+    "phonetic": "['æktʃuəli]",
+    "pos": "adv",
+    "meaning": "adv. 实际上；事实上",
+    "example": "I’ve known Barbara for years. Since we were babies, actually.",
+    "translation": "我认识芭芭拉很多年了，实际上我们从小就认识。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=actually&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3205
   },
   {
     "word": "AD",
@@ -717,7 +933,19 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2575
+    "id": 3206
+  },
+  {
+    "word": "base",
+    "phonetic": "[bes]",
+    "pos": "v",
+    "meaning": "v. 以……为根据; n. 基部；基础；基地",
+    "example": "The paper had intended to base itself in London.",
+    "translation": "这家报社原来打算把总部设在伦敦。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=base&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3207
   },
   {
     "word": "at present",
@@ -729,7 +957,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=at+present&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2576
+    "id": 3208
   },
   {
     "word": "gradual",
@@ -741,7 +969,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=gradual&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2577
+    "id": 3209
+  },
+  {
+    "word": "gradually",
+    "phonetic": "['grædʒʊəli]",
+    "pos": "adv",
+    "meaning": "adv. 逐渐地；逐步地",
+    "example": "Jill gradually became aware of an awful smell.",
+    "translation": "吉尔渐渐地闻到了一股难闻的气味。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=gradually&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3210
   },
   {
     "word": "Danish",
@@ -753,7 +993,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Danish&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2578
+    "id": 3211
   },
   {
     "word": "enrich",
@@ -765,7 +1005,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=enrich&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2579
+    "id": 3212
   },
   {
     "word": "vocabulary",
@@ -777,7 +1017,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=vocabulary&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2580
+    "id": 3213
   },
   {
     "word": "Shakespeare",
@@ -789,7 +1029,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Shakespeare&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2581
+    "id": 3214
   },
   {
     "word": "make use of",
@@ -801,7 +1041,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2582
+    "id": 3215
   },
   {
     "word": "spelling",
@@ -813,7 +1053,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=spelling&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2583
+    "id": 3216
   },
   {
     "word": "Samuel Johnson",
@@ -825,7 +1065,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2584
+    "id": 3217
   },
   {
     "word": "Noah Webster",
@@ -837,7 +1077,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2585
+    "id": 3218
   },
   {
     "word": "latter",
@@ -849,7 +1089,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=latter&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2586
+    "id": 3219
   },
   {
     "word": "identity",
@@ -861,7 +1101,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=identity&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2587
+    "id": 3220
   },
   {
     "word": "fluent",
@@ -873,7 +1113,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=fluent&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2588
+    "id": 3221
   },
   {
     "word": "fluently",
@@ -885,7 +1125,43 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=fluently&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2589
+    "id": 3222
+  },
+  {
+    "word": "Singapore",
+    "phonetic": "[ˌsɪŋgə'pɔ:]",
+    "pos": "n",
+    "meaning": "n. 新加坡（东南亚国家）",
+    "example": "I come from Singapore.",
+    "translation": "我来自新加坡。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=Singapore&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3223
+  },
+  {
+    "word": "Malaysia",
+    "phonetic": "[mə'leʒə]",
+    "pos": "n",
+    "meaning": "n. 马来西亚（东南亚国家）；马来群岛",
+    "example": "He settled in Malaysia.",
+    "translation": "他定居马来西亚。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=Malaysia&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3224
+  },
+  {
+    "word": "such as",
+    "phonetic": "",
+    "pos": "",
+    "meaning": "例如……；像这种的",
+    "example": "But what if you have a lot of audio material to listen to, such as audio books or podcasts?",
+    "translation": "但是如果你有很多像有声书或播客这样的音频材料要听，那该怎么办呢？",
+    "audio": "https://dict.youdao.com/dictvoice?audio=such+as&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3225
   },
   {
     "word": "frequent",
@@ -897,7 +1173,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=frequent&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2590
+    "id": 3226
   },
   {
     "word": "frequently",
@@ -909,7 +1185,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=frequently&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2591
+    "id": 3227
   },
   {
     "word": "usage",
@@ -921,7 +1197,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=usage&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2592
+    "id": 3228
   },
   {
     "word": "command",
@@ -933,7 +1209,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=command&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2593
+    "id": 3229
+  },
+  {
+    "word": "request",
+    "phonetic": "[rɪ'kwɛst]",
+    "pos": "n",
+    "meaning": "n. 请求；要求; v. 请求；要求",
+    "example": "They have made an urgent request for international aid.",
+    "translation": "他们紧急请求国际援助。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=request&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3230
   },
   {
     "word": "dialect",
@@ -945,7 +1233,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=dialect&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2594
+    "id": 3231
+  },
+  {
+    "word": "expression",
+    "phonetic": "[ɪk'sprɛʃən]",
+    "pos": "n",
+    "meaning": "n. 表示；表达；词语",
+    "example": "Student leaders are demanding greater freedom of expression (= the right to say what you think without being punished ).",
+    "translation": "学生领袖要求得到更多的言论自由。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=expression&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3232
   },
   {
     "word": "midwestern",
@@ -957,7 +1257,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=midwestern&type=3",
     "level": "Senior-1",
     "category": "general",
-    "id": 2595
+    "id": 3233
   },
   {
     "word": "African",
@@ -969,7 +1269,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=African&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2596
+    "id": 3234
+  },
+  {
+    "word": "Spanish",
+    "phonetic": "['spænɪʃ]",
+    "pos": "adj",
+    "meaning": "adj. 西班牙的；西班牙人的；西班牙语的; n. 西班牙人；西班牙语",
+    "example": "...a Spanish sherry.",
+    "translation": "...一瓶西班牙雪利酒。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=Spanish&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3235
   },
   {
     "word": "play a part (in)",
@@ -981,7 +1293,19 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2597
+    "id": 3236
+  },
+  {
+    "word": "eastern",
+    "phonetic": "['istɚn]",
+    "pos": "adj",
+    "meaning": "adj. 东方的；东部的",
+    "example": "the eastern shore of the island",
+    "translation": "岛的东岸",
+    "audio": "https://dict.youdao.com/dictvoice?audio=eastern&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3237
   },
   {
     "word": "southeastern",
@@ -993,7 +1317,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=southeastern&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2598
+    "id": 3238
   },
   {
     "word": "northwestern",
@@ -1005,7 +1329,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2599
+    "id": 3239
   },
   {
     "word": "recognize",
@@ -1017,7 +1341,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=recognize&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2600
+    "id": 3240
   },
   {
     "word": "lorry",
@@ -1029,7 +1353,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=lorry&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2601
+    "id": 3241
   },
   {
     "word": "Lori",
@@ -1041,7 +1365,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2602
+    "id": 3242
   },
   {
     "word": "Houston",
@@ -1053,7 +1377,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Houston&type=1",
     "level": "Senior-1",
     "category": "general",
-    "id": 2603
+    "id": 3243
   },
   {
     "word": "Texas",
@@ -1065,7 +1389,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Texas&type=1",
     "level": "Senior-1",
     "category": "general",
-    "id": 2604
+    "id": 3244
   },
   {
     "word": "accent",
@@ -1077,7 +1401,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=accent&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2605
+    "id": 3245
   },
   {
     "word": "Buford",
@@ -1089,7 +1413,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2606
+    "id": 3246
   },
   {
     "word": "Lester",
@@ -1101,7 +1425,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Lester&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2607
+    "id": 3247
   },
   {
     "word": "catfish",
@@ -1113,7 +1437,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=catfish&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2608
+    "id": 3248
   },
   {
     "word": "lightning",
@@ -1125,7 +1449,31 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=lightning&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2609
+    "id": 3249
+  },
+  {
+    "word": "straight",
+    "phonetic": "[stret]",
+    "pos": "adv",
+    "meaning": "adv. 挺直；直接; adj. 直的；笔直的；正直的；正直的",
+    "example": "She was looking straight at me.",
+    "translation": "她直直地看着我。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=straight&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3250
+  },
+  {
+    "word": "block",
+    "phonetic": "[blɑk]",
+    "pos": "n",
+    "meaning": "n. 块；木块；石块；街区",
+    "example": "Head for 44th Street, a few blocks east of Sixth Avenue.",
+    "translation": "往44号街走，从第六大街往东走几个街区就是。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=block&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3251
   },
   {
     "word": "cab",
@@ -1137,7 +1485,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=cab&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2610
+    "id": 3252
   },
   {
     "word": "journal",
@@ -1149,7 +1497,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=journal&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2611
+    "id": 3253
   },
   {
     "word": "transport",
@@ -1161,7 +1509,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=transport&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2612
+    "id": 3254
+  },
+  {
+    "word": "prefer",
+    "phonetic": "[prɪ'fɝ]",
+    "pos": "v",
+    "meaning": "v. 更喜欢；选择某事物（而不选择其他事物）",
+    "example": "This type of owl prefers a desert habitat.",
+    "translation": "这种猫头鹰更喜欢沙漠的生活环境。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=prefer&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3255
   },
   {
     "word": "disadvantage",
@@ -1173,7 +1533,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=disadvantage&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2613
+    "id": 3256
   },
   {
     "word": "fare",
@@ -1185,7 +1545,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=fare&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2614
+    "id": 3257
   },
   {
     "word": "route",
@@ -1197,7 +1557,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=route&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2615
+    "id": 3258
   },
   {
     "word": "Mekong",
@@ -1209,7 +1569,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Mekong&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2616
+    "id": 3259
   },
   {
     "word": "flow",
@@ -1221,7 +1581,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=flow&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2617
+    "id": 3260
+  },
+  {
+    "word": "ever since",
+    "phonetic": "",
+    "pos": "",
+    "meaning": "从那以后",
+    "example": "I have distrusted her ever since she cheated me.",
+    "translation": "自从她骗我以后，我就不信任她了。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=ever+since&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3261
   },
   {
     "word": "persuade",
@@ -1233,7 +1605,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=persuade&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2618
+    "id": 3262
   },
   {
     "word": "cycle",
@@ -1245,7 +1617,43 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=cycle&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2619
+    "id": 3263
+  },
+  {
+    "word": "graduate",
+    "phonetic": "[ˈɡrædʒuˌet]",
+    "pos": "v",
+    "meaning": "v. 毕业; n. 大学毕业生",
+    "example": "When the boys graduated from high school, Ann moved to a small town in Vermont.",
+    "translation": "男孩们中学毕业后安迁到了佛蒙特州的一座小镇。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=graduate&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3264
+  },
+  {
+    "word": "finally",
+    "phonetic": "['faɪnlɪ]",
+    "pos": "adv",
+    "meaning": "adv. 最后；终于",
+    "example": "After several delays we finally took off at six o’clock.",
+    "translation": "几经耽搁后，我们终于在六点起飞了。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=finally&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3265
+  },
+  {
+    "word": "schedule",
+    "phonetic": "[ˈskedʒʊl; skɛdʒʊl]",
+    "pos": "n",
+    "meaning": "n. 进度表；时间表; v. 为某事安排时间",
+    "example": "How can he fit everything into his busy schedule ?",
+    "translation": "他是怎么把所有的事情都排进自己忙碌的时间表的？",
+    "audio": "https://dict.youdao.com/dictvoice?audio=schedule&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3266
   },
   {
     "word": "fond",
@@ -1257,7 +1665,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=fond&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2620
+    "id": 3267
   },
   {
     "word": "be fond of",
@@ -1269,7 +1677,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=be+fond+of&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2621
+    "id": 3268
   },
   {
     "word": "shortcoming",
@@ -1281,7 +1689,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=shortcoming&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2622
+    "id": 3269
   },
   {
     "word": "stubborn",
@@ -1293,7 +1701,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=stubborn&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2623
+    "id": 3270
   },
   {
     "word": "organize",
@@ -1305,7 +1713,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=organize&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2624
+    "id": 3271
+  },
+  {
+    "word": "care about",
+    "phonetic": "",
+    "pos": "",
+    "meaning": "关心；忧虑；惦念",
+    "example": "I don't care about his opinion.",
+    "translation": "我才不管他是什么意见呢。",
+    "audio": "",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3272
   },
   {
     "word": "detail",
@@ -1317,7 +1737,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=detail&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2625
+    "id": 3273
   },
   {
     "word": "source",
@@ -1329,7 +1749,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=source&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2626
+    "id": 3274
   },
   {
     "word": "determine",
@@ -1341,7 +1761,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=determine&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2627
+    "id": 3275
   },
   {
     "word": "determined",
@@ -1353,7 +1773,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=determined&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2628
+    "id": 3276
   },
   {
     "word": "change one’s mind",
@@ -1365,7 +1785,19 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2629
+    "id": 3277
+  },
+  {
+    "word": "journey",
+    "phonetic": "[ˈdʒɝ​nɪ]",
+    "pos": "n",
+    "meaning": "n. 旅行；旅程",
+    "example": "the friends they made on the journey",
+    "translation": "他们在旅途中交下的朋友",
+    "audio": "https://dict.youdao.com/dictvoice?audio=journey&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3278
   },
   {
     "word": "altitude",
@@ -1377,7 +1809,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=altitude&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2630
+    "id": 3279
   },
   {
     "word": "make up one’s mind",
@@ -1389,7 +1821,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2631
+    "id": 3280
   },
   {
     "word": "give in",
@@ -1401,7 +1833,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=give+in&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2632
+    "id": 3281
   },
   {
     "word": "atlas",
@@ -1413,7 +1845,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2633
+    "id": 3282
   },
   {
     "word": "glacier",
@@ -1425,7 +1857,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=glacier&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2634
+    "id": 3283
   },
   {
     "word": "Tibetan",
@@ -1437,7 +1869,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Tibetan&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2635
+    "id": 3284
   },
   {
     "word": "rapids",
@@ -1449,7 +1881,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=rapids&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2636
+    "id": 3285
   },
   {
     "word": "valley",
@@ -1461,7 +1893,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=valley&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2637
+    "id": 3286
   },
   {
     "word": "waterfall",
@@ -1473,7 +1905,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=waterfall&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2638
+    "id": 3287
   },
   {
     "word": "pace",
@@ -1485,7 +1917,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=pace&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2639
+    "id": 3288
   },
   {
     "word": "bend",
@@ -1497,7 +1929,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=bend&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2640
+    "id": 3289
   },
   {
     "word": "meander",
@@ -1509,7 +1941,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=meander&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2641
+    "id": 3290
   },
   {
     "word": "delta",
@@ -1521,7 +1953,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=delta&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2642
+    "id": 3291
   },
   {
     "word": "attitude",
@@ -1533,7 +1965,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=attitude&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2643
+    "id": 3292
   },
   {
     "word": "Qomolangma",
@@ -1545,7 +1977,19 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2644
+    "id": 3293
+  },
+  {
+    "word": "boil",
+    "phonetic": "[bɔɪl]",
+    "pos": "v",
+    "meaning": "v. （指液体）沸腾；（水）开",
+    "example": "Put the spaghetti into plenty of boiling salted water.",
+    "translation": "把意大利面放入大量煮沸的盐水中。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=boil&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3294
   },
   {
     "word": "forecast",
@@ -1557,7 +2001,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=forecast&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2645
+    "id": 3295
   },
   {
     "word": "parcel",
@@ -1569,7 +2013,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=parcel&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2646
+    "id": 3296
   },
   {
     "word": "insurance",
@@ -1581,7 +2025,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=insurance&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2647
+    "id": 3297
   },
   {
     "word": "wool",
@@ -1593,7 +2037,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=wool&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2648
+    "id": 3298
   },
   {
     "word": "as usual",
@@ -1605,7 +2049,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=as+usual&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2649
+    "id": 3299
   },
   {
     "word": "reliable",
@@ -1617,7 +2061,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=reliable&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2650
+    "id": 3300
   },
   {
     "word": "view",
@@ -1629,7 +2073,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=view&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2651
+    "id": 3301
   },
   {
     "word": "yak",
@@ -1641,7 +2085,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=yak&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2652
+    "id": 3302
   },
   {
     "word": "pillow",
@@ -1653,7 +2097,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=pillow&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2653
+    "id": 3303
+  },
+  {
+    "word": "midnight",
+    "phonetic": "['mɪdnaɪt]",
+    "pos": "n",
+    "meaning": "n. 午夜；子夜",
+    "example": "You can’t phone her now – it’s gone midnight (= after midnight ) !",
+    "translation": "你现在不能打电话给她，都过午夜了！",
+    "audio": "https://dict.youdao.com/dictvoice?audio=midnight&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3304
   },
   {
     "word": "at midnight",
@@ -1665,7 +2121,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2654
+    "id": 3305
   },
   {
     "word": "flame",
@@ -1677,7 +2133,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=flame&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2655
+    "id": 3306
   },
   {
     "word": "beneath",
@@ -1689,7 +2145,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=beneath&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2656
+    "id": 3307
   },
   {
     "word": "Laos",
@@ -1701,7 +2157,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Laos&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2657
+    "id": 3308
   },
   {
     "word": "Laotian",
@@ -1713,7 +2169,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Laotian&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2658
+    "id": 3309
   },
   {
     "word": "temple",
@@ -1725,7 +2181,31 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=temple&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2659
+    "id": 3310
+  },
+  {
+    "word": "cave",
+    "phonetic": "[kev]",
+    "pos": "n",
+    "meaning": "n. 洞穴；地窖",
+    "example": "the entrance to a cave",
+    "translation": "洞穴的入口",
+    "audio": "https://dict.youdao.com/dictvoice?audio=cave&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3311
+  },
+  {
+    "word": "earthquake",
+    "phonetic": "['ɝθ'kwek]",
+    "pos": "n",
+    "meaning": "n. 地震",
+    "example": "An earthquake measuring 6.1 on the Richter scale struck southern California on June 28.",
+    "translation": "6月28日加州南部地区发生了里氏6.1级地震。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=earthquake&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3312
   },
   {
     "word": "quake",
@@ -1737,7 +2217,31 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=quake&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2660
+    "id": 3313
+  },
+  {
+    "word": "right away",
+    "phonetic": "",
+    "pos": "",
+    "meaning": "立刻；马上",
+    "example": "If he looked away, I could find the answer right away.",
+    "translation": "只要他的眼睛往窗外看一看，我就立刻能找到答案。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=right+away&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3314
+  },
+  {
+    "word": "well",
+    "phonetic": "[wɛl]",
+    "pos": "n",
+    "meaning": "n. 井",
+    "example": "She lowered her bucket into the well.",
+    "translation": "她把水桶放到井里。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=well&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3315
   },
   {
     "word": "crack",
@@ -1749,7 +2253,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=crack&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2661
+    "id": 3316
   },
   {
     "word": "smelly",
@@ -1761,7 +2265,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=smelly&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2662
+    "id": 3317
   },
   {
     "word": "farmyard",
@@ -1773,7 +2277,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=farmyard&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2663
+    "id": 3318
   },
   {
     "word": "pipe",
@@ -1785,7 +2289,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=pipe&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2664
+    "id": 3319
   },
   {
     "word": "burst",
@@ -1797,7 +2301,31 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=burst&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2665
+    "id": 3320
+  },
+  {
+    "word": "million",
+    "phonetic": "['mɪljən]",
+    "pos": "n",
+    "meaning": "n. 百万",
+    "example": "The book sold more than a million copies.",
+    "translation": "这本书售出了一百多万册。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=million&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3321
+  },
+  {
+    "word": "event",
+    "phonetic": "[ɪ'vɛnt]",
+    "pos": "n",
+    "meaning": "n. 事件；大事",
+    "example": "one of the most important events in the history of mankind",
+    "translation": "人类历史上最重大的事件之一",
+    "audio": "https://dict.youdao.com/dictvoice?audio=event&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3322
   },
   {
     "word": "as if",
@@ -1809,7 +2337,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=as+if&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2666
+    "id": 3323
   },
   {
     "word": "at an end",
@@ -1821,7 +2349,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2667
+    "id": 3324
   },
   {
     "word": "nation",
@@ -1833,7 +2361,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=nation&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2668
+    "id": 3325
   },
   {
     "word": "canal",
@@ -1845,7 +2373,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=canal&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2669
+    "id": 3326
   },
   {
     "word": "steam",
@@ -1857,7 +2385,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=steam&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2670
+    "id": 3327
   },
   {
     "word": "dirt",
@@ -1869,7 +2397,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=dirt&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2671
+    "id": 3328
   },
   {
     "word": "ruin",
@@ -1881,7 +2409,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=ruin&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2672
+    "id": 3329
   },
   {
     "word": "in ruins",
@@ -1893,7 +2421,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2673
+    "id": 3330
   },
   {
     "word": "suffering",
@@ -1905,7 +2433,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=suffering&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2674
+    "id": 3331
   },
   {
     "word": "extreme",
@@ -1917,7 +2445,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=extreme&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2675
+    "id": 3332
   },
   {
     "word": "injure",
@@ -1929,7 +2457,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=injure&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2676
+    "id": 3333
   },
   {
     "word": "survivor",
@@ -1941,7 +2469,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=survivor&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2677
+    "id": 3334
   },
   {
     "word": "destroy",
@@ -1953,7 +2481,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=destroy&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2678
+    "id": 3335
   },
   {
     "word": "brick",
@@ -1965,7 +2493,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=brick&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2679
+    "id": 3336
   },
   {
     "word": "dam",
@@ -1977,7 +2505,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=dam&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2680
+    "id": 3337
   },
   {
     "word": "track",
@@ -1989,7 +2517,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=track&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2681
+    "id": 3338
   },
   {
     "word": "useless",
@@ -2001,7 +2529,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=useless&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2682
+    "id": 3339
   },
   {
     "word": "shock",
@@ -2013,7 +2541,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=shock&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2683
+    "id": 3340
   },
   {
     "word": "rescue",
@@ -2025,7 +2553,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=rescue&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2684
+    "id": 3341
   },
   {
     "word": "trap",
@@ -2037,7 +2565,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=trap&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2685
+    "id": 3342
+  },
+  {
+    "word": "electricity",
+    "phonetic": "[ɪ'lɛk'trɪsəti]",
+    "pos": "n",
+    "meaning": "n. 电",
+    "example": "The farm was very isolated, but it had electricity.",
+    "translation": "那个农场非常偏远，但有电力供应。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=electricity&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3343
   },
   {
     "word": "disaster",
@@ -2049,7 +2589,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=disaster&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2686
+    "id": 3344
   },
   {
     "word": "dig out",
@@ -2061,7 +2601,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2687
+    "id": 3345
   },
   {
     "word": "bury",
@@ -2073,7 +2613,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=bury&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2688
+    "id": 3346
+  },
+  {
+    "word": "mine",
+    "phonetic": "[maɪn]",
+    "pos": "n",
+    "meaning": "n. 矿；矿山；矿井",
+    "example": "one of the largest coal mines in the country",
+    "translation": "该国最大的煤矿之一",
+    "audio": "https://dict.youdao.com/dictvoice?audio=mine&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3347
   },
   {
     "word": "miner",
@@ -2085,7 +2637,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=miner&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2689
+    "id": 3348
   },
   {
     "word": "shelter",
@@ -2097,7 +2649,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=shelter&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2690
+    "id": 3349
   },
   {
     "word": "a (great) number of",
@@ -2109,7 +2661,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2691
+    "id": 3350
   },
   {
     "word": "title",
@@ -2121,7 +2673,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=title&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2692
+    "id": 3351
+  },
+  {
+    "word": "reporter",
+    "phonetic": "[rɪ'pɔrtɚ]",
+    "pos": "n",
+    "meaning": "n. 记者",
+    "example": "a news reporter",
+    "translation": "新闻记者",
+    "audio": "https://dict.youdao.com/dictvoice?audio=reporter&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3352
   },
   {
     "word": "bar",
@@ -2133,7 +2697,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=bar&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2693
+    "id": 3353
   },
   {
     "word": "damage",
@@ -2145,7 +2709,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=damage&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2694
+    "id": 3354
   },
   {
     "word": "frighten",
@@ -2157,7 +2721,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=frighten&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2695
+    "id": 3355
   },
   {
     "word": "frightened",
@@ -2169,7 +2733,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=frightened&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2696
+    "id": 3356
   },
   {
     "word": "frightening",
@@ -2181,7 +2745,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=frightening&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2697
+    "id": 3357
   },
   {
     "word": "congratulation",
@@ -2193,7 +2757,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=congratulation&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2698
+    "id": 3358
   },
   {
     "word": "judge",
@@ -2205,7 +2769,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=judge&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2699
+    "id": 3359
   },
   {
     "word": "sincerely",
@@ -2217,7 +2781,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=sincerely&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2700
+    "id": 3360
+  },
+  {
+    "word": "express",
+    "phonetic": "[ɪk'sprɛs]",
+    "pos": "v",
+    "meaning": "v. 表示；表达; n. 快车；速递",
+    "example": "Parents have expressed their concerns about their children’s safety.",
+    "translation": "父母对自己孩子的安全表示忧虑。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=express&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3361
   },
   {
     "word": "outline",
@@ -2229,7 +2805,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=outline&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2701
+    "id": 3362
   },
   {
     "word": "headline",
@@ -2241,7 +2817,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=headline&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2702
+    "id": 3363
   },
   {
     "word": "cyclist",
@@ -2253,7 +2829,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=cyclist&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2703
+    "id": 3364
   },
   {
     "word": "Nelson Mandela",
@@ -2265,7 +2841,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=nelson+mandela&type=3",
     "level": "Senior-1",
     "category": "general",
-    "id": 2704
+    "id": 3365
   },
   {
     "word": "quality",
@@ -2277,7 +2853,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=quality&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2705
+    "id": 3366
   },
   {
     "word": "warm-hearted",
@@ -2289,7 +2865,31 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2706
+    "id": 3367
+  },
+  {
+    "word": "mean",
+    "phonetic": "[min]",
+    "pos": "adj",
+    "meaning": "adj. 吝啬的；自私的；卑鄙的",
+    "example": "He’s too mean to buy a present for his wife.",
+    "translation": "他很吝啬，给他妻子买件礼物都不肯。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=mean&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3368
+  },
+  {
+    "word": "active",
+    "phonetic": "['æktɪv]",
+    "pos": "adj",
+    "meaning": "adj. 活跃的；积极的",
+    "example": "She’s over 80, but is still very active.",
+    "translation": "她80多岁了，但仍旧很活跃。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=active&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3369
   },
   {
     "word": "generous",
@@ -2301,7 +2901,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=generous&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2707
+    "id": 3370
   },
   {
     "word": "easy-going",
@@ -2313,7 +2913,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=easy-going&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2708
+    "id": 3371
   },
   {
     "word": "self",
@@ -2325,7 +2925,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=self&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2709
+    "id": 3372
   },
   {
     "word": "selfish",
@@ -2337,7 +2937,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=selfish&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2710
+    "id": 3373
   },
   {
     "word": "selfless",
@@ -2349,7 +2949,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=selfless&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2711
+    "id": 3374
   },
   {
     "word": "selflessly",
@@ -2361,7 +2961,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2712
+    "id": 3375
   },
   {
     "word": "devote",
@@ -2373,7 +2973,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=devote&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2713
+    "id": 3376
   },
   {
     "word": "devoted",
@@ -2385,7 +2985,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=devoted&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2714
+    "id": 3377
   },
   {
     "word": "William Tyndale",
@@ -2397,7 +2997,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2715
+    "id": 3378
   },
   {
     "word": "Bible",
@@ -2409,7 +3009,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Bible&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2716
+    "id": 3379
   },
   {
     "word": "Norman Bethune",
@@ -2421,7 +3021,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2717
+    "id": 3380
   },
   {
     "word": "invader",
@@ -2433,7 +3033,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=invader&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2718
+    "id": 3381
   },
   {
     "word": "found",
@@ -2445,7 +3045,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=found&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2719
+    "id": 3382
   },
   {
     "word": "republic",
@@ -2457,7 +3057,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=republic&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2720
+    "id": 3383
   },
   {
     "word": "principle",
@@ -2469,7 +3069,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=principle&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2721
+    "id": 3384
   },
   {
     "word": "nationalism",
@@ -2481,7 +3081,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=nationalism&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2722
+    "id": 3385
   },
   {
     "word": "livelihood",
@@ -2493,7 +3093,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=livelihood&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2723
+    "id": 3386
   },
   {
     "word": "Mohandas Gandhi",
@@ -2505,7 +3105,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=mohandas+gandhi&type=3",
     "level": "Senior-1",
     "category": "general",
-    "id": 2724
+    "id": 3387
+  },
+  {
+    "word": "peaceful",
+    "phonetic": "['pisfəl]",
+    "pos": "adj",
+    "meaning": "adj. 平静的；安宁的；和平的",
+    "example": "We had a peaceful afternoon without the children.",
+    "translation": "孩子们不在，我们度过了一个宁静的下午。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=peaceful&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3388
   },
   {
     "word": "giant",
@@ -2517,7 +3129,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=giant&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2725
+    "id": 3389
   },
   {
     "word": "leap",
@@ -2529,7 +3141,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=leap&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2726
+    "id": 3390
   },
   {
     "word": "mankind",
@@ -2541,7 +3153,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=mankind&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2727
+    "id": 3391
   },
   {
     "word": "Elias",
@@ -2553,7 +3165,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Elias&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2728
+    "id": 3392
   },
   {
     "word": "lawyer",
@@ -2565,7 +3177,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=lawyer&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2729
+    "id": 3393
   },
   {
     "word": "guidance",
@@ -2577,7 +3189,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=guidance&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2730
+    "id": 3394
   },
   {
     "word": "legal",
@@ -2589,7 +3201,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=legal&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2731
+    "id": 3395
   },
   {
     "word": "fee",
@@ -2601,7 +3213,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=fee&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2732
+    "id": 3396
   },
   {
     "word": "passbook",
@@ -2613,7 +3225,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=passbook&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2733
+    "id": 3397
   },
   {
     "word": "Johannesburg",
@@ -2625,7 +3237,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Johannesburg&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2734
+    "id": 3398
   },
   {
     "word": "out of work",
@@ -2637,7 +3249,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=out+of+work&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2735
+    "id": 3399
   },
   {
     "word": "hopeful",
@@ -2649,7 +3261,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=hopeful&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2736
+    "id": 3400
   },
   {
     "word": "ANC",
@@ -2661,7 +3273,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2737
+    "id": 3401
   },
   {
     "word": "youth",
@@ -2673,7 +3285,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=youth&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2738
+    "id": 3402
   },
   {
     "word": "league",
@@ -2685,7 +3297,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=league&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2739
+    "id": 3403
   },
   {
     "word": "Youth League",
@@ -2697,7 +3309,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2740
+    "id": 3404
   },
   {
     "word": "stage",
@@ -2709,7 +3321,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=stage&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2741
+    "id": 3405
   },
   {
     "word": "vote",
@@ -2721,7 +3333,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=vote&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2742
+    "id": 3406
   },
   {
     "word": "attack",
@@ -2733,7 +3345,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=attack&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2743
+    "id": 3407
   },
   {
     "word": "violence",
@@ -2745,7 +3357,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=violence&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2744
+    "id": 3408
   },
   {
     "word": "as a matter of fact",
@@ -2757,7 +3369,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2745
+    "id": 3409
   },
   {
     "word": "blow up",
@@ -2769,7 +3381,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=blow+up&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2746
+    "id": 3410
   },
   {
     "word": "equal",
@@ -2781,7 +3393,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=equal&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2747
+    "id": 3411
   },
   {
     "word": "in trouble",
@@ -2793,7 +3405,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=in+trouble&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2748
+    "id": 3412
   },
   {
     "word": "willing",
@@ -2805,7 +3417,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=willing&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2749
+    "id": 3413
+  },
+  {
+    "word": "unfair",
+    "phonetic": "['ʌn'fɛr]",
+    "pos": "adj",
+    "meaning": "adj. 不公正的；不公平的",
+    "example": "Many employers have recognized that age discrimination is unfair.",
+    "translation": "许多雇主已经认识到年龄歧视是不公平的。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=unfair&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3414
   },
   {
     "word": "turn to",
@@ -2817,7 +3441,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=turn+to&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2750
+    "id": 3415
   },
   {
     "word": "quote",
@@ -2829,7 +3453,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=quote&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2751
+    "id": 3416
   },
   {
     "word": "release",
@@ -2841,7 +3465,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=release&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2752
+    "id": 3417
   },
   {
     "word": "lose heart",
@@ -2853,7 +3477,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2753
+    "id": 3418
   },
   {
     "word": "Robben Island",
@@ -2865,7 +3489,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2754
+    "id": 3419
   },
   {
     "word": "escape",
@@ -2877,7 +3501,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=escape&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2755
+    "id": 3420
   },
   {
     "word": "blanket",
@@ -2889,7 +3513,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=blanket&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2756
+    "id": 3421
+  },
+  {
+    "word": "educate",
+    "phonetic": "['ɛdʒuket]",
+    "pos": "v",
+    "meaning": "v. 教育；训练",
+    "example": "The Ormerod School educates handicapped children.",
+    "translation": "奥默罗德学校的教育对象为残疾儿童。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=educate&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3422
   },
   {
     "word": "educated",
@@ -2901,7 +3537,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=educated&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2757
+    "id": 3423
   },
   {
     "word": "come to power",
@@ -2913,7 +3549,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2758
+    "id": 3424
   },
   {
     "word": "beg",
@@ -2925,7 +3561,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=beg&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2759
+    "id": 3425
+  },
+  {
+    "word": "relative",
+    "phonetic": "['rɛlətɪv]",
+    "pos": "n",
+    "meaning": "n. 亲戚；亲属",
+    "example": "a gathering of friends and relatives",
+    "translation": "亲朋好友的聚会",
+    "audio": "https://dict.youdao.com/dictvoice?audio=relative&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3426
   },
   {
     "word": "terror",
@@ -2937,7 +3585,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=terror&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2760
+    "id": 3427
   },
   {
     "word": "cruelty",
@@ -2949,7 +3597,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=cruelty&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2761
+    "id": 3428
   },
   {
     "word": "reward",
@@ -2961,7 +3609,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=reward&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2762
+    "id": 3429
   },
   {
     "word": "Transkei",
@@ -2973,7 +3621,31 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Transkei&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2763
+    "id": 3430
+  },
+  {
+    "word": "set up",
+    "phonetic": "",
+    "pos": "",
+    "meaning": "设立;建立",
+    "example": "The two sides agreed to set up a commission to investigate claims.",
+    "translation": "双方同意成立一个委员会，调查索赔问题。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=set+up&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3431
+  },
+  {
+    "word": "sentence",
+    "phonetic": "['sɛntəns]",
+    "pos": "v",
+    "meaning": "v. 判决；宣判",
+    "example": "The judge has passed a sentence on the prisoner.",
+    "translation": "法官已对犯人做出判决。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=sentence&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3432
   },
   {
     "word": "be sentenced to",
@@ -2985,7 +3657,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2764
+    "id": 3433
   },
   {
     "word": "anti-",
@@ -2997,7 +3669,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=anti-&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2765
+    "id": 3434
   },
   {
     "word": "anti-black",
@@ -3009,7 +3681,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=antiblack&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2766
+    "id": 3435
   },
   {
     "word": "Cape Town",
@@ -3021,7 +3693,19 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2767
+    "id": 3436
+  },
+  {
+    "word": "president",
+    "phonetic": "['prɛzɪdənt]",
+    "pos": "n",
+    "meaning": "n. 总统；会长；校长；行长",
+    "example": "President Bush",
+    "translation": "布什总统",
+    "audio": "https://dict.youdao.com/dictvoice?audio=president&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3437
   },
   {
     "word": "Nobel Peace Prize",
@@ -3033,7 +3717,19 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2768
+    "id": 3438
+  },
+  {
+    "word": "opinion",
+    "phonetic": "[ə'pɪnjən]",
+    "pos": "n",
+    "meaning": "n. 意见；看法；主张",
+    "example": "He asked his wife’s opinion on every important decision.",
+    "translation": "凡是重要的决定他都会征求妻子的意见。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=opinion&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3439
   },
   {
     "word": "cultural",
@@ -3045,7 +3741,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=cultural&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2769
+    "id": 3440
   },
   {
     "word": "relic",
@@ -3057,7 +3753,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=relic&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2770
+    "id": 3441
   },
   {
     "word": "rare",
@@ -3069,7 +3765,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=rare&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2771
+    "id": 3442
+  },
+  {
+    "word": "valuable",
+    "phonetic": "[ˈvæljuəbəl; ˈvæljə-]",
+    "pos": "adj",
+    "meaning": "adj. 贵重的；有价值的",
+    "example": "Their most valuable belongings were locked in a safe in the bedroom.",
+    "translation": "他们最值钱的财物锁在卧室保险箱里。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=valuable&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3443
   },
   {
     "word": "survive",
@@ -3081,7 +3789,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=survive&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2772
+    "id": 3444
   },
   {
     "word": "vase",
@@ -3093,7 +3801,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=vase&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2773
+    "id": 3445
+  },
+  {
+    "word": "dynasty",
+    "phonetic": "['daɪnəsti]",
+    "pos": "n",
+    "meaning": "n. 王朝；朝代",
+    "example": "The Habsburg dynasty ruled in Austria from 1278 to 1918.",
+    "translation": "哈布斯堡王朝在1278至1918年间统治奥地利。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=dynasty&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3446
   },
   {
     "word": "Taj Mahal",
@@ -3105,7 +3825,31 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2774
+    "id": 3447
+  },
+  {
+    "word": "ivory",
+    "phonetic": "['aɪvəri]",
+    "pos": "n",
+    "meaning": "n. 象牙",
+    "example": "an ivory chess set",
+    "translation": "一副象牙国际象棋",
+    "audio": "https://dict.youdao.com/dictvoice?audio=ivory&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3448
+  },
+  {
+    "word": "dragon",
+    "phonetic": "['dræɡən]",
+    "pos": "n",
+    "meaning": "n. 龙",
+    "example": "She worked a dragon on the new linen cloth.",
+    "translation": "她在新的亚麻布上绣了条龙。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=dragon&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3449
   },
   {
     "word": "amber",
@@ -3117,7 +3861,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=amber&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2775
+    "id": 3450
   },
   {
     "word": "in search of",
@@ -3129,7 +3873,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=in+search+of&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2776
+    "id": 3451
   },
   {
     "word": "Frederick William I",
@@ -3141,7 +3885,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2777
+    "id": 3452
   },
   {
     "word": "Prussia",
@@ -3153,7 +3897,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Prussia&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2778
+    "id": 3453
   },
   {
     "word": "amaze",
@@ -3165,7 +3909,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=amaze&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2779
+    "id": 3454
+  },
+  {
+    "word": "amazing",
+    "phonetic": "[ə'mezɪŋ]",
+    "pos": "adj",
+    "meaning": "adj. 惊人的，了不起的",
+    "example": "He’s an amazing player to watch.",
+    "translation": "看他比赛那才叫精彩呢。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=amazing&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3455
   },
   {
     "word": "select",
@@ -3177,7 +3933,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=select&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2780
+    "id": 3456
+  },
+  {
+    "word": "honey",
+    "phonetic": "['hʌni]",
+    "pos": "n",
+    "meaning": "n. 蜜；蜂蜜",
+    "example": "Where did you buy the honey?",
+    "translation": "你在哪里买到这蜂蜜的？",
+    "audio": "https://dict.youdao.com/dictvoice?audio=honey&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3457
   },
   {
     "word": "design",
@@ -3189,7 +3957,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=design&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2781
+    "id": 3458
   },
   {
     "word": "fancy",
@@ -3201,7 +3969,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=fancy&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2782
+    "id": 3459
+  },
+  {
+    "word": "style",
+    "phonetic": "[staɪl]",
+    "pos": "n",
+    "meaning": "n. 风格；类型；风度",
+    "example": "You may not like her, but she certainly has style .",
+    "translation": "你也许不喜欢她，但她确实有风度。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=style&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3460
   },
   {
     "word": "decorate",
@@ -3213,7 +3993,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=decorate&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2783
+    "id": 3461
   },
   {
     "word": "jewel",
@@ -3225,7 +4005,31 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=jewel&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2784
+    "id": 3462
+  },
+  {
+    "word": "artist",
+    "phonetic": "['ɑrtɪst]",
+    "pos": "n",
+    "meaning": "n. 艺术家",
+    "example": "an exhibition of paintings by local artists",
+    "translation": "当地画家的画展",
+    "audio": "https://dict.youdao.com/dictvoice?audio=artist&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3463
+  },
+  {
+    "word": "belong",
+    "phonetic": "[bɪ'lɔŋ]",
+    "pos": "v",
+    "meaning": "v. 属于；为……的一员",
+    "example": "The house had belonged to her family for three or four generations.",
+    "translation": "这座房子属于她家已有三四代了。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=belong&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3464
   },
   {
     "word": "belong to",
@@ -3237,7 +4041,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=belong+to&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2785
+    "id": 3465
   },
   {
     "word": "Peter the Great",
@@ -3249,7 +4053,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2786
+    "id": 3466
   },
   {
     "word": "in return",
@@ -3261,7 +4065,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=in+return&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2787
+    "id": 3467
   },
   {
     "word": "Czar",
@@ -3273,7 +4077,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=czar&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2788
+    "id": 3468
   },
   {
     "word": "troop",
@@ -3285,7 +4089,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=troop&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2789
+    "id": 3469
   },
   {
     "word": "St Petersburg",
@@ -3297,7 +4101,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2790
+    "id": 3470
   },
   {
     "word": "reception",
@@ -3309,7 +4113,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=reception&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2791
+    "id": 3471
   },
   {
     "word": "CatherineⅡ",
@@ -3321,7 +4125,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Catherine&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2792
+    "id": 3472
   },
   {
     "word": "at war",
@@ -3333,7 +4137,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2793
+    "id": 3473
   },
   {
     "word": "remove",
@@ -3345,7 +4149,43 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=remove&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2794
+    "id": 3474
+  },
+  {
+    "word": "less than",
+    "phonetic": "",
+    "pos": "",
+    "meaning": "少于",
+    "example": "Spend less than you earn, go without until you have the money.",
+    "translation": "一定要比自己挣的花的少，如果没有那么多钱，就不要行动。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=less+than&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3475
+  },
+  {
+    "word": "wooden",
+    "phonetic": "['wʊdn]",
+    "pos": "adj",
+    "meaning": "adj. 木制的",
+    "example": "a wooden bench",
+    "translation": "木制长椅",
+    "audio": "https://dict.youdao.com/dictvoice?audio=wooden&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3476
+  },
+  {
+    "word": "doubt",
+    "phonetic": "[daʊt]",
+    "pos": "n",
+    "meaning": "n. 怀疑；疑惑; v. 怀疑；不信",
+    "example": "There was still one little nagging doubt at the back of his mind.",
+    "translation": "他的心头仍有一丝挥之不去的疑虑。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=doubt&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3477
   },
   {
     "word": "Konigsberg",
@@ -3357,7 +4197,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2795
+    "id": 3478
   },
   {
     "word": "the Baltic Sea",
@@ -3369,7 +4209,19 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2796
+    "id": 3479
+  },
+  {
+    "word": "mystery",
+    "phonetic": "[ˈmɪstri]",
+    "pos": "n",
+    "meaning": "n. 神秘；神秘的事物",
+    "example": "Twenty years after the event, his death remains a mystery .",
+    "translation": "事情过去二十年了，他的死仍然是个谜。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=mystery&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3480
   },
   {
     "word": "former",
@@ -3381,7 +4233,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=former&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2797
+    "id": 3481
+  },
+  {
+    "word": "worth",
+    "phonetic": "[wɝθ]",
+    "pos": "prep",
+    "meaning": "prep. 值得的；相当于……的价值; n. 价值；作用; adj. [古]值钱的",
+    "example": "It was a lot of hard work, but it was worth it .",
+    "translation": "虽然非常辛苦，但是值得。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=worth&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3482
   },
   {
     "word": "rebuild",
@@ -3393,7 +4257,31 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=rebuild&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2798
+    "id": 3483
+  },
+  {
+    "word": "local",
+    "phonetic": "[ˈloʊkl]",
+    "pos": "adj",
+    "meaning": "adj. 本地的；当地的",
+    "example": "local hospital",
+    "translation": "当地医院",
+    "audio": "https://dict.youdao.com/dictvoice?audio=local&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3484
+  },
+  {
+    "word": "apart",
+    "phonetic": "[ə'pɑrt]",
+    "pos": "adv",
+    "meaning": "adv. 分离地；分别地",
+    "example": "The children have never been apart before.",
+    "translation": "孩子们以前从来没有分开过。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=apart&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3485
   },
   {
     "word": "take apart",
@@ -3405,7 +4293,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2799
+    "id": 3486
   },
   {
     "word": "Leningrad",
@@ -3417,7 +4305,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Leningrad&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2800
+    "id": 3487
+  },
+  {
+    "word": "painting",
+    "phonetic": "['pentɪŋ]",
+    "pos": "n",
+    "meaning": "n. 绘画；画",
+    "example": "Can you help me hang this painting (= put it on a wall ) ?",
+    "translation": "你帮我把这幅画挂起来好吗？",
+    "audio": "https://dict.youdao.com/dictvoice?audio=painting&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3488
   },
   {
     "word": "castle",
@@ -3429,7 +4329,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=castle&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2801
+    "id": 3489
   },
   {
     "word": "Windsor Castle",
@@ -3441,7 +4341,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2802
+    "id": 3490
   },
   {
     "word": "trial",
@@ -3453,7 +4353,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=trial&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2803
+    "id": 3491
   },
   {
     "word": "eyewitness",
@@ -3465,7 +4365,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=eyewitness&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2804
+    "id": 3492
   },
   {
     "word": "evidence",
@@ -3477,7 +4377,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=evidence&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2805
+    "id": 3493
   },
   {
     "word": "Jan Hasek",
@@ -3489,7 +4389,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2806
+    "id": 3494
   },
   {
     "word": "Czech Republic",
@@ -3501,7 +4401,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=czech+republic&type=3",
     "level": "Senior-1",
     "category": "general",
-    "id": 2807
+    "id": 3495
   },
   {
     "word": "explode",
@@ -3513,7 +4413,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=explode&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2808
+    "id": 3496
   },
   {
     "word": "entrance",
@@ -3525,7 +4425,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=entrance&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2809
+    "id": 3497
   },
   {
     "word": "Hans Braun",
@@ -3537,7 +4437,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2810
+    "id": 3498
   },
   {
     "word": "sailor",
@@ -3549,7 +4449,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=sailor&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2811
+    "id": 3499
   },
   {
     "word": "sink",
@@ -3561,7 +4461,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=sink&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2812
+    "id": 3500
   },
   {
     "word": "Anna Petrov",
@@ -3573,7 +4473,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2813
+    "id": 3501
   },
   {
     "word": "maid",
@@ -3585,7 +4485,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=maid&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2814
+    "id": 3502
+  },
+  {
+    "word": "Berlin",
+    "phonetic": "[bɝ'lɪn]",
+    "pos": "n",
+    "meaning": "n. 柏林（德国首都）",
+    "example": "He captained the siege of Berlin.",
+    "translation": "他指挥了围攻柏林的战役。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=Berlin&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3503
   },
   {
     "word": "think highly of",
@@ -3597,7 +4509,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2815
+    "id": 3504
   },
   {
     "word": "Johann Webber",
@@ -3609,7 +4521,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2816
+    "id": 3505
   },
   {
     "word": "informal",
@@ -3621,7 +4533,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=informal&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2817
+    "id": 3506
   },
   {
     "word": "debate",
@@ -3633,7 +4545,43 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=debate&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2818
+    "id": 3507
+  },
+  {
+    "word": "ancient",
+    "phonetic": "[ˈenʃənt]",
+    "pos": "adj",
+    "meaning": "adj. 古代的；古老的",
+    "example": "the ancient civilizations of Asia",
+    "translation": "亚洲的古代文明",
+    "audio": "https://dict.youdao.com/dictvoice?audio=ancient&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3508
+  },
+  {
+    "word": "compete",
+    "phonetic": "[kəm'pit]",
+    "pos": "v",
+    "meaning": "v. 竞争；比赛",
+    "example": "They found themselves competing with foreign companies for a share of the market.",
+    "translation": "他们发现自己在与外国公司争夺市场份额。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=compete&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3509
+  },
+  {
+    "word": "competitor",
+    "phonetic": "[kəm'pɛtɪtɚ]",
+    "pos": "n",
+    "meaning": "n. 竞争者",
+    "example": "Last year they sold twice as many computers as their competitors.",
+    "translation": "去年他们的计算机销量是竞争对手的两倍。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=competitor&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3510
   },
   {
     "word": "take part in",
@@ -3645,7 +4593,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=take+part+in&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2819
+    "id": 3511
   },
   {
     "word": "medal",
@@ -3657,7 +4605,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=medal&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2820
+    "id": 3512
   },
   {
     "word": "stand for",
@@ -3669,7 +4617,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=stand+for&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2821
+    "id": 3513
   },
   {
     "word": "mascot",
@@ -3681,7 +4629,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=mascot&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2822
+    "id": 3514
   },
   {
     "word": "Pausanias",
@@ -3693,7 +4641,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Pausanias&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2823
+    "id": 3515
   },
   {
     "word": "Greece",
@@ -3705,7 +4653,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Greece&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2824
+    "id": 3516
   },
   {
     "word": "Greek",
@@ -3717,7 +4665,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Greek&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2825
+    "id": 3517
   },
   {
     "word": "magical",
@@ -3729,7 +4677,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=magical&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2826
+    "id": 3518
+  },
+  {
+    "word": "volunteer",
+    "phonetic": "[,vɑlən'tɪr]",
+    "pos": "n",
+    "meaning": "n. 志愿者；志愿兵; v. 自愿",
+    "example": "Most of the relief work was done by volunteers.",
+    "translation": "大部分救援工作都由志愿人员完成。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=volunteer&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3519
   },
   {
     "word": "homeland",
@@ -3741,7 +4701,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=homeland&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2827
+    "id": 3520
   },
   {
     "word": "regular",
@@ -3753,7 +4713,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=regular&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2828
+    "id": 3521
   },
   {
     "word": "basis",
@@ -3765,7 +4725,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=basis&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2829
+    "id": 3522
   },
   {
     "word": "athlete",
@@ -3777,7 +4737,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=athlete&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2830
+    "id": 3523
   },
   {
     "word": "admit",
@@ -3789,7 +4749,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=admit&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2831
+    "id": 3524
   },
   {
     "word": "slave",
@@ -3801,7 +4761,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=slave&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2832
+    "id": 3525
+  },
+  {
+    "word": "nowadays",
+    "phonetic": "['naʊədez]",
+    "pos": "adv",
+    "meaning": "adv. 现今；现在",
+    "example": "Nowadays people are rarely shocked by the sex they see on television.",
+    "translation": "如今人们在电视上看见性爱镜头不太会感到吃惊了。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=nowadays&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3526
   },
   {
     "word": "gymnastics",
@@ -3813,7 +4785,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=gymnastics&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2833
+    "id": 3527
   },
   {
     "word": "athletics",
@@ -3825,7 +4797,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=athletics&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2834
+    "id": 3528
   },
   {
     "word": "Stadium",
@@ -3837,7 +4809,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=stadium&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2835
+    "id": 3529
   },
   {
     "word": "gymnasium",
@@ -3849,7 +4821,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=gymnasium&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2836
+    "id": 3530
+  },
+  {
+    "word": "gym",
+    "phonetic": "[dʒɪm]",
+    "pos": "n",
+    "meaning": "n. 体育馆；健身房",
+    "example": "I go to the gym as often as I can.",
+    "translation": "我一有空就去健身房健身。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=gym&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3531
   },
   {
     "word": "as well",
@@ -3861,7 +4845,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=as+well&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2837
+    "id": 3532
+  },
+  {
+    "word": "host",
+    "phonetic": "[host]",
+    "pos": "v",
+    "meaning": "v. 做东；主办；招待; n. 主人",
+    "example": "Which country is going to host the next World Cup?",
+    "translation": "哪个国家将主办下一届世界杯？",
+    "audio": "https://dict.youdao.com/dictvoice?audio=host&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3533
   },
   {
     "word": "responsibility",
@@ -3873,7 +4869,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=responsibility&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2838
+    "id": 3534
   },
   {
     "word": "olive",
@@ -3885,7 +4881,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=olive&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2839
+    "id": 3535
   },
   {
     "word": "wreath",
@@ -3897,7 +4893,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=wreath&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2840
+    "id": 3536
   },
   {
     "word": "replace",
@@ -3909,7 +4905,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=replace&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2841
+    "id": 3537
   },
   {
     "word": "motto",
@@ -3921,7 +4917,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=motto&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2842
+    "id": 3538
   },
   {
     "word": "swift",
@@ -3933,7 +4929,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=swift&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2843
+    "id": 3539
   },
   {
     "word": "similarity",
@@ -3945,7 +4941,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=similarity&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2844
+    "id": 3540
   },
   {
     "word": "Athens",
@@ -3957,7 +4953,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Athens&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2845
+    "id": 3541
   },
   {
     "word": "charge",
@@ -3969,7 +4965,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=charge&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2846
+    "id": 3542
   },
   {
     "word": "in charge",
@@ -3981,7 +4977,31 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=in+charge&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2847
+    "id": 3543
+  },
+  {
+    "word": "physical",
+    "phonetic": "['fɪzɪkl]",
+    "pos": "adj",
+    "meaning": "adj. 身体的；物理的",
+    "example": "She was in constant physical pain.",
+    "translation": "她一直感到身上疼痛。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=physical&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3544
+  },
+  {
+    "word": "fine",
+    "phonetic": "[faɪn]",
+    "pos": "v",
+    "meaning": "v. 罚款",
+    "example": "She was fined for speeding.",
+    "translation": "她因超速驾车而被罚款 。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=fine&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3545
   },
   {
     "word": "poster",
@@ -3993,7 +5013,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=poster&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2848
+    "id": 3546
   },
   {
     "word": "advertise",
@@ -4005,7 +5025,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=advertise&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2849
+    "id": 3547
   },
   {
     "word": "Atlanta",
@@ -4017,7 +5037,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Atlanta&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2850
+    "id": 3548
   },
   {
     "word": "princess",
@@ -4029,7 +5049,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=princess&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2851
+    "id": 3549
   },
   {
     "word": "glory",
@@ -4041,7 +5061,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=glory&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2852
+    "id": 3550
   },
   {
     "word": "bargain",
@@ -4053,7 +5073,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=bargain&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2853
+    "id": 3551
+  },
+  {
+    "word": "prince",
+    "phonetic": "[prɪns]",
+    "pos": "n",
+    "meaning": "n. 王子",
+    "example": "Prince William",
+    "translation": "威廉王子",
+    "audio": "https://dict.youdao.com/dictvoice?audio=prince&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3552
   },
   {
     "word": "hopeless",
@@ -4065,7 +5097,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=hopeless&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2854
+    "id": 3553
   },
   {
     "word": "Hippomenes",
@@ -4077,7 +5109,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Hippomenes&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2855
+    "id": 3554
   },
   {
     "word": "foolish",
@@ -4089,7 +5121,31 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=foolish&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2856
+    "id": 3555
+  },
+  {
+    "word": "goddess",
+    "phonetic": "[ɡɑdɪs]",
+    "pos": "n",
+    "meaning": "n. 女神",
+    "example": "Aphrodite, goddess of love",
+    "translation": "爱神阿佛洛狄忒",
+    "audio": "https://dict.youdao.com/dictvoice?audio=goddess&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3556
+  },
+  {
+    "word": "pain",
+    "phonetic": "[pen]",
+    "pos": "n",
+    "meaning": "n. 疼痛；痛苦",
+    "example": "The pain is getting worse.",
+    "translation": "疼得越来越厉害了。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=pain&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3557
   },
   {
     "word": "one after another",
@@ -4101,7 +5157,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=one+after+another&type=3",
     "level": "Senior-1",
     "category": "general",
-    "id": 2857
+    "id": 3558
   },
   {
     "word": "deserve",
@@ -4113,7 +5169,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=deserve&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2858
+    "id": 3559
   },
   {
     "word": "striker",
@@ -4125,7 +5181,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=striker&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2859
+    "id": 3560
   },
   {
     "word": "abacus",
@@ -4137,7 +5193,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=abacus&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2860
+    "id": 3561
   },
   {
     "word": "calculator",
@@ -4149,7 +5205,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=calculator&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2861
+    "id": 3562
   },
   {
     "word": "PC",
@@ -4161,7 +5217,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2862
+    "id": 3563
   },
   {
     "word": "laptop",
@@ -4173,7 +5229,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=laptop&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2863
+    "id": 3564
   },
   {
     "word": "PDA",
@@ -4185,7 +5241,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=PDA&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2864
+    "id": 3565
   },
   {
     "word": "analytical",
@@ -4197,7 +5253,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=analytical&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2865
+    "id": 3566
   },
   {
     "word": "calculate",
@@ -4209,7 +5265,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=calculate&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2866
+    "id": 3567
   },
   {
     "word": "universal",
@@ -4221,7 +5277,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=universal&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2867
+    "id": 3568
   },
   {
     "word": "simplify",
@@ -4233,7 +5289,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=simplify&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2868
+    "id": 3569
   },
   {
     "word": "sum",
@@ -4245,7 +5301,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=sum&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2869
+    "id": 3570
   },
   {
     "word": "Charles Babbage",
@@ -4257,7 +5313,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2870
+    "id": 3571
   },
   {
     "word": "operator",
@@ -4269,7 +5325,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=operator&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2871
+    "id": 3572
   },
   {
     "word": "logical",
@@ -4281,7 +5337,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=logical&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2872
+    "id": 3573
   },
   {
     "word": "logically",
@@ -4293,7 +5349,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=logically&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2873
+    "id": 3574
+  },
+  {
+    "word": "technology",
+    "phonetic": "[tɛkˈnɑlədʒɪ]",
+    "pos": "n",
+    "meaning": "n. 工艺；科技；技术",
+    "example": "Modern technology makes moving money around much easier than it used to be.",
+    "translation": "现代科技使货币流动比以前便捷得多。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=technology&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3575
   },
   {
     "word": "technological",
@@ -4305,7 +5373,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=technological&type=3",
     "level": "Senior-1",
     "category": "general",
-    "id": 2874
+    "id": 3576
   },
   {
     "word": "revolution",
@@ -4317,7 +5385,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=revolution&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2875
+    "id": 3577
   },
   {
     "word": "artificial",
@@ -4329,7 +5397,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=artificial&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2876
+    "id": 3578
   },
   {
     "word": "intelligence",
@@ -4341,7 +5409,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=intelligence&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2877
+    "id": 3579
+  },
+  {
+    "word": "intelligent",
+    "phonetic": "[ɪn'tɛlɪdʒənt]",
+    "pos": "adj",
+    "meaning": "adj. 聪明的；智能的",
+    "example": "Sontag was once famously described as the most intelligent woman in America.",
+    "translation": "桑塔格曾被称为美国最聪明的女人，这是众人皆知的事。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=intelligent&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3580
   },
   {
     "word": "Alan Turing",
@@ -4353,7 +5433,19 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2878
+    "id": 3581
+  },
+  {
+    "word": "solve",
+    "phonetic": "[sɑlv]",
+    "pos": "v",
+    "meaning": "v. 解决；解答",
+    "example": "Charlie thinks money will solve all his problems.",
+    "translation": "查理认为钱能解决他所有的问题。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=solve&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3582
   },
   {
     "word": "mathematical",
@@ -4365,7 +5457,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=mathematical&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2879
+    "id": 3583
   },
   {
     "word": "from…on",
@@ -4377,7 +5469,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2880
+    "id": 3584
   },
   {
     "word": "reality",
@@ -4389,7 +5481,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=reality&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2881
+    "id": 3585
   },
   {
     "word": "designer",
@@ -4401,7 +5493,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=designer&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2882
+    "id": 3586
+  },
+  {
+    "word": "personal",
+    "phonetic": "['pɝsənl]",
+    "pos": "adj",
+    "meaning": "adj. 私人的；个人的；亲自的",
+    "example": "My personal view is that we shouldn’t offer him the job.",
+    "translation": "我个人认为我们不该给他这份工作。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=personal&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3587
   },
   {
     "word": "personally",
@@ -4413,7 +5517,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=personally&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2883
+    "id": 3588
   },
   {
     "word": "tube",
@@ -4425,7 +5529,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=tube&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2884
+    "id": 3589
   },
   {
     "word": "transistor",
@@ -4437,7 +5541,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=transistor&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2885
+    "id": 3590
   },
   {
     "word": "chip",
@@ -4449,7 +5553,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=chip&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2886
+    "id": 3591
   },
   {
     "word": "as a result",
@@ -4461,7 +5565,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=as+a+result&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2887
+    "id": 3592
+  },
+  {
+    "word": "total",
+    "phonetic": "['totl]",
+    "pos": "adj",
+    "meaning": "adj. 总的；整个的; n. 总数；合计",
+    "example": "They said that the total number of cows dying from BSE would be twenty thousand.",
+    "translation": "他们说死于疯牛病的奶牛总数会有2万头。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=total&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3593
   },
   {
     "word": "totally",
@@ -4473,7 +5589,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=totally&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2888
+    "id": 3594
   },
   {
     "word": "so…that…",
@@ -4485,7 +5601,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=so+that&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2889
+    "id": 3595
   },
   {
     "word": "network",
@@ -4497,7 +5613,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=network&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2890
+    "id": 3596
   },
   {
     "word": "web",
@@ -4509,7 +5625,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=web&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2891
+    "id": 3597
   },
   {
     "word": "application",
@@ -4521,7 +5637,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=application&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2892
+    "id": 3598
   },
   {
     "word": "finance",
@@ -4533,7 +5649,31 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=finance&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2893
+    "id": 3599
+  },
+  {
+    "word": "mobile",
+    "phonetic": "[ˈməʊbl;mobil]",
+    "pos": "adj",
+    "meaning": "adj. 可移动的；机动的",
+    "example": "mobile air-conditioners",
+    "translation": "移动式空调器",
+    "audio": "https://dict.youdao.com/dictvoice?audio=mobile&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3600
+  },
+  {
+    "word": "rocket",
+    "phonetic": "['rɑkɪt]",
+    "pos": "n",
+    "meaning": "n. 火箭",
+    "example": "The rocket was launched from a space research base.",
+    "translation": "火箭从一个太空研究基地发射升空。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=rocket&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3601
   },
   {
     "word": "explore",
@@ -4545,7 +5685,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=explore&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2894
+    "id": 3602
+  },
+  {
+    "word": "Mars",
+    "phonetic": "[mɑrz]",
+    "pos": "n",
+    "meaning": "n. 火星",
+    "example": "the enormous volcanoes known to exist on Mars",
+    "translation": "已知在火星上存在的大量火山",
+    "audio": "https://dict.youdao.com/dictvoice?audio=Mars&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3603
   },
   {
     "word": "anyhow",
@@ -4557,7 +5709,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=anyhow&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2895
+    "id": 3604
+  },
+  {
+    "word": "goal",
+    "phonetic": "[ɡol]",
+    "pos": "n",
+    "meaning": "n. 目标；目的；球门；（进球）得分",
+    "example": "Your goal as a parent is to help your child become an independent adult.",
+    "translation": "身为父母，你的目标就是要培养孩子成为独立的成年人。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=goal&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3605
   },
   {
     "word": "happiness",
@@ -4569,7 +5733,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=happiness&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2896
+    "id": 3606
   },
   {
     "word": "human race",
@@ -4581,7 +5745,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=human+race&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2897
+    "id": 3607
   },
   {
     "word": "supporting",
@@ -4593,7 +5757,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=supporting&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2898
+    "id": 3608
   },
   {
     "word": "download",
@@ -4605,7 +5769,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=download&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2899
+    "id": 3609
   },
   {
     "word": "programmer",
@@ -4617,7 +5781,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=programmer&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2900
+    "id": 3610
   },
   {
     "word": "virus",
@@ -4629,7 +5793,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=virus&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2901
+    "id": 3611
   },
   {
     "word": "android",
@@ -4641,7 +5805,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=android&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2902
+    "id": 3612
   },
   {
     "word": "signal",
@@ -4653,7 +5817,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=signal&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2903
+    "id": 3613
+  },
+  {
+    "word": "teammate",
+    "phonetic": "['tim'met]",
+    "pos": "n",
+    "meaning": "n. 队友",
+    "example": "It has been like a coach, mentor and teammate, and it has been my constant companion for the past six years of incredible life change and over the past six months of my new venture.",
+    "translation": "它就像一个教练，导师和队友，它是我忠实的伙伴，过去六年它陪我度过了难以置信的生活变化和开始了过去六个月新的旅程。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=teammate&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3614
   },
   {
     "word": "Nagoya",
@@ -4665,7 +5841,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Nagoya&type=1",
     "level": "Senior-1",
     "category": "general",
-    "id": 2904
+    "id": 3615
   },
   {
     "word": "Seattle",
@@ -4677,7 +5853,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Seattle&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2905
+    "id": 3616
+  },
+  {
+    "word": "type",
+    "phonetic": "[taɪp]",
+    "pos": "n",
+    "meaning": "n. 类型; v. 打字",
+    "example": "Jo’s not really the sporty type.",
+    "translation": "乔可不是那种喜欢运动的人。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=type&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3617
   },
   {
     "word": "in a way",
@@ -4689,7 +5877,19 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2906
+    "id": 3618
+  },
+  {
+    "word": "coach",
+    "phonetic": "[kotʃ]",
+    "pos": "n",
+    "meaning": "n. 教练",
+    "example": "a tennis coach",
+    "translation": "网球教练",
+    "audio": "https://dict.youdao.com/dictvoice?audio=coach&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3619
   },
   {
     "word": "arise",
@@ -4701,7 +5901,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=arise&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2907
+    "id": 3620
   },
   {
     "word": "with the help of",
@@ -4713,7 +5913,19 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2908
+    "id": 3621
+  },
+  {
+    "word": "electronic",
+    "phonetic": "[ɪˌlɛkˈtrɑnɪk]",
+    "pos": "adj",
+    "meaning": "adj. 电子的",
+    "example": "electronic games",
+    "translation": "电子游戏",
+    "audio": "https://dict.youdao.com/dictvoice?audio=electronic&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3622
   },
   {
     "word": "appearance",
@@ -4725,7 +5937,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=appearance&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2909
+    "id": 3623
+  },
+  {
+    "word": "character",
+    "phonetic": "['kærɪktɚ]",
+    "pos": "n",
+    "meaning": "n. 性格；特点",
+    "example": "He has a cheerful but quiet character.",
+    "translation": "他的性格乐观文静。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=character&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3624
   },
   {
     "word": "mop",
@@ -4737,7 +5961,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=mop&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2910
+    "id": 3625
+  },
+  {
+    "word": "deal with",
+    "phonetic": "",
+    "pos": "",
+    "meaning": "处理；安排；对付",
+    "example": "...the way that banks deal with complaints.",
+    "translation": "…银行处理投诉的方式。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=deal+with&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3626
   },
   {
     "word": "watch over",
@@ -4749,7 +5985,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2911
+    "id": 3627
   },
   {
     "word": "naughty",
@@ -4761,7 +5997,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=naughty&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2912
+    "id": 3628
   },
   {
     "word": "niece",
@@ -4773,7 +6009,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=niece&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2913
+    "id": 3629
   },
   {
     "word": "spoil",
@@ -4785,7 +6021,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=spoil&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2914
+    "id": 3630
   },
   {
     "word": "wildlife",
@@ -4797,7 +6033,31 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=wildlife&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2915
+    "id": 3631
+  },
+  {
+    "word": "protection",
+    "phonetic": "[prə'tɛkʃən]",
+    "pos": "n",
+    "meaning": "n. 保护",
+    "example": "protection money",
+    "translation": "保护费",
+    "audio": "https://dict.youdao.com/dictvoice?audio=protection&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3632
+  },
+  {
+    "word": "wild",
+    "phonetic": "[waɪld]",
+    "pos": "adj",
+    "meaning": "adj. 野生的；野的；未开发的；荒凉的",
+    "example": "Nepal is stunning, with its wild, untamed landscape.",
+    "translation": "尼泊尔有着自然原始的风景，美不胜收",
+    "audio": "https://dict.youdao.com/dictvoice?audio=wild&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3633
   },
   {
     "word": "habitat",
@@ -4809,7 +6069,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=habitat&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2916
+    "id": 3634
   },
   {
     "word": "threaten",
@@ -4821,7 +6081,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=threaten&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2917
+    "id": 3635
   },
   {
     "word": "decrease",
@@ -4833,7 +6093,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=decrease&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2918
+    "id": 3636
   },
   {
     "word": "endanger",
@@ -4845,7 +6105,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=endanger&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2919
+    "id": 3637
   },
   {
     "word": "die out",
@@ -4857,7 +6117,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2920
+    "id": 3638
   },
   {
     "word": "loss",
@@ -4869,7 +6129,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=loss&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2921
+    "id": 3639
   },
   {
     "word": "reserve",
@@ -4881,7 +6141,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=reserve&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2922
+    "id": 3640
   },
   {
     "word": "hunt",
@@ -4893,7 +6153,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=hunt&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2923
+    "id": 3641
   },
   {
     "word": "zone",
@@ -4905,7 +6165,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=zone&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2924
+    "id": 3642
   },
   {
     "word": "in peace",
@@ -4917,7 +6177,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2925
+    "id": 3643
   },
   {
     "word": "in danger",
@@ -4929,7 +6189,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2926
+    "id": 3644
   },
   {
     "word": "Daisy",
@@ -4941,7 +6201,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Daisy&type=1",
     "level": "Senior-1",
     "category": "general",
-    "id": 2927
+    "id": 3645
   },
   {
     "word": "species",
@@ -4953,7 +6213,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=species&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2928
+    "id": 3646
   },
   {
     "word": "carpet",
@@ -4965,7 +6225,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=carpet&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2929
+    "id": 3647
   },
   {
     "word": "respond",
@@ -4977,7 +6237,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=respond&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2930
+    "id": 3648
   },
   {
     "word": "distant",
@@ -4989,7 +6249,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=distant&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2931
+    "id": 3649
+  },
+  {
+    "word": "fur",
+    "phonetic": "[fɝ]",
+    "pos": "n",
+    "meaning": "n. 毛；软毛；毛皮",
+    "example": "I like his fuzzy fur!",
+    "translation": "我喜欢他的毛绒绒的软毛。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=fur&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3650
   },
   {
     "word": "antelope",
@@ -5001,7 +6273,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=antelope&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2932
+    "id": 3651
   },
   {
     "word": "Zimbabwe",
@@ -5013,7 +6285,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Zimbabwe&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2933
+    "id": 3652
+  },
+  {
+    "word": "relief",
+    "phonetic": "[rɪ'lif]",
+    "pos": "n",
+    "meaning": "n. （痛苦或忧虑的）减轻或解除；减轻痛苦的事物",
+    "example": "Marijuana can provide pain relief for some cancer patients.",
+    "translation": "大麻可以为一些癌症患者减轻疼痛。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=relief&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3653
   },
   {
     "word": "in relief",
@@ -5025,7 +6309,19 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2934
+    "id": 3654
+  },
+  {
+    "word": "laughter",
+    "phonetic": "['læftɚ]",
+    "pos": "n",
+    "meaning": "n. 笑；笑声",
+    "example": "Foster joined in the laughter.",
+    "translation": "福斯特也跟着笑了起来。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=laughter&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3655
   },
   {
     "word": "burst into laughter",
@@ -5037,7 +6333,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2935
+    "id": 3656
   },
   {
     "word": "mercy",
@@ -5049,7 +6345,43 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=mercy&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2936
+    "id": 3657
+  },
+  {
+    "word": "certain",
+    "phonetic": "['sɝtn]",
+    "pos": "adj",
+    "meaning": "adj. 确定的；一定的；某一",
+    "example": "I felt certain that I’d passed the test.",
+    "translation": "我感觉自己肯定通过这次测验了。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=certain&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3658
+  },
+  {
+    "word": "importance",
+    "phonetic": "[ɪm'pɔrtns]",
+    "pos": "n",
+    "meaning": "n. 重要（性）",
+    "example": "He was full of his own importance (= he behaved in an annoying way which showed that he thought he was very important ).",
+    "translation": "他自以为很了不起。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=importance&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3659
+  },
+  {
+    "word": "WWF",
+    "phonetic": "",
+    "pos": "",
+    "meaning": "(Word Wildlife Fund)世界野生生物基金会",
+    "example": "",
+    "translation": "",
+    "audio": "",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3660
   },
   {
     "word": "rub",
@@ -5061,7 +6393,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=rub&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2937
+    "id": 3661
   },
   {
     "word": "protect…from",
@@ -5073,7 +6405,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2938
+    "id": 3662
   },
   {
     "word": "mosquito",
@@ -5085,7 +6417,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=mosquito&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2939
+    "id": 3663
   },
   {
     "word": "millipede",
@@ -5097,7 +6429,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=millipede&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2940
+    "id": 3664
+  },
+  {
+    "word": "insect",
+    "phonetic": "['ɪnsɛkt]",
+    "pos": "n",
+    "meaning": "n. 昆虫",
+    "example": "Don’t forget to bring insect repellant (= a chemical to keep insects away ).",
+    "translation": "不要忘记带上驱虫剂。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=insect&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3665
   },
   {
     "word": "contain",
@@ -5109,7 +6453,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=contain&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2941
+    "id": 3666
   },
   {
     "word": "powerful",
@@ -5121,7 +6465,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=powerful&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2942
+    "id": 3667
   },
   {
     "word": "affect",
@@ -5133,7 +6477,31 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=affect&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2943
+    "id": 3668
+  },
+  {
+    "word": "attention",
+    "phonetic": "[ə'tɛnʃən]",
+    "pos": "n",
+    "meaning": "n. 注意；注意力；关注",
+    "example": "My attention wasn’t really on the game.",
+    "translation": "我的注意力其实不在比赛上。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=attention&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3669
+  },
+  {
+    "word": "pay attention to",
+    "phonetic": "",
+    "pos": "",
+    "meaning": "注意",
+    "example": "In this materialistic age we do not have time to pay attention to our surroundings.",
+    "translation": "在这唯物主义的时代里，我们没有时间去注意我们周围的世界。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=pay+attention+to&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3670
   },
   {
     "word": "appreciate",
@@ -5145,7 +6513,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=appreciate&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2944
+    "id": 3671
+  },
+  {
+    "word": "succeed",
+    "phonetic": "[sək'sid]",
+    "pos": "v",
+    "meaning": "v. 成功；接替；继任",
+    "example": "She wanted to be the first woman to climb Mount Qomolangma, and she almost succeeded.",
+    "translation": "她本想成为第一位登上珠穆朗玛峰的女性，而且差一点就成功了。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=succeed&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3672
   },
   {
     "word": "Indonesia",
@@ -5157,7 +6537,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Indonesia&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2945
+    "id": 3673
   },
   {
     "word": "rhino",
@@ -5169,7 +6549,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=rhino&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2946
+    "id": 3674
   },
   {
     "word": "secure",
@@ -5181,7 +6561,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=secure&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2947
+    "id": 3675
   },
   {
     "word": "income",
@@ -5193,7 +6573,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=income&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2948
+    "id": 3676
   },
   {
     "word": "employ",
@@ -5205,7 +6585,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=employ&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2949
+    "id": 3677
   },
   {
     "word": "harm",
@@ -5217,7 +6597,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=harm&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2950
+    "id": 3678
   },
   {
     "word": "Milu deer",
@@ -5229,7 +6609,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2951
+    "id": 3679
   },
   {
     "word": "bite",
@@ -5241,7 +6621,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=bite&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2952
+    "id": 3680
   },
   {
     "word": "extinction",
@@ -5253,7 +6633,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=extinction&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2953
+    "id": 3681
+  },
+  {
+    "word": "dinosaur",
+    "phonetic": "[ˈdaɪnəˌsɔr]",
+    "pos": "n",
+    "meaning": "n. 恐龙",
+    "example": "How then would this dinosaur have moved?",
+    "translation": "那么这种恐龙要如何移动呢？",
+    "audio": "https://dict.youdao.com/dictvoice?audio=dinosaur&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3682
   },
   {
     "word": "come into being",
@@ -5265,7 +6657,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2954
+    "id": 3683
   },
   {
     "word": "county",
@@ -5277,7 +6669,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=county&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2955
+    "id": 3684
   },
   {
     "word": "inspect",
@@ -5289,7 +6681,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=inspect&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2956
+    "id": 3685
+  },
+  {
+    "word": "unexpected",
+    "phonetic": "['ʌnɪk'spɛktɪd]",
+    "pos": "adj",
+    "meaning": "adj. 没料到的；意外的",
+    "example": "The experiment produced some unexpected results.",
+    "translation": "这次试验产生了一些意想不到的结果。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=unexpected&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3686
   },
   {
     "word": "incident",
@@ -5301,7 +6705,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=incident&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2957
+    "id": 3687
   },
   {
     "word": "dust",
@@ -5313,7 +6717,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=dust&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2958
+    "id": 3688
   },
   {
     "word": "according to",
@@ -5325,7 +6729,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=according+to&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2959
+    "id": 3689
   },
   {
     "word": "Mauritius",
@@ -5337,7 +6741,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=Mauritius&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2960
+    "id": 3690
   },
   {
     "word": "disappearance",
@@ -5349,7 +6753,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=disappearance&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2961
+    "id": 3691
   },
   {
     "word": "fierce",
@@ -5361,7 +6765,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=fierce&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2962
+    "id": 3692
   },
   {
     "word": "so that",
@@ -5373,7 +6777,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=so+that&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2963
+    "id": 3693
   },
   {
     "word": "ending",
@@ -5385,7 +6789,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=ending&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2964
+    "id": 3694
+  },
+  {
+    "word": "faithfully",
+    "phonetic": "['feθfəli]",
+    "pos": "adv",
+    "meaning": "adv. 忠诚地；忠实地",
+    "example": "He had served the family faithfully for 40 years.",
+    "translation": "他已忠心耿耿地为这家人服务了40年。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=faithfully&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3695
   },
   {
     "word": "Colobus monkey",
@@ -5397,7 +6813,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2965
+    "id": 3696
   },
   {
     "word": "classical",
@@ -5409,7 +6825,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=classical&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2966
+    "id": 3697
+  },
+  {
+    "word": "roll",
+    "phonetic": "[rol]",
+    "pos": "v",
+    "meaning": "v. 滚动；（使）摇摆; n. 摇晃；卷；卷形物；面包圈",
+    "example": "He rolled his shoulders back.",
+    "translation": "他转动双肩。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=roll&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3698
   },
   {
     "word": "rock’n’roll",
@@ -5421,7 +6849,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2967
+    "id": 3699
   },
   {
     "word": "orchestra",
@@ -5433,7 +6861,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=orchestra&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2968
+    "id": 3700
   },
   {
     "word": "rap",
@@ -5445,7 +6873,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=rap&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2969
+    "id": 3701
+  },
+  {
+    "word": "folk",
+    "phonetic": "[fok]",
+    "pos": "adj",
+    "meaning": "adj. 民间的",
+    "example": "folk tales",
+    "translation": "民间故事",
+    "audio": "https://dict.youdao.com/dictvoice?audio=folk&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3702
   },
   {
     "word": "jazz",
@@ -5457,7 +6897,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=jazz&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2970
+    "id": 3703
   },
   {
     "word": "choral",
@@ -5469,7 +6909,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=choral&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2971
+    "id": 3704
   },
   {
     "word": "the Monkees",
@@ -5481,7 +6921,19 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2972
+    "id": 3705
+  },
+  {
+    "word": "musician",
+    "phonetic": "[mjʊ'zɪʃən]",
+    "pos": "n",
+    "meaning": "n. 音乐家",
+    "example": "a talented young musician",
+    "translation": "有天赋的年轻音乐家",
+    "audio": "https://dict.youdao.com/dictvoice?audio=musician&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3706
   },
   {
     "word": "dream of",
@@ -5493,7 +6945,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2973
+    "id": 3707
   },
   {
     "word": "karaoke",
@@ -5505,7 +6957,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=karaoke&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2974
+    "id": 3708
   },
   {
     "word": "pretend",
@@ -5517,7 +6969,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=pretend&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2975
+    "id": 3709
+  },
+  {
+    "word": "to be honest",
+    "phonetic": "",
+    "pos": "",
+    "meaning": "说实在地；实话说",
+    "example": "",
+    "translation": "",
+    "audio": "",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3710
   },
   {
     "word": "attach",
@@ -5529,7 +6993,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=attach&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2976
+    "id": 3711
   },
   {
     "word": "attach…to",
@@ -5541,7 +7005,31 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2977
+    "id": 3712
+  },
+  {
+    "word": "form",
+    "phonetic": "[fɔrm]",
+    "pos": "v",
+    "meaning": "v. （使）组成；形成；构成",
+    "example": "The winning party will form the government.",
+    "translation": "获胜的党派将组建政府。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=form&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3713
+  },
+  {
+    "word": "fame",
+    "phonetic": "[fem]",
+    "pos": "n",
+    "meaning": "n. 名声；名望",
+    "example": "He claims he is not really interested in fame.",
+    "translation": "他称自己对出名真的没有兴趣。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=fame&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3714
   },
   {
     "word": "passer-by",
@@ -5553,7 +7041,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=passer-by&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2978
+    "id": 3715
   },
   {
     "word": "earn",
@@ -5565,7 +7053,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=earn&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2979
+    "id": 3716
   },
   {
     "word": "extra",
@@ -5577,7 +7065,43 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=extra&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2980
+    "id": 3717
+  },
+  {
+    "word": "instrument",
+    "phonetic": "['ɪnstrəmənt]",
+    "pos": "n",
+    "meaning": "n. 工具；器械；乐器",
+    "example": "surgical instruments",
+    "translation": "外科(手术)器械",
+    "audio": "https://dict.youdao.com/dictvoice?audio=instrument&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3718
+  },
+  {
+    "word": "perform",
+    "phonetic": "[pɚ'fɔrm]",
+    "pos": "v",
+    "meaning": "v. 表演；履行；执行",
+    "example": "Chenier and the band are performing at the Silver Palace tomorrow.",
+    "translation": "车尼尔和乐队明天将在银宫演出。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=perform&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3719
+  },
+  {
+    "word": "performance",
+    "phonetic": "[pɚ'fɔrməns]",
+    "pos": "n",
+    "meaning": "n. 表演；演奏",
+    "example": "This evening’s performance will begin at 8.00 pm.",
+    "translation": "今晚的演出8点开始。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=performance&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3720
   },
   {
     "word": "pub",
@@ -5589,7 +7113,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=pub&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2981
+    "id": 3721
   },
   {
     "word": "cash",
@@ -5601,7 +7125,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=cash&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2982
+    "id": 3722
   },
   {
     "word": "in cash",
@@ -5613,7 +7137,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2983
+    "id": 3723
   },
   {
     "word": "studio",
@@ -5625,7 +7149,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=studio&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2984
+    "id": 3724
   },
   {
     "word": "millionaire",
@@ -5637,7 +7161,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=millionaire&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2985
+    "id": 3725
   },
   {
     "word": "play jokes on",
@@ -5649,7 +7173,19 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2986
+    "id": 3726
+  },
+  {
+    "word": "actor",
+    "phonetic": "['æktɚ]",
+    "pos": "n",
+    "meaning": "n. 男演员；行动者",
+    "example": "His father was an actor in the Cantonese Opera Company.",
+    "translation": "他父亲曾是粤剧团的一名演员。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=actor&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3727
   },
   {
     "word": "rely",
@@ -5661,7 +7197,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=rely&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2987
+    "id": 3728
   },
   {
     "word": "rely on",
@@ -5673,7 +7209,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=rely+on&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2988
+    "id": 3729
   },
   {
     "word": "broadcast",
@@ -5685,7 +7221,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=broadcast&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2989
+    "id": 3730
+  },
+  {
+    "word": "humorous",
+    "phonetic": "['hjumərəs]",
+    "pos": "adj",
+    "meaning": "adj. 幽默的；诙谐的",
+    "example": "The film has some mildly humorous moments.",
+    "translation": "那部电影中有些略显幽默的片段。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=humorous&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3731
   },
   {
     "word": "familiar",
@@ -5697,7 +7245,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=familiar&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2990
+    "id": 3732
   },
   {
     "word": "be familiar with",
@@ -5709,7 +7257,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=be+familiar+with&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2991
+    "id": 3733
   },
   {
     "word": "get familiar with",
@@ -5721,7 +7269,19 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 2992
+    "id": 3734
+  },
+  {
+    "word": "or so",
+    "phonetic": "",
+    "pos": "",
+    "meaning": "大约",
+    "example": "Of the original ten, four or so remain.",
+    "translation": "在原有的十个中，留下约四个左右。",
+    "audio": "",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3735
   },
   {
     "word": "break up",
@@ -5733,7 +7293,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=break+up&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2993
+    "id": 3736
   },
   {
     "word": "reunite",
@@ -5745,7 +7305,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=reunite&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2994
+    "id": 3737
   },
   {
     "word": "attractive",
@@ -5757,7 +7317,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=attractive&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2995
+    "id": 3738
   },
   {
     "word": "addition",
@@ -5769,7 +7329,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=addition&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2996
+    "id": 3739
   },
   {
     "word": "in addition",
@@ -5781,7 +7341,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=in+addition&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2997
+    "id": 3740
   },
   {
     "word": "sort out",
@@ -5793,7 +7353,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=sort+out&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2998
+    "id": 3741
+  },
+  {
+    "word": "excitement",
+    "phonetic": "[ɪk'saɪtmənt]",
+    "pos": "n",
+    "meaning": "n. 兴奋；刺激",
+    "example": "We were both new to the excitements of life in the big city.",
+    "translation": "我们俩都是初次感受大城市多姿多彩的生活。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=excitement&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3742
   },
   {
     "word": "ballad",
@@ -5805,7 +7377,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=ballad&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 2999
+    "id": 3743
   },
   {
     "word": "overnignt",
@@ -5817,7 +7389,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 3000
+    "id": 3744
   },
   {
     "word": "dip",
@@ -5829,7 +7401,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=dip&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 3001
+    "id": 3745
   },
   {
     "word": "tadpole",
@@ -5841,7 +7413,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=tadpole&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 3002
+    "id": 3746
   },
   {
     "word": "lily",
@@ -5853,7 +7425,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=lily&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 3003
+    "id": 3747
   },
   {
     "word": "confident",
@@ -5865,7 +7437,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=confident&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 3004
+    "id": 3748
   },
   {
     "word": "Freddy",
@@ -5877,7 +7449,7 @@
     "audio": "",
     "level": "Senior-1",
     "category": "general",
-    "id": 3005
+    "id": 3749
   },
   {
     "word": "brief",
@@ -5889,7 +7461,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=brief&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 3006
+    "id": 3750
   },
   {
     "word": "briefly",
@@ -5901,7 +7473,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=briefly&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 3007
+    "id": 3751
   },
   {
     "word": "devotion",
@@ -5913,7 +7485,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=devotion&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 3008
+    "id": 3752
   },
   {
     "word": "afterwards",
@@ -5925,7 +7497,19 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=afterwards&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 3009
+    "id": 3753
+  },
+  {
+    "word": "invitation",
+    "phonetic": "[ˌɪnvɪˈteɪʃn]",
+    "pos": "n",
+    "meaning": "n. 邀请；招待",
+    "example": "They were always dropping by, usually without invitation.",
+    "translation": "他们常常来串门，通常不请自来。",
+    "audio": "https://dict.youdao.com/dictvoice?audio=invitation&type=2",
+    "level": "Senior-1",
+    "category": "general",
+    "id": 3754
   },
   {
     "word": "beard",
@@ -5937,7 +7521,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=beard&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 3010
+    "id": 3755
   },
   {
     "word": "sensitive",
@@ -5949,7 +7533,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=sensitive&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 3011
+    "id": 3756
   },
   {
     "word": "painful",
@@ -5961,7 +7545,7 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=painful&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 3012
+    "id": 3757
   },
   {
     "word": "above all",
@@ -5973,6 +7557,6 @@
     "audio": "https://dict.youdao.com/dictvoice?audio=above+all&type=2",
     "level": "Senior-1",
     "category": "general",
-    "id": 3013
+    "id": 3758
   }
 ]
