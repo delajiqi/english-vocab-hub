@@ -556,6 +556,18 @@
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
+
+    /* 手机端 */
+    @media (max-width: 640px) {
+      nav { flex-wrap: wrap; gap: 10px; padding: 14px 16px; }
+      .nav-links { flex-wrap: wrap; gap: 4px 6px; }
+      .nav-link { padding: 6px 10px; font-size: 0.8rem; }
+      .hero { padding: 32px 16px 24px; }
+      .container { padding: 0 16px; }
+      .stats-row { gap: 18px; margin-bottom: 32px; }
+      .stat-number { font-size: 1.5rem; }
+      .cards-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -807,25 +819,31 @@ function speakSentence(text) { if (text) playClip(youdaoAudio(text), text, getRa
   sel.addEventListener('change', () => setRate(sel.value));
 })();
 
+const DEFER_LEVELS = ['Postgrad', 'TOEFL', 'SAT'];
+async function fetchLevel(level) {
+  try {
+    const res = await fetch(FILES[level]);
+    if (!res.ok) { levelCounts[level] = 0; return []; }
+    const data = await res.json();
+    levelCounts[level] = data.length;
+    return data;
+  } catch { levelCounts[level] = 0; return []; }
+}
 async function loadAllVocab() {
-  const promises = Object.entries(FILES).map(async ([level, file]) => {
-    try {
-      const res = await fetch(file);
-      if (!res.ok) return [];
-      const data = await res.json();
-      levelCounts[level] = data.length;
-      return data;
-    } catch {
-      levelCounts[level] = 0;
-      return [];
-    }
-  });
-  const results = await Promise.all(promises);
-  allWords = results.flat();
+  const core = Object.keys(FILES).filter(l => !DEFER_LEVELS.includes(l));
+  allWords = (await Promise.all(core.map(fetchLevel))).flat();
   renderStats();
   renderLevels();
   pickRandomWord();
   setupRandomCard();
+  // 后台补充大词库，完成后刷新统计/概览（搜索也会涵盖它们）
+  Promise.all(DEFER_LEVELS.map(fetchLevel)).then(parts => {
+    const extra = parts.flat();
+    if (!extra.length) return;
+    allWords = allWords.concat(extra);
+    renderStats();
+    renderLevels();
+  });
 }
 
 function renderStats() {

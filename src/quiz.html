@@ -486,6 +486,19 @@
     }
 
     .btn-home:hover { background: var(--surface-hover); }
+
+    /* 手机端 */
+    @media (max-width: 640px) {
+      nav { flex-wrap: wrap; gap: 10px; padding: 12px 14px; }
+      .nav-links { flex-wrap: wrap; gap: 4px 6px; }
+      .nav-link { padding: 6px 10px; font-size: 0.8rem; }
+      .main { padding: 24px 14px 36px; }
+      .question-card { padding: 22px 18px; }
+      .q-word-big { font-size: 2rem; }
+      .options-grid { grid-template-columns: 1fr; }
+      .result-stats { gap: 10px; }
+      .result-stat { min-width: 88px; padding: 14px 16px; }
+    }
   </style>
 </head>
 <body>
@@ -716,7 +729,10 @@ function speakWordObj(w) { if (w) playClip(w.audio || youdaoAudio(w.word), w.wor
 function speakSentence(text) { if (text) playClip(youdaoAudio(text), text, getRate()); }
 
 async function loadAllVocab() {
-  const promises = Object.entries(FILES).map(async ([, file]) => {
+  // 测验只覆盖初高中+四六级，不加载托福/SAT/考研大词库，省流量
+  const SKIP = ['Postgrad', 'TOEFL', 'SAT'];
+  const used = Object.entries(FILES).filter(([lv]) => !SKIP.includes(lv));
+  const promises = used.map(async ([, file]) => {
     try { const r = await fetch(file); if (!r.ok) return []; return await r.json(); }
     catch { return []; }
   });

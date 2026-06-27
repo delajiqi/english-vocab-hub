@@ -419,6 +419,22 @@
       margin-top: 8px;
       opacity: 0.5;
     }
+
+    /* 手机端 */
+    @media (max-width: 640px) {
+      nav { flex-wrap: wrap; gap: 10px; padding: 12px 14px; }
+      .nav-links { flex-wrap: wrap; gap: 4px 6px; }
+      .nav-link { padding: 6px 10px; font-size: 0.8rem; }
+      .main { padding: 16px 14px 32px; }
+      .controls-bar { gap: 8px; }
+      .spacer { display: none; }
+      .ctrl-select, .ctrl-btn { font-size: 0.8rem; padding: 7px 10px; }
+      .card-3d { min-height: 320px; }
+      .card-face { padding: 28px 22px; }
+      .action-row { gap: 8px; flex-wrap: wrap; }
+      .action-btn { padding: 9px 14px; font-size: 0.82rem; }
+      .btn-prev, .btn-next { padding: 9px 16px; }
+    }
   </style>
 </head>
 <body>
@@ -594,16 +610,15 @@ let favSet = new Set(JSON.parse(localStorage.getItem(LS_FAV) || '[]'));
 function saveKnown() { localStorage.setItem(LS_KNOWN, JSON.stringify([...knownSet])); }
 function saveFav() { localStorage.setItem(LS_FAV, JSON.stringify([...favSet])); }
 
+// 分批加载：先初高中+四六级(轻)，托福/SAT/考研(重)后台再补，手机首屏更快省流量
+const DEFER_LEVELS = ['Postgrad', 'TOEFL', 'SAT'];
+async function fetchLevel(level) {
+  try { const r = await fetch(FILES[level]); if (!r.ok) return []; return await r.json(); }
+  catch { return []; }
+}
 async function loadAllVocab() {
-  const promises = Object.entries(FILES).map(async ([, file]) => {
-    try {
-      const res = await fetch(file);
-      if (!res.ok) return [];
-      return await res.json();
-    } catch { return []; }
-  });
-  const results = await Promise.all(promises);
-  allWords = results.flat();
+  const core = Object.keys(FILES).filter(l => !DEFER_LEVELS.includes(l));
+  allWords = (await Promise.all(core.map(fetchLevel))).flat();
   buildDict();
   isLoading = false;
   applyFilters();
@@ -615,12 +630,21 @@ async function loadAllVocab() {
     document.getElementById('level-select').value = lvParam;
     applyFilters();
   }
-  // 从生词本进入：自动开启「生词本」模式
   if (params.get('fav') === '1') {
     favMode = true;
     document.getElementById('btn-fav-only').classList.add('active');
     applyFilters();
   }
+
+  // 后台补充大词库（不打断当前学习）
+  Promise.all(DEFER_LEVELS.map(fetchLevel)).then(parts => {
+    const extra = parts.flat();
+    if (!extra.length) return;
+    allWords = allWords.concat(extra);
+    buildDict();
+    const lv = document.getElementById('level-select').value;
+    if (DEFER_LEVELS.includes(lv) && deck.length === 0) applyFilters();
+  });
 }
 
 function applyFilters() {

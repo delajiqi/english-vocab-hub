@@ -87,6 +87,20 @@
     /* 选词翻译浮层 */
     #sel-popup { display:none; position:fixed; z-index:2000; max-width:280px; background:#12182a; border:1px solid var(--border); border-radius:12px; padding:12px 14px; box-shadow:var(--shadow); font-size:0.9rem; }
 
+    /* 手机端 */
+    @media (max-width: 640px) {
+      nav { flex-wrap:wrap; gap:10px; padding:12px 14px; }
+      .nav-links { flex-wrap:wrap; gap:4px 6px; }
+      .nav-link { padding:6px 10px; font-size:0.8rem; }
+      .main { padding:20px 14px 36px; }
+      .ov-head { flex-direction:column; align-items:flex-start; }
+      .days-grid { grid-template-columns:repeat(auto-fill,minmax(130px,1fr)); }
+      .card3d { min-height:300px; }
+      .face { padding:28px 20px; }
+      .actions { gap:8px; }
+      .a-btn { padding:9px 14px; font-size:0.82rem; }
+    }
+
     /* ===== 打印 / 导出（浅色，一天一页，便于打印）===== */
     .print-toolbar { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:20px; }
     #print-area { display:flex; flex-direction:column; gap:24px; }
