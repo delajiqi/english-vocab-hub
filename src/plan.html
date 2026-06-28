@@ -431,60 +431,83 @@ function showOverview(){
 // ---- 打印 / 导出 ----
 function escHtml(s){ return String(s||'').replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 function wordCell(w){
-  const ph = w.phonetic? ` <span class="ph">${escHtml(w.phonetic)}</span>`:'';
-  return `<div class="w ${w._rv?'rv':''}"><div class="hw">${escHtml(w.word)}${ph}</div><div class="mn">${escHtml(w.meaning)}</div></div>`;
+  const raw=(w.phonetic||'').replace(/^\[|\]$/g,'');
+  const ph = raw? `<span class="ph">/${escHtml(raw)}/</span> `:'';
+  return `<div class="w"><b>${escHtml(w.word)}</b> ${ph}<span class="mn">${escHtml(w.meaning)}</span></div>`;
 }
 const PRINT_CSS = `
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,'Segoe UI','Microsoft YaHei',sans-serif;background:#eef0f5;color:#1f2430;padding:16px}
-.toolbar{position:sticky;top:0;z-index:9;background:#fff;border:1px solid #e0e3ec;border-radius:10px;padding:10px 14px;margin-bottom:16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-.toolbar button{background:#7c6df0;color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:14px;font-weight:600;cursor:pointer}
+body{font-family:-apple-system,'Segoe UI','Microsoft YaHei',sans-serif;background:#e9edf3;color:#1f2430;padding:14px}
+.toolbar{position:sticky;top:0;z-index:9;background:#fff;border:1px solid #e0e3ec;border-radius:10px;padding:10px 14px;margin-bottom:14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.toolbar button{color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:14px;font-weight:700;cursor:pointer}
+.toolbar .dlbtn{background:#e0322c}
+.toolbar .pbtn{background:#4f9cf9}
 .toolbar span{color:#6b7080;font-size:13px}
-.day-page{background:#fff;border-radius:12px;padding:18px 20px 18px;margin:0 auto 18px;max-width:900px}
-.banner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:linear-gradient(135deg,#7c6df0,#4f9cf9);color:#fff;border-radius:10px;padding:12px 18px;margin-bottom:14px}
-.banner .d{font-size:1.7rem;font-weight:800;line-height:1}
-.banner .d small{display:block;font-size:.74rem;font-weight:500;opacity:.92;margin-top:4px}
-.pill{background:rgba(255,255,255,.2);border-radius:100px;padding:5px 12px;font-size:.8rem;font-weight:600;white-space:nowrap;margin-left:8px}
-.sec{font-size:.9rem;font-weight:800;margin:10px 0 8px}
-.sec.n{color:#0f6e56}.sec.r{color:#854f0b}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px 12px}
-.w{border:1px solid #e7e9f0;border-radius:7px;background:#fafbff;padding:5px 9px}
-.w.rv{background:#fff9ef;border-color:#f3e6c8}
-.hw{font-weight:700;font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.hw .ph{font-weight:400;font-size:.74rem;color:#8a8f9e;font-style:italic}
-.mn{font-size:.76rem;color:#4a4f5e;line-height:1.35;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.foot{margin-top:12px;padding-top:8px;border-top:1px dashed #dfe2ec;display:flex;justify-content:space-between;font-size:.74rem;color:#8a8f9e}
+.gen-tip{color:#7c6df0!important;font-weight:600}
+.day-page{background:#fff;border-radius:10px;padding:18px 24px 14px;margin:0 auto 16px;max-width:920px}
+.hd{background:#eaf1fb;border:1px solid #d6e4f7;border-radius:10px;padding:12px 18px;text-align:center;margin-bottom:14px}
+.hd .t{font-size:1.5rem;font-weight:800;color:#1f2430}
+.hd .t b{color:#e0322c;margin:0 4px}
+.hd .d{display:inline-block;margin-top:8px;background:#4f9cf9;color:#fff;font-size:.82rem;font-weight:700;padding:4px 20px;border-radius:7px}
+.sec{font-size:.92rem;font-weight:800;margin:12px 0 6px;padding-left:9px;border-left:4px solid #fbbf24;color:#1f2430}
+.sec.r{border-color:#34d399}
+.cols{column-count:3;column-gap:24px}
+.w{break-inside:avoid;-webkit-column-break-inside:avoid;font-size:.85rem;line-height:1.55;padding:1.5px 0}
+.w b{color:#2f6df0;font-weight:700;margin-right:3px}
+.w .ph{color:#9097a6;font-style:italic;font-size:.8rem}
+.w .mn{color:#3a3f4c}
+.foot{margin-top:14px;border-top:1px solid #e6e9f0;padding-top:9px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:.74rem;color:#6b7080}
+.foot .lbl{font-weight:700;color:#4a4f5e}
+.foot .chip{border:1px solid #cfd4e0;border-radius:6px;padding:2px 9px}
 @media print{
   @page{size:A4;margin:10mm}
   body{background:#fff;padding:0}
   .no-print{display:none!important}
   .day-page{border-radius:0;max-width:none;margin:0;padding:0 0 4mm;page-break-after:always}
   .day-page:last-child{page-break-after:auto}
-  .banner{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .hd,.sec,.hd .d{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }`;
 function buildPagesHTML(){
+  const total = stageWords(plan.stage).length;
   let html='';
   for(let d=1; d<=plan.days; d++){
-    const news = (lists[d]||[]).map(w=>({...w,_rv:false}));
-    const reviews = reviewDaysFor(d).flatMap(rd => (lists[rd]||[]).map(w=>({...w,_rv:true})));
-    html += `<div class="day-page"><div class="banner">
-        <div class="d">DAY ${String(d).padStart(2,'0')}<small>${escHtml(stageLabel(plan.stage))} · 第 ${d} / ${plan.days} 天</small></div>
-        <div><span class="pill">🆕 新词 ${news.length}</span><span class="pill">🔁 复习 ${reviews.length}</span></div></div>`;
-    if(news.length) html += `<div class="sec n">🆕 今日新词 · ${news.length}</div><div class="grid">${news.map(wordCell).join('')}</div>`;
-    if(reviews.length) html += `<div class="sec r">🔁 今日复习 · ${reviews.length}</div><div class="grid">${reviews.map(wordCell).join('')}</div>`;
-    html += `<div class="foot"><span>${escHtml(stageLabel(plan.stage))} · 背单词计划</span><span>第 ${d} / ${plan.days} 天</span></div></div>`;
+    const news = lists[d]||[];
+    const reviews = reviewDaysFor(d).flatMap(rd => (lists[rd]||[]));
+    html += `<div class="day-page">
+      <div class="hd"><div class="t">${plan.days}天背完 ${escHtml(stageLabel(plan.stage))} <b>${total}</b> 词</div><div class="d">第 ${d} 天</div></div>`;
+    if(news.length) html += `<div class="sec">🆕 今日新词 · ${news.length}</div><div class="cols">${news.map(wordCell).join('')}</div>`;
+    if(reviews.length) html += `<div class="sec r">🔁 今日复习 · ${reviews.length}</div><div class="cols">${reviews.map(wordCell).join('')}</div>`;
+    const future = EBB.map(k=>d+k).filter(x=>x<=plan.days);
+    const chips = future.length ? future.map(x=>`<span class="chip">第${x}天</span>`).join('') : '<span class="chip">已是最后阶段</span>';
+    html += `<div class="foot"><span class="lbl">艾宾浩斯复习：本组在</span>${chips}<span class="lbl">再复习</span></div></div>`;
   }
   return html;
 }
-// 在新窗口里渲染（无论选多大范围都不会卡死主页面）
+// 在新窗口渲染（不卡主页面）：可一键下载PDF，或打印
 function showPrint(){
   const win = window.open('', '_blank');
   if(!win){ alert('请允许本站弹出窗口，然后再点一次「打印/导出PDF」'); return; }
   const title = stageLabel(plan.stage)+' · '+plan.days+'天计划';
-  win.document.write(`<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>${escHtml(title)}</title><style>${PRINT_CSS}</style></head><body>
-    <div class="toolbar no-print"><button onclick="window.print()">🖨️ 打印 / 保存为 PDF</button>
-    <span>纸张选 A4、目标选「另存为 PDF」。每天从新的一页开始，词多放不下会自动顺延到下一页。</span></div>
-    ${buildPagesHTML()}</body></html>`);
+  const fname = (stageLabel(plan.stage)+'_'+plan.days+'天背单词计划.pdf').replace(/\s+/g,'');
+  win.document.write(`<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>${escHtml(title)}</title>
+    <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.2/dist/html2pdf.bundle.min.js"><\/script>
+    <style>${PRINT_CSS}</style></head><body>
+    <div class="toolbar no-print">
+      <button class="dlbtn" onclick="dl()">⬇️ 下载 PDF</button>
+      <button class="pbtn" onclick="window.print()">🖨️ 打印</button>
+      <span>点「下载 PDF」直接生成文件；天数很多时生成较慢，可改用「打印」。</span>
+      <span class="gen-tip" style="display:none">⏳ 正在生成 PDF，请稍候…</span>
+    </div>
+    <div id="pages">${buildPagesHTML()}</div>
+    <script>
+      function dl(){
+        if(!window.html2pdf){ alert('PDF 组件还在加载，请稍等 1-2 秒再点'); return; }
+        var tip=document.querySelector('.gen-tip'); tip.style.display='inline';
+        var opt={margin:[6,6,6,6],filename:${JSON.stringify(fname)},image:{type:'jpeg',quality:0.95},html2canvas:{scale:2,useCORS:true},jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},pagebreak:{mode:['css'],before:'.day-page'}};
+        html2pdf().set(opt).from(document.getElementById('pages')).save().then(function(){tip.style.display='none';}).catch(function(e){tip.style.display='none';alert('生成失败，可改用「打印」：'+e);});
+      }
+    <\/script>
+    </body></html>`);
   win.document.close();
 }
 function exportCSV(){

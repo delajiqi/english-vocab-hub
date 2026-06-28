@@ -210,6 +210,13 @@ Two new pages, both linked from the homepage feature cards and the nav of every 
   - CSV export (`exportCSV`) writes a UTF-8 BOM CSV: 天数/类型/单词/音标/词性/释义/例句/翻译.
   - NOTE: a full plan renders thousands of word cards (Ebbinghaus review multiplies counts),
     so the print DOM is large — fine to print, but heavy to screenshot in automation.
+  - **Booklet restyle (2026-06-28)**: print page now mimics a 背单词 booklet — light-blue
+    title header (`N天背完<阶段><total>词` / `第d天`), each word on **one line**
+    (`word /phonetic/ pos meaning`, blue headword) flowing in a 3-up CSS `column-count` list
+    (no boxes, no category grouping), and a footer showing the Ebbinghaus re-review days.
+  - **One-click PDF**: the print popup loads `html2pdf.js` (jsDelivr CDN) and has a
+    「⬇️ 下载 PDF」button that generates and downloads the file directly (no print-dialog
+    hunting). 「🖨️ 打印」(window.print) remains for crisp/small output on large plans.
 
 ### `src/wordbook.html` — 生词本 (Wordbook)
 - Lists all favorites: resolves `evh_fav` ids against the loaded data, plus text-only
